@@ -5,153 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Storybook — Toddler Kitties</title>
 <meta name="description" content="Meet the Toddler Kitties crew and read their stories.">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
-<div class="book">
-  <main class="page">
-    <span class="eyebrow">Chapter One</span>
-    <h1>The <span class="accent">Crew</span></h1>
-    <p>Every story needs its heroes. Tap a kitty card to read a little more about them.</p>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="home.html">Toddler <span>Kitties</span></a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="storybook.html" class="active">Storybook</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="card-grid">
-      <div class="card" data-expand tabindex="0">
-        <div class="art" aria-hidden="true">&#128049;</div>
-        <div class="info">
-          <h3>Kitty One</h3>
-          <p>The brave one.</p>
-          <p class="more">A longer story about Kitty One goes here &mdash; their favorite nap spot, their nemesis (the vacuum), and their greatest adventure so far.</p>
-        </div>
-      </div>
-      <div class="card" data-expand tabindex="0">
-        <div class="art" aria-hidden="true">&#128568;</div>
-        <div class="info">
-          <h3>Kitty Two</h3>
-          <p>The silly one.</p>
-          <p class="more">A longer story about Kitty Two goes here. Replace this with the real tale.</p>
-        </div>
-      </div>
-      <div class="card" data-expand tabindex="0">
-        <div class="art" aria-hidden="true">&#128570;</div>
-        <div class="info">
-          <h3>Kitty Three</h3>
-          <p>The sleepy one.</p>
-          <p class="more">A longer story about Kitty Three goes here. Replace this with the real tale.</p>
-        </div>
-      </div>
-      <div class="card" data-expand tabindex="0">
-        <div class="art" aria-hidden="true">&#128571;</div>
-        <div class="info">
-          <h3>Kitty Four</h3>
-          <p>The sweet one.</p>
-          <p class="more">A longer story about Kitty Four goes here. Replace this with the real tale.</p>
-        </div>
+<main>
+
+  <span class="eyebrow">The crew</span>
+  <h1>Story<span class="accent">book</span></h1>
+  <p>Every story needs its heroes. Tap a kitty card to read a little more about them.</p>
+
+  <div class="card-grid">
+    <div class="card" data-expand tabindex="0">
+      <div class="art" aria-hidden="true">&#128049;</div>
+      <div class="info">
+        <h3>Kitty One</h3>
+        <p>The brave one.</p>
+        <p class="more">A longer story about Kitty One goes here &mdash; their favorite nap spot, their nemesis (the vacuum), and their greatest adventure so far.</p>
       </div>
     </div>
-  </main>
-  <div class="page-nav">
-    <a class="page-btn prev" href="home.html" data-turn>&larr; Home</a>
-    <span class="page-num">PAGE 1</span>
-    <a class="page-btn next" href="shop.html" data-turn>Shop &rarr;</a>
+    <div class="card" data-expand tabindex="0">
+      <div class="art" aria-hidden="true">&#128568;</div>
+      <div class="info">
+        <h3>Kitty Two</h3>
+        <p>The silly one.</p>
+        <p class="more">A longer story about Kitty Two goes here. Replace this with the real tale.</p>
+      </div>
+    </div>
+    <div class="card" data-expand tabindex="0">
+      <div class="art" aria-hidden="true">&#128570;</div>
+      <div class="info">
+        <h3>Kitty Three</h3>
+        <p>The sleepy one.</p>
+        <p class="more">A longer story about Kitty Three goes here. Replace this with the real tale.</p>
+      </div>
+    </div>
+    <div class="card" data-expand tabindex="0">
+      <div class="art" aria-hidden="true">&#128571;</div>
+      <div class="info">
+        <h3>Kitty Four</h3>
+        <p>The sweet one.</p>
+        <p class="more">A longer story about Kitty Four goes here. Replace this with the real tale.</p>
+      </div>
+    </div>
   </div>
-</div>
 
-<nav class="cat-menu" aria-label="Site menu">
-  <a class="cat-item" href="home.html" data-fur="lav">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Home</span>
-  </a>
-  <a class="cat-item here" href="storybook.html" data-fur="pink">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Storybook</span>
-  </a>
-  <a class="cat-item" href="shop.html" data-fur="yellow">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Shop</span>
-  </a>
-  <a class="cat-item" href="about.html" data-fur="mint">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">About</span>
-  </a>
-</nav>
+</main>
 
-<script src="book.js?v=3"></script>
+<footer>
+  <p>&copy; 2026 Toddler Kitties &middot; <a href="mailto:hello@example.com">Say hi</a></p>
+</footer>
+
+<script src="site.js?v=5"></script>
 </body>
 </html>

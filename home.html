@@ -4,121 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Toddler Kitties — Home</title>
-<meta name="description" content="Toddler Kitties — a storybook world of tiny animated cats.">
-<link rel="stylesheet" href="styles.css?v=3">
+<meta name="description" content="Toddler Kitties — a world of tiny animated cats.">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
-<div class="book">
-  <main class="page cover">
-    <span class="eyebrow">A tiny tale in four chapters</span>
-    <h1>Toddler <span class="accent">Kitties</span></h1>
-    <p>Once upon a time there were four small cats with very big personalities. Pick a kitty below and it will walk you to its page.</p>
-    <a class="cover-btn" href="storybook.html" data-turn>Open the Book &rarr;</a>
-    <p class="cover-hint">Psst &mdash; try clicking one of the cats at the bottom.</p>
-  </main>
-  <div class="page-nav">
-    <span class="page-btn prev hidden">&larr; Back</span>
-    <span class="page-num">COVER</span>
-    <a class="page-btn next" href="storybook.html" data-turn>Storybook &rarr;</a>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="home.html">Toddler <span>Kitties</span></a>
+    <nav>
+      <a href="home.html" class="active">Home</a>
+      <a href="storybook.html">Storybook</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
   </div>
-</div>
+</header>
 
-<nav class="cat-menu" aria-label="Site menu">
-  <a class="cat-item here" href="home.html" data-fur="lav">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Home</span>
-  </a>
-  <a class="cat-item" href="storybook.html" data-fur="pink">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Storybook</span>
-  </a>
-  <a class="cat-item" href="shop.html" data-fur="yellow">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">Shop</span>
-  </a>
-  <a class="cat-item" href="about.html" data-fur="mint">
-    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g class="cat-svg-inner">
-        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
-        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
-        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
-        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
-        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="cat-label">About</span>
-  </a>
-</nav>
+<main>
+  <div class="hero">
+    <span class="eyebrow">Welcome to the litter</span>
+    <h1>Tiny cats.<br><span class="accent">Big personalities.</span></h1>
+    <p>Toddler Kitties is a world of small animated cats with a whole lot of attitude. Come meet the crew.</p>
+    <a class="btn" href="storybook.html">Meet the Kitties</a>
+  </div>
 
-<script src="book.js?v=3"></script>
+  <h2>Explore</h2>
+  <div class="card-grid">
+    <a class="card" href="storybook.html" style="text-decoration:none; color:inherit;">
+      <div class="art" aria-hidden="true">&#128218;</div>
+      <div class="info"><h3>Storybook</h3><p>Meet the crew and read their tales.</p></div>
+    </a>
+    <a class="card" href="shop.html" style="text-decoration:none; color:inherit;">
+      <div class="art" aria-hidden="true">&#128717;&#65039;</div>
+      <div class="info"><h3>Shop</h3><p>Goodies coming soon.</p></div>
+    </a>
+    <a class="card" href="about.html" style="text-decoration:none; color:inherit;">
+      <div class="art" aria-hidden="true">&#128394;&#65039;</div>
+      <div class="info"><h3>About</h3><p>The story behind Toddler Kitties.</p></div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Toddler Kitties &middot; <a href="mailto:hello@example.com">Say hi</a></p>
+</footer>
+
+<script src="site.js?v=5"></script>
 </body>
 </html>
