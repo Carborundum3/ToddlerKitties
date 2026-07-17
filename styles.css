@@ -308,3 +308,92 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
   .intro-cats .cat { animation: none; transform: translateY(var(--up)); }
   .intro-cats .cat .cat-svg-inner { animation: none; }
 }
+
+
+/* =========================================================
+   CAT MENU — four cats along the bottom of every page
+   ========================================================= */
+body.has-cats { padding-bottom: 150px; }
+
+.cat-menu {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(10px, 5vw, 60px);
+  padding-bottom: 8px;
+  z-index: 20;
+  background: linear-gradient(to top, rgba(59,46,74,0.12) 0 32px, transparent 32px);
+  pointer-events: none;            /* the floor doesn't block clicks... */
+}
+
+.cat-menu .cat-item { pointer-events: auto; }   /* ...but the cats do */
+
+.cat-item {
+  --fur: var(--lav);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: transform 1.6s linear;   /* the walk across the screen */
+  will-change: transform;
+}
+
+.cat-item .cat {
+  width: clamp(72px, 11vw, 104px);
+  height: auto;
+  display: block;
+}
+
+.cat-label {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(12px, 2vw, 15px);
+  font-weight: 700;
+  background: #fff;
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-top: 2px;
+  box-shadow: 2px 2px 0 rgba(59,46,74,0.2);
+}
+
+.cat-item.here .cat-label { background: var(--yellow); }
+
+.cat-item[data-fur="lav"]    { --fur: var(--lav); }
+.cat-item[data-fur="pink"]   { --fur: var(--pink); }
+.cat-item[data-fur="yellow"] { --fur: var(--yellow); }
+.cat-item[data-fur="mint"]   { --fur: var(--mint); }
+
+/* idle: tails sway */
+.cat-item .tail { transform-origin: 16px 56px; animation: tail-sway 2.6s ease-in-out infinite; }
+.cat-item:hover .cat-svg-inner { animation: hop 0.5s ease; }
+
+/* walking */
+.cat-item.walking { z-index: 30; }
+.cat-item.walking .cat-label { opacity: 0; }
+.cat-item.walking .cat-svg-inner { animation: trot 0.4s ease-in-out infinite; }
+.cat-item.walking .leg-a { animation: step-a 0.4s ease-in-out infinite; }
+.cat-item.walking .leg-b { animation: step-b 0.4s ease-in-out infinite; }
+.cat-item.walking .tail  { animation: tail-sway 0.8s ease-in-out infinite; }
+
+.leg-a, .leg-b { transform-origin: center 62px; }
+
+@keyframes step-a { 0%, 100% { transform: rotate(16deg); }  50% { transform: rotate(-16deg); } }
+@keyframes step-b { 0%, 100% { transform: rotate(-16deg); } 50% { transform: rotate(16deg); } }
+@keyframes trot   { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(-4px); } }
+@keyframes tail-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(14deg); } }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* keep the footer readable above the cats */
+body.has-cats footer { margin-bottom: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-item, .cat-item .tail,
+  .cat-item.walking .cat-svg-inner,
+  .cat-item.walking .leg-a,
+  .cat-item.walking .leg-b { animation: none; transition: none; }
+}
