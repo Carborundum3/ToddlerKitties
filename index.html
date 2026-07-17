@@ -10,27 +10,114 @@
 <body>
 
 <div class="book">
-  <nav class="ribbons" aria-label="Sections">
-    <a class="ribbon r-home active" href="index.html" data-turn>Cover</a>
-    <a class="ribbon r-story" href="storybook.html" data-turn>Storybook</a>
-    <a class="ribbon r-shop" href="shop.html" data-turn>Shop</a>
-    <a class="ribbon r-about" href="about.html" data-turn>About</a>
-  </nav>
-
   <main class="page cover">
     <span class="eyebrow">A tiny tale in four chapters</span>
-    <span class="cover-cat" aria-hidden="true">🐱</span>
     <h1>Toddler <span class="accent">Kitties</span></h1>
-    <p>Once upon a time there were four small cats with very big personalities. Open the book to meet them.</p>
-    <a class="cover-btn" href="storybook.html" data-turn>Open the Book →</a>
+    <p>Once upon a time there were four small cats with very big personalities. Pick a kitty below and it will walk you to its page.</p>
+    <a class="cover-btn" href="storybook.html" data-turn>Open the Book &rarr;</a>
+    <p class="cover-hint">Psst &mdash; try clicking one of the cats at the bottom.</p>
   </main>
-
   <div class="page-nav">
-    <span class="page-btn prev hidden">← Back</span>
+    <span class="page-btn prev hidden">&larr; Back</span>
     <span class="page-num">COVER</span>
-    <a class="page-btn next" href="storybook.html" data-turn>Storybook →</a>
+    <a class="page-btn next" href="storybook.html" data-turn>Storybook &rarr;</a>
   </div>
 </div>
+
+<nav class="cat-menu" aria-label="Site menu">
+  <a class="cat-item here" href="index.html" data-fur="lav">
+    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="cat-svg-inner">
+        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
+        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
+        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
+        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <span class="cat-label">Home</span>
+  </a>
+  <a class="cat-item" href="storybook.html" data-fur="pink">
+    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="cat-svg-inner">
+        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
+        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
+        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
+        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <span class="cat-label">Storybook</span>
+  </a>
+  <a class="cat-item" href="shop.html" data-fur="yellow">
+    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="cat-svg-inner">
+        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
+        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
+        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
+        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <span class="cat-label">Shop</span>
+  </a>
+  <a class="cat-item" href="about.html" data-fur="mint">
+    <svg class="cat" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="cat-svg-inner">
+        <path class="tail" d="M16 56 Q2 46 9 28" fill="none" stroke="var(--fur)" stroke-width="9" stroke-linecap="round"/>
+        <rect class="leg-a" x="28" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="44" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-a" x="64" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <rect class="leg-b" x="80" y="58" width="10" height="28" rx="5" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <ellipse cx="55" cy="52" rx="38" ry="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <polygon points="80,18 88,2 96,16" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="102,16 112,3 117,20" fill="var(--fur)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="98" cy="34" r="24" fill="var(--fur)" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="92" cy="31" r="3" fill="var(--ink)"/>
+        <circle cx="108" cy="31" r="3" fill="var(--ink)"/>
+        <path d="M97 40 q3 3 6 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="88" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <circle cx="112" cy="40" r="3.5" fill="#fff" opacity="0.55"/>
+        <line x1="116" y1="36" x2="127" y2="34" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="116" y1="41" x2="127" y2="42" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <span class="cat-label">About</span>
+  </a>
+</nav>
 
 <script src="book.js"></script>
 </body>
