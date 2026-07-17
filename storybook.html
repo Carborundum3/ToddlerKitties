@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storybook — Toddler Kitties</title>
+<meta name="description" content="Meet the Toddler Kitties crew and read their stories.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="book">
+  <nav class="ribbons" aria-label="Sections">
+    <a class="ribbon r-home" href="index.html" data-turn>Cover</a>
+    <a class="ribbon r-story active" href="storybook.html" data-turn>Storybook</a>
+    <a class="ribbon r-shop" href="shop.html" data-turn>Shop</a>
+    <a class="ribbon r-about" href="about.html" data-turn>About</a>
+  </nav>
+
+  <main class="page">
+    <span class="eyebrow">Chapter One</span>
+    <h1>The <span class="accent">Crew</span></h1>
+    <p>Every story needs its heroes. Tap a kitty to read a little more about them.</p>
+
+    <div class="card-grid">
+      <div class="card" data-expand tabindex="0">
+        <div class="art" aria-hidden="true">🐱</div>
+        <div class="info">
+          <h3>Kitty One</h3>
+          <p>The brave one.</p>
+          <p class="more">A longer story about Kitty One goes here — their favorite nap spot, their nemesis (the vacuum), and their greatest adventure so far.</p>
+        </div>
+      </div>
+      <div class="card" data-expand tabindex="0">
+        <div class="art" aria-hidden="true">😸</div>
+        <div class="info">
+          <h3>Kitty Two</h3>
+          <p>The silly one.</p>
+          <p class="more">A longer story about Kitty Two goes here. Replace this with the real tale.</p>
+        </div>
+      </div>
+      <div class="card" data-expand tabindex="0">
+        <div class="art" aria-hidden="true">😺</div>
+        <div class="info">
+          <h3>Kitty Three</h3>
+          <p>The sleepy one.</p>
+          <p class="more">A longer story about Kitty Three goes here. Replace this with the real tale.</p>
+        </div>
+      </div>
+      <div class="card" data-expand tabindex="0">
+        <div class="art" aria-hidden="true">😻</div>
+        <div class="info">
+          <h3>Kitty Four</h3>
+          <p>The sweet one.</p>
+          <p class="more">A longer story about Kitty Four goes here. Replace this with the real tale.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="page-nav">
+    <a class="page-btn prev" href="index.html" data-turn>← Cover</a>
+    <span class="page-num">PAGE 1</span>
+    <a class="page-btn next" href="shop.html" data-turn>Shop →</a>
+  </div>
+</div>
+
+<script src="book.js"></script>
+</body>
+</html>
