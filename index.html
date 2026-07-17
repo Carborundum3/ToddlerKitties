@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toddler Kitties</title>
+<meta name="description" content="Toddler Kitties — a world of tiny animated cats.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #F4EFFF;          /* lavender milk */
+    --ink: #3B2E4A;         /* deep plum text */
+    --card: #FFFFFF;
+    --pink: #FF8FB1;        /* bubblegum */
+    --yellow: #FFD166;      /* sunbeam */
+    --mint: #7FDBC4;        /* fresh mint */
+    --outline: #3B2E4A;
+    --shadow: 6px 6px 0 rgba(59, 46, 74, 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, .logo, .btn {
+    font-family: 'Baloo 2', cursive;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .logo span { color: var(--pink); }
+
+  nav .links a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 700;
+    margin-left: 22px;
+    font-size: 16px;
+  }
+
+  nav .links a:hover { color: var(--pink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    max-width: 1000px;
+    margin: 30px auto 60px;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .hero-sticker {
+    background: var(--card);
+    border: 3px solid var(--outline);
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+    padding: 60px 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-sticker::before,
+  .hero-sticker::after {
+    content: "🐾";
+    position: absolute;
+    font-size: 42px;
+    opacity: 0.25;
+  }
+
+  .hero-sticker::before { top: 18px; left: 24px; transform: rotate(-20deg); }
+  .hero-sticker::after  { bottom: 18px; right: 24px; transform: rotate(15deg); }
+
+  .eyebrow {
+    display: inline-block;
+    background: var(--yellow);
+    border: 2px solid var(--outline);
+    border-radius: 999px;
+    padding: 4px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 7vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  h1 .wiggle { color: var(--pink); display: inline-block; }
+
+  .hero p {
+    max-width: 480px;
+    margin: 0 auto 28px;
+    font-size: 18px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    border: 3px solid var(--outline);
+    border-radius: 999px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 rgba(59, 46, 74, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(59, 46, 74, 0.25);
+  }
+
+  /* ---------- Gallery ---------- */
+  section {
+    max-width: 1000px;
+    margin: 0 auto 70px;
+    padding: 0 24px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .kitty-card {
+    background: var(--card);
+    border: 3px solid var(--outline);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.15s ease;
+  }
+
+  .kitty-card:hover { transform: rotate(-1.5deg) translateY(-4px); }
+
+  .kitty-card .art {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+  }
+
+  .kitty-card:nth-child(1) .art { background: var(--mint); }
+  .kitty-card:nth-child(2) .art { background: var(--yellow); }
+  .kitty-card:nth-child(3) .art { background: var(--pink); }
+  .kitty-card:nth-child(4) .art { background: var(--mint); }
+
+  .kitty-card .info { padding: 16px 18px; }
+  .kitty-card h3 { font-size: 20px; margin-bottom: 4px; }
+  .kitty-card p { font-size: 14px; }
+
+  /* ---------- About ---------- */
+  .about-card {
+    background: var(--card);
+    border: 3px solid var(--outline);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 36px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 14px;
+  }
+
+  footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn, .kitty-card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Toddler <span>Kitties</span></a>
+  <div class="links">
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-sticker">
+    <div class="eyebrow">Welcome to the litter</div>
+    <h1>Tiny cats.<br><span class="wiggle">Big personalities.</span></h1>
+    <p>Toddler Kitties is a world of small animated cats with a whole lot of attitude. Come meet the crew.</p>
+    <a class="btn" href="#gallery">Meet the Kitties</a>
+  </div>
+</div>
+
+<section id="gallery">
+  <h2>The Crew</h2>
+  <div class="gallery">
+    <div class="kitty-card">
+      <div class="art">🐱</div>
+      <div class="info">
+        <h3>Kitty One</h3>
+        <p>A short description of this kitty goes here.</p>
+      </div>
+    </div>
+    <div class="kitty-card">
+      <div class="art">😸</div>
+      <div class="info">
+        <h3>Kitty Two</h3>
+        <p>A short description of this kitty goes here.</p>
+      </div>
+    </div>
+    <div class="kitty-card">
+      <div class="art">😺</div>
+      <div class="info">
+        <h3>Kitty Three</h3>
+        <p>A short description of this kitty goes here.</p>
+      </div>
+    </div>
+    <div class="kitty-card">
+      <div class="art">😻</div>
+      <div class="info">
+        <h3>Kitty Four</h3>
+        <p>A short description of this kitty goes here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="about-card">
+    <p>Toddler Kitties started with four real cats and one big imagination. Here you'll find their animated adventures, artwork, and whatever mischief comes next.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>© 2026 Toddler Kitties · <a href="mailto:hello@example.com">Say hi</a></p>
+</footer>
+
+</body>
+</html>
