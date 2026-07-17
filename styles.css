@@ -337,3 +337,118 @@ h2 { font-size: 28px; font-weight: 800; margin: 26px 0 12px; }
   .cat-item.walking .leg-b { animation: none; }
   .cat-item, .card, .cover-btn, .page-btn { transition: none; }
 }
+
+/* =========================================================
+   INTRO SPLASH — title + cats popping up like a rainbow
+   ========================================================= */
+.intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.intro-title {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: clamp(44px, 11vw, 110px);
+  line-height: 1.05;
+  z-index: 2;
+}
+
+.intro-title .word { display: block; }
+.intro-title .word:nth-child(2) { color: var(--pink); }
+
+.intro-title .letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes letter-pop {
+  from { opacity: 0; transform: translateY(24px) scale(0.6); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.intro-sub {
+  margin-top: 10px;
+  font-size: clamp(15px, 2.5vw, 20px);
+  font-weight: 700;
+  color: #6b5a8a;
+  opacity: 0;
+  animation: fade-up 0.6s ease 1s forwards;
+  z-index: 2;
+}
+
+.intro .cover-btn {
+  opacity: 0;
+  animation: fade-up 0.6s ease 1.6s forwards;
+  z-index: 2;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- the rainbow of cats ---- */
+.intro-cats {
+  position: absolute;
+  left: 0; right: 0; bottom: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(0px, 3vw, 40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.intro-cats .cat {
+  width: clamp(110px, 20vw, 200px);
+  height: auto;
+  transform: translateY(120%);
+  animation: cat-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* arch heights: ends low, middle high — the rainbow shape */
+.intro-cats .cat:nth-child(1) { --up: -6px;  animation-delay: 0.15s; }
+.intro-cats .cat:nth-child(2) { --up: -52px; animation-delay: 0.32s; }
+.intro-cats .cat:nth-child(3) { --up: -52px; animation-delay: 0.49s; }
+.intro-cats .cat:nth-child(4) { --up: -6px;  animation-delay: 0.66s; }
+
+@keyframes cat-pop {
+  0%   { transform: translateY(120%); }
+  70%  { transform: translateY(calc(var(--up) - 18px)); }
+  100% { transform: translateY(var(--up)); }
+}
+
+/* gentle idle sway once they're up */
+.intro-cats .cat .cat-svg-inner {
+  animation: intro-sway 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+  transform-origin: center bottom;
+}
+
+.intro-cats .cat:nth-child(2) .cat-svg-inner,
+.intro-cats .cat:nth-child(4) .cat-svg-inner { animation-delay: 1.7s; }
+
+@keyframes intro-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+.intro-cats .cat[data-fur="lav"]    { --fur: var(--lav); }
+.intro-cats .cat[data-fur="pink"]   { --fur: var(--pink); }
+.intro-cats .cat[data-fur="yellow"] { --fur: var(--yellow); }
+.intro-cats .cat[data-fur="mint"]   { --fur: var(--mint); }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-title .letter, .intro-sub, .intro .cover-btn { animation: none; opacity: 1; }
+  .intro-cats .cat { animation: none; transform: translateY(var(--up)); }
+  .intro-cats .cat .cat-svg-inner { animation: none; }
+}
