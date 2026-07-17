@@ -4,7 +4,7 @@ document.addEventListener('click', function (e) {
   if (card) card.classList.toggle('open');
 });
 
-// Cat menu: click a cat and it walks off the page, then navigates
+// Cat menu: click a cat -> random exit action -> navigate
 document.addEventListener('click', function (e) {
   const cat = e.target.closest('a.cat-item');
   if (!cat) return;
@@ -13,7 +13,7 @@ document.addEventListener('click', function (e) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) { window.location.href = cat.href; return; }
 
-  // clicking the cat for the current page = a happy hop, no navigation
+  // clicking the current page's cat = a happy hop, no navigation
   if (cat.classList.contains('here')) {
     const inner = cat.querySelector('.cat-svg-inner');
     if (inner) {
@@ -23,12 +23,41 @@ document.addEventListener('click', function (e) {
     return;
   }
 
-  cat.classList.add('walking');
-  const rect = cat.getBoundingClientRect();
-  const distance = window.innerWidth - rect.left + 60;
-  requestAnimationFrame(function () {
-    cat.style.transform = 'translateX(' + distance + 'px)';
-  });
+  if (cat.classList.contains('walking') || cat.classList.contains('batting')) return;
 
-  setTimeout(function () { window.location.href = cat.href; }, 1550);
+  const rect = cat.getBoundingClientRect();
+  const actions = ['right', 'left', 'up', 'down', 'bat'];
+  const action = actions[Math.floor(Math.random() * actions.length)];
+  let wait = 1000;
+
+  function go() {
+    setTimeout(function () { window.location.href = cat.href; }, wait);
+  }
+
+  if (action === 'bat') {
+    // rear up and swat the page, then scamper off to the right
+    cat.classList.add('batting');
+    document.body.classList.add('swatted');
+    setTimeout(function () {
+      cat.classList.remove('batting');
+      cat.classList.add('walking');
+      cat.style.transform = 'translateX(' + (window.innerWidth - rect.left + 60) + 'px)';
+    }, 820);
+    wait = 1750;
+    go();
+    return;
+  }
+
+  cat.classList.add('walking');
+  if (action === 'right') {
+    cat.style.transform = 'translateX(' + (window.innerWidth - rect.left + 60) + 'px)';
+  } else if (action === 'left') {
+    cat.classList.add('face-left');
+    cat.style.transform = 'translateX(-' + (rect.right + 60) + 'px)';
+  } else if (action === 'up') {
+    cat.style.transform = 'translateY(-' + (rect.bottom + 80) + 'px)';
+  } else if (action === 'down') {
+    cat.style.transform = 'translateY(' + (window.innerHeight - rect.top + 80) + 'px)';
+  }
+  go();
 });
