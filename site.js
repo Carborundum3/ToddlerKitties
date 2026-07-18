@@ -4,7 +4,7 @@ document.addEventListener('click', function (e) {
   if (card) card.classList.toggle('open');
 });
 
-// Cat menu: click a cat -> random exit action -> navigate
+// ---- Cat menu: fast, random, catlike exits ----
 document.addEventListener('click', function (e) {
   const cat = e.target.closest('a.cat-item');
   if (!cat) return;
@@ -13,51 +13,68 @@ document.addEventListener('click', function (e) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) { window.location.href = cat.href; return; }
 
-  // clicking the current page's cat = a happy hop, no navigation
+  // current page's cat: happy hop, stay put
   if (cat.classList.contains('here')) {
     const inner = cat.querySelector('.cat-svg-inner');
     if (inner) {
-      inner.style.animation = 'hop 0.5s ease';
-      setTimeout(function () { inner.style.animation = ''; }, 520);
+      inner.style.animation = 'hop 0.4s ease';
+      setTimeout(function () { inner.style.animation = ''; }, 420);
     }
     return;
   }
 
-  if (cat.classList.contains('walking') || cat.classList.contains('batting')) return;
+  if (cat.dataset.busy) return;
+  cat.dataset.busy = '1';
+  cat.classList.add('moving');   // label bubble disappears instantly
 
   const rect = cat.getBoundingClientRect();
-  const actions = ['right', 'left', 'up', 'down', 'bat'];
-  const action = actions[Math.floor(Math.random() * actions.length)];
-  let wait = 1000;
+  const rand = function (min, max) { return min + Math.random() * (max - min); };
 
-  function go() {
-    setTimeout(function () { window.location.href = cat.href; }, wait);
+  const runTime = rand(0.3, 0.5);   // seconds, different every click
+  cat.style.transitionDuration = runTime.toFixed(2) + 's';
+
+  const exits = ['right', 'right', 'left', 'up', 'down', 'bat', 'zoomies'];
+  const exit = exits[Math.floor(Math.random() * exits.length)];
+  const doPrep = exit !== 'bat' && Math.random() < 0.5;
+
+  function leave() {
+    setTimeout(function () { window.location.href = cat.href; }, runTime * 1000 + 100);
   }
 
-  if (action === 'bat') {
-    // rear up and swat the page, then scamper off to the right
-    cat.classList.add('batting');
-    document.body.classList.add('swatted');
-    setTimeout(function () {
-      cat.classList.remove('batting');
-      cat.classList.add('walking');
+  function run() {
+    if (exit === 'bat') {
+      cat.classList.add('batting');
+      document.body.classList.add('swatted');
+      setTimeout(function () {
+        cat.classList.remove('batting');
+        cat.classList.add('walking');
+        cat.style.transform = 'translateX(' + (window.innerWidth - rect.left + 60) + 'px)';
+        leave();
+      }, 520);
+      return;
+    }
+
+    cat.classList.add('walking');
+    if (exit === 'zoomies') cat.classList.add('zoomies');
+
+    if (exit === 'left') {
+      cat.classList.add('face-left');
+      cat.style.transform = 'translateX(-' + (rect.right + 60) + 'px)';
+    } else if (exit === 'up') {
+      const drift = rand(-80, 80).toFixed(0);   // sideways drift looks feline
+      cat.style.transform = 'translate(' + drift + 'px, -' + (rect.bottom + 80) + 'px)';
+    } else if (exit === 'down') {
+      cat.style.transform = 'translateY(' + (window.innerHeight - rect.top + 80) + 'px)';
+    } else {
       cat.style.transform = 'translateX(' + (window.innerWidth - rect.left + 60) + 'px)';
-    }, 820);
-    wait = 1750;
-    go();
-    return;
+    }
+    leave();
   }
 
-  cat.classList.add('walking');
-  if (action === 'right') {
-    cat.style.transform = 'translateX(' + (window.innerWidth - rect.left + 60) + 'px)';
-  } else if (action === 'left') {
-    cat.classList.add('face-left');
-    cat.style.transform = 'translateX(-' + (rect.right + 60) + 'px)';
-  } else if (action === 'up') {
-    cat.style.transform = 'translateY(-' + (rect.bottom + 80) + 'px)';
-  } else if (action === 'down') {
-    cat.style.transform = 'translateY(' + (window.innerHeight - rect.top + 80) + 'px)';
+  if (doPrep) {
+    cat.classList.add('prepping');
+    setTimeout(function () { cat.classList.remove('prepping'); run(); }, 360);
+  } else {
+    run();
   }
-  go();
 });

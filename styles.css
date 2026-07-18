@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-  --bg: #F4EFFF;          /* lavender milk */
-  --ink: #3B2E4A;         /* deep plum */
+  --ink: #3B2E4A;
   --card: #FFFFFF;
   --pink: #FF8FB1;
   --yellow: #FFD166;
@@ -10,18 +9,28 @@
   --lav: #B39DDB;
   --outline: #3B2E4A;
   --shadow: 6px 6px 0 rgba(59, 46, 74, 0.15);
+  --accent: var(--pink);
+  --page-bg: #F4EFFF;
 }
+
+/* ---- page themes: each page wears its cat's color ---- */
+body[data-theme="lav"]    { --accent: var(--lav);    --page-bg: #EDE7FA; }
+body[data-theme="pink"]   { --accent: var(--pink);   --page-bg: #FFEDF3; }
+body[data-theme="yellow"] { --accent: var(--yellow); --page-bg: #FFF6DF; }
+body[data-theme="mint"]   { --accent: var(--mint);   --page-bg: #E7F8F2; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--bg);
+  background: var(--page-bg);
   color: var(--ink);
   font-family: 'Nunito', sans-serif;
   line-height: 1.6;
 }
 
-h1, h2, h3, .logo, .btn, nav a { font-family: 'Baloo 2', cursive; }
+body.has-cats { padding-bottom: 160px; }
+
+h1, h2, h3, .logo, .btn, nav a, .cat-label { font-family: 'Baloo 2', cursive; }
 
 /* ---------- Navbar ---------- */
 header {
@@ -43,14 +52,8 @@ header {
   gap: 10px;
 }
 
-.logo {
-  font-size: 26px;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--ink);
-}
-
-.logo span { color: var(--pink); }
+.logo { font-size: 26px; font-weight: 800; text-decoration: none; color: var(--ink); }
+.logo span { color: var(--accent); }
 
 nav { display: flex; gap: 6px; flex-wrap: wrap; }
 
@@ -64,19 +67,11 @@ nav a {
   border: 2px solid transparent;
 }
 
-nav a:hover { border-color: var(--outline); background: var(--bg); }
-
-nav a.active {
-  background: var(--accent);
-  border-color: var(--outline);
-}
+nav a:hover { border-color: var(--outline); background: var(--page-bg); }
+nav a.active { background: var(--accent); border-color: var(--outline); }
 
 /* ---------- Layout ---------- */
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 24px 70px;
-}
+main { max-width: 1000px; margin: 0 auto; padding: 40px 24px 70px; }
 
 .eyebrow {
   display: inline-block;
@@ -89,20 +84,15 @@ main {
   margin-bottom: 14px;
 }
 
-h1 {
-  font-size: clamp(36px, 6vw, 56px);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 12px;
+h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 12px; }
+h2 {
+  font-size: 28px; font-weight: 800; margin: 34px 0 14px;
+  display: inline-block; border-bottom: 4px solid var(--accent); padding-bottom: 2px;
 }
-
-h2 { font-size: 28px; font-weight: 800; margin: 34px 0 14px; }
-
 main p { max-width: 620px; font-size: 17px; margin-bottom: 12px; }
-
 .accent { color: var(--accent); }
 
-/* ---------- Hero (home) ---------- */
+/* ---------- Hero ---------- */
 .hero {
   background: var(--card);
   border: 3px solid var(--outline);
@@ -130,10 +120,7 @@ main p { max-width: 620px; font-size: 17px; margin-bottom: 12px; }
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn:hover {
-  transform: translate(-2px,-2px);
-  box-shadow: 6px 6px 0 rgba(59,46,74,0.25);
-}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(59,46,74,0.25); }
 
 /* ---------- Cards ---------- */
 .card-grid {
@@ -149,11 +136,11 @@ main p { max-width: 620px; font-size: 17px; margin-bottom: 12px; }
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card[data-expand] { cursor: pointer; }
-.card:hover { transform: translateY(-4px); }
+.card:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 var(--accent); }
 
 .card .art {
   height: 150px;
@@ -175,23 +162,135 @@ main p { max-width: 620px; font-size: 17px; margin-bottom: 12px; }
 .card.open .more { display: block; }
 
 /* ---------- Footer ---------- */
-footer {
-  background: var(--ink);
-  color: #fff;
-  text-align: center;
-  padding: 26px 20px;
-  font-size: 14px;
-}
-
-footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
-
-@media (prefers-reduced-motion: reduce) {
-  .btn, .card { transition: none; }
-}
-
+footer { background: var(--ink); color: #fff; text-align: center; padding: 26px 20px; font-size: 14px; }
+footer a { color: var(--accent); text-decoration: none; font-weight: 700; }
 
 /* =========================================================
-   INTRO SPLASH (index.html) — title + cats popping up
+   CAT MENU — four cats along the bottom
+   ========================================================= */
+.cat-menu {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(10px, 5vw, 60px);
+  padding-bottom: 10px;
+  z-index: 30;
+  background: linear-gradient(to top, rgba(59,46,74,0.14) 0 34px, transparent 34px);
+  pointer-events: none;
+}
+
+.cat-item {
+  --fur: var(--lav);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: transform 0.5s linear;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.cat-item .cat { width: clamp(74px, 12vw, 110px); height: auto; display: block; }
+
+.cat-label {
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 700;
+  background: #fff;
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-top: 2px;
+  box-shadow: 2px 2px 0 rgba(59,46,74,0.2);
+}
+
+.cat-item.here .cat-label { background: var(--accent); }
+
+/* the label bubble vanishes the instant a cat starts moving */
+.cat-item.moving .cat-label { display: none; }
+
+.cat-item[data-fur="lav"]    { --fur: var(--lav); }
+.cat-item[data-fur="pink"]   { --fur: var(--pink); }
+.cat-item[data-fur="yellow"] { --fur: var(--yellow); }
+.cat-item[data-fur="mint"]   { --fur: var(--mint); }
+
+/* idle + hover */
+.cat-menu .cat .tail { transform-origin: 16px 56px; animation: tail-sway 2.6s ease-in-out infinite; }
+.cat-item:hover .cat-svg-inner { animation: hop 0.4s ease; }
+
+/* walking */
+.cat-item.walking { z-index: 40; }
+.cat-item.walking .cat-svg-inner { animation: trot 0.14s ease-in-out infinite; }
+.cat-item.walking .leg-a { animation: step-a 0.14s ease-in-out infinite; }
+.cat-item.walking .leg-b { animation: step-b 0.14s ease-in-out infinite; }
+.cat-item.walking .tail  { animation: tail-sway 0.3s ease-in-out infinite; }
+
+.leg-a, .leg-b { transform-origin: center 62px; }
+
+.cat-item.face-left .cat { transform: scaleX(-1); }
+
+/* pounce prep: butt-wiggle before committing */
+.cat-item.prepping .cat-svg-inner {
+  animation: pounce-prep 0.34s ease-in-out 1;
+  transform-origin: center bottom;
+}
+
+@keyframes pounce-prep {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  25% { transform: rotate(-3deg) translateY(2px); }
+  50% { transform: rotate(3deg) translateY(2px); }
+  75% { transform: rotate(-3deg) translateY(1px); }
+}
+
+/* zoomies: chaotic bouncy sprint */
+.cat-item.zoomies .cat-svg-inner { animation: zoomy 0.24s ease-in-out infinite; }
+
+@keyframes zoomy {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  25% { transform: translateY(-10px) rotate(3deg); }
+  50% { transform: translateY(-2px) rotate(-3deg); }
+  75% { transform: translateY(-12px) rotate(2deg); }
+}
+
+/* batting the page */
+.cat-item.batting .cat-svg-inner {
+  animation: bat-swipe 0.5s ease-in-out 1;
+  transform-origin: center bottom;
+}
+
+@keyframes bat-swipe {
+  0%   { transform: rotate(0deg) translateY(0); }
+  18%  { transform: rotate(-24deg) translateY(-16px); }
+  36%  { transform: rotate(10deg) translateY(-20px); }
+  54%  { transform: rotate(-24deg) translateY(-16px); }
+  70%  { transform: rotate(10deg) translateY(-20px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+body.swatted header, body.swatted main, body.swatted footer {
+  animation: page-shake 0.35s ease-in-out 1;
+}
+
+@keyframes page-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px) rotate(-0.4deg); }
+  40% { transform: translateX(6px) rotate(0.3deg); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes step-a { 0%, 100% { transform: rotate(18deg); }  50% { transform: rotate(-18deg); } }
+@keyframes step-b { 0%, 100% { transform: rotate(-18deg); } 50% { transform: rotate(18deg); } }
+@keyframes trot   { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(-4px); } }
+@keyframes tail-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(14deg); } }
+@keyframes hop    { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(-8px); } }
+
+/* =========================================================
+   INTRO SPLASH (index.html)
    ========================================================= */
 .intro {
   position: fixed;
@@ -211,21 +310,14 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
     radial-gradient(circle at 75% 85%, rgba(255,255,255,0.35) 0 6px, transparent 7px);
 }
 
-.intro-title {
-  font-family: 'Baloo 2', cursive;
-  font-weight: 800;
-  font-size: clamp(44px, 11vw, 110px);
-  line-height: 1.05;
-  z-index: 2;
-}
-
+.intro-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: clamp(44px, 11vw, 110px); line-height: 1.05; z-index: 2; }
 .intro-title .word { display: block; }
 .intro-title .word:nth-child(2) { color: var(--pink); }
 
 .intro-title .letter {
   display: inline-block;
   opacity: 0;
-  animation: letter-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: letter-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes letter-pop {
@@ -233,21 +325,7 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.intro-sub {
-  margin-top: 10px;
-  font-size: clamp(15px, 2.5vw, 20px);
-  font-weight: 700;
-  color: #6b5a8a;
-  opacity: 0;
-  animation: fade-up 0.6s ease 1s forwards;
-  z-index: 2;
-}
-
-.intro .btn {
-  opacity: 0;
-  animation: fade-up 0.6s ease 1.6s forwards;
-  z-index: 2;
-}
+.intro .btn { opacity: 0; animation: fade-up 0.5s ease 1.2s forwards; z-index: 2; }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(14px); }
@@ -270,13 +348,13 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
   width: clamp(110px, 20vw, 200px);
   height: auto;
   transform: translateY(120%);
-  animation: cat-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: cat-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.intro-cats .cat:nth-child(1) { --up: -6px;  animation-delay: 0.15s; }
-.intro-cats .cat:nth-child(2) { --up: -52px; animation-delay: 0.32s; }
-.intro-cats .cat:nth-child(3) { --up: -52px; animation-delay: 0.49s; }
-.intro-cats .cat:nth-child(4) { --up: -6px;  animation-delay: 0.66s; }
+.intro-cats .cat:nth-child(1) { --up: -6px;  animation-delay: 0.1s; }
+.intro-cats .cat:nth-child(2) { --up: -52px; animation-delay: 0.24s; }
+.intro-cats .cat:nth-child(3) { --up: -52px; animation-delay: 0.38s; }
+.intro-cats .cat:nth-child(4) { --up: -6px;  animation-delay: 0.52s; }
 
 @keyframes cat-pop {
   0%   { transform: translateY(120%); }
@@ -286,12 +364,12 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
 
 .intro-cats .cat .cat-svg-inner {
   animation: intro-sway 3s ease-in-out infinite;
-  animation-delay: 1.2s;
+  animation-delay: 1s;
   transform-origin: center bottom;
 }
 
 .intro-cats .cat:nth-child(2) .cat-svg-inner,
-.intro-cats .cat:nth-child(4) .cat-svg-inner { animation-delay: 1.7s; }
+.intro-cats .cat:nth-child(4) .cat-svg-inner { animation-delay: 1.4s; }
 
 @keyframes intro-sway {
   0%, 100% { transform: rotate(-2deg); }
@@ -303,140 +381,14 @@ footer a { color: var(--yellow); text-decoration: none; font-weight: 700; }
 .intro-cats .cat[data-fur="yellow"] { --fur: var(--yellow); }
 .intro-cats .cat[data-fur="mint"]   { --fur: var(--mint); }
 
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .intro-title .letter, .intro-sub, .intro .btn { animation: none; opacity: 1; }
-  .intro-cats .cat { animation: none; transform: translateY(var(--up)); }
+  .btn, .card, .cat-item { transition: none; }
+  .cat-menu .cat .tail,
+  .cat-item.walking .cat-svg-inner, .cat-item.walking .leg-a, .cat-item.walking .leg-b,
+  .cat-item.prepping .cat-svg-inner, .cat-item.zoomies .cat-svg-inner,
+  .cat-item.batting .cat-svg-inner,
   .intro-cats .cat .cat-svg-inner { animation: none; }
+  .intro-title .letter, .intro .btn { animation: none; opacity: 1; }
+  .intro-cats .cat { animation: none; transform: translateY(var(--up)); }
 }
-
-
-/* =========================================================
-   CAT MENU — four cats along the bottom of every page
-   ========================================================= */
-body.has-cats { padding-bottom: 150px; }
-
-.cat-menu {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  height: 148px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: clamp(10px, 5vw, 60px);
-  padding-bottom: 8px;
-  z-index: 20;
-  background: linear-gradient(to top, rgba(59,46,74,0.12) 0 32px, transparent 32px);
-  pointer-events: none;            /* the floor doesn't block clicks... */
-}
-
-.cat-menu .cat-item { pointer-events: auto; }   /* ...but the cats do */
-
-.cat-item {
-  --fur: var(--lav);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--ink);
-  position: relative;
-  transition: transform 1.6s linear;   /* the walk across the screen */
-  will-change: transform;
-}
-
-.cat-item .cat {
-  width: clamp(72px, 11vw, 104px);
-  height: auto;
-  display: block;
-}
-
-.cat-label {
-  font-family: 'Baloo 2', cursive;
-  font-size: clamp(12px, 2vw, 15px);
-  font-weight: 700;
-  background: #fff;
-  border: 2px solid var(--outline);
-  border-radius: 999px;
-  padding: 2px 12px;
-  margin-top: 2px;
-  box-shadow: 2px 2px 0 rgba(59,46,74,0.2);
-}
-
-.cat-item.here .cat-label { background: var(--accent); }
-
-.cat-item[data-fur="lav"]    { --fur: var(--lav); }
-.cat-item[data-fur="pink"]   { --fur: var(--pink); }
-.cat-item[data-fur="yellow"] { --fur: var(--yellow); }
-.cat-item[data-fur="mint"]   { --fur: var(--mint); }
-
-/* idle: tails sway */
-.cat-item .tail { transform-origin: 16px 56px; animation: tail-sway 2.6s ease-in-out infinite; }
-.cat-item:hover .cat-svg-inner { animation: hop 0.5s ease; }
-
-/* walking */
-.cat-item.walking { z-index: 30; }
-.cat-item.walking .cat-label { opacity: 0; }
-.cat-item.walking .cat-svg-inner { animation: trot 0.22s ease-in-out infinite; }
-.cat-item.walking .leg-a { animation: step-a 0.22s ease-in-out infinite; }
-.cat-item.walking .leg-b { animation: step-b 0.22s ease-in-out infinite; }
-.cat-item.walking .tail  { animation: tail-sway 0.45s ease-in-out infinite; }
-
-/* face left when running left */
-.cat-item.face-left .cat { transform: scaleX(-1); }
-
-/* batting the page: rear up and swipe */
-.cat-item.batting .cat-svg-inner {
-  animation: bat-swipe 0.8s ease-in-out 1;
-  transform-origin: center bottom;
-}
-
-@keyframes bat-swipe {
-  0%   { transform: rotate(0deg) translateY(0); }
-  15%  { transform: rotate(-24deg) translateY(-16px); }
-  30%  { transform: rotate(10deg) translateY(-20px); }
-  45%  { transform: rotate(-24deg) translateY(-16px); }
-  60%  { transform: rotate(10deg) translateY(-20px); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
-
-/* the page flinches when batted */
-body.swatted header,
-body.swatted main,
-body.swatted footer {
-  animation: page-shake 0.5s ease-in-out 1;
-}
-
-@keyframes page-shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-7px) rotate(-0.4deg); }
-  40% { transform: translateX(6px) rotate(0.3deg); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(3px); }
-}
-
-.leg-a, .leg-b { transform-origin: center 62px; }
-
-@keyframes step-a { 0%, 100% { transform: rotate(16deg); }  50% { transform: rotate(-16deg); } }
-@keyframes step-b { 0%, 100% { transform: rotate(-16deg); } 50% { transform: rotate(16deg); } }
-@keyframes trot   { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(-4px); } }
-@keyframes tail-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(14deg); } }
-@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-
-/* keep the footer readable above the cats */
-body.has-cats footer { margin-bottom: 0; }
-
-@media (prefers-reduced-motion: reduce) {
-  .cat-item, .cat-item .tail,
-  .cat-item.walking .cat-svg-inner,
-  .cat-item.walking .leg-a,
-  .cat-item.walking .leg-b { animation: none; transition: none; }
-}
-
-
-/* =========================================================
-   PAGE THEMES — each page wears its cat's color
-   ========================================================= */
-body[data-theme="lav"]    { --accent: var(--lav); }
-body[data-theme="pink"]   { --accent: var(--pink); }
-body[data-theme="yellow"] { --accent: var(--yellow); }
-body[data-theme="mint"]   { --accent: var(--mint); }
-body { --accent: var(--pink); }
