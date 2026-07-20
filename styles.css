@@ -394,4 +394,125 @@ body.swatted header, body.swatted main, body.swatted footer {
   .intro-cats .cat .cat-svg-inner { animation: none; }
   .intro-title .letter, .intro .btn { animation: none; opacity: 1; }
   .intro-cats .cat { animation: none; transform: translateY(var(--up)); }
+  .fx-fly, .cat-item.scratching .cat-svg-inner, .cat-item.scratching .cat-svg-inner rect:last-of-type,
+  .cat-item.licking .cat-svg-inner, .cat-item.licking .cat-svg-inner rect:last-of-type,
+  .cat-item.skid .cat-svg-inner { animation: none; }
+}
+
+
+/* =========================================================
+   CAT EVENT PROPS — laser dot, fly, bird
+   ========================================================= */
+.fx {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.fx-laser {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8a80, #ff1744 60%, #b71c1c);
+  box-shadow: 0 0 14px 5px rgba(255, 40, 40, 0.55);
+  transition: transform 0.45s ease-in-out, opacity 0.15s ease;
+}
+
+.fx-fly {
+  width: 11px; height: 9px;
+  background: var(--ink);
+  border-radius: 50%;
+  transition: transform 0.4s ease-in, opacity 0.15s ease;
+  animation: fly-buzz 0.12s linear infinite;
+}
+
+.fx-fly::before, .fx-fly::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 7px; height: 6px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 50% 50% 50% 0;
+}
+.fx-fly::before { left: -3px; transform: rotate(-30deg); }
+.fx-fly::after  { right: -3px; transform: rotate(30deg) scaleX(-1); }
+
+@keyframes fly-buzz {
+  0%   { margin-top: 0;   margin-left: 0; }
+  25%  { margin-top: -2px; margin-left: 1px; }
+  50%  { margin-top: 1px;  margin-left: -1px; }
+  75%  { margin-top: -1px; margin-left: 2px; }
+  100% { margin-top: 0;    margin-left: 0; }
+}
+
+.fx-bird {
+  font-size: 30px;
+  line-height: 1;
+  transition: transform 0.6s linear, opacity 0.15s ease;
+  filter: drop-shadow(1px 2px 0 rgba(59,46,74,0.2));
+}
+
+/* ---------- grooming: ear scratch ---------- */
+.cat-item.scratching .cat-svg-inner {
+  animation: scratch-tilt 0.8s ease-in-out 1;
+  transform-origin: center bottom;
+}
+.cat-item.scratching .cat-svg-inner rect:last-of-type {
+  animation: scratch-leg 0.8s ease-in-out 1;
+  transform-origin: center 58px;
+}
+
+@keyframes scratch-tilt {
+  0%, 100% { transform: rotate(0); }
+  20%, 80% { transform: rotate(6deg); }
+}
+
+@keyframes scratch-leg {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-55deg); }
+  25% { transform: rotate(-42deg); }
+  35% { transform: rotate(-58deg); }
+  45% { transform: rotate(-42deg); }
+  55% { transform: rotate(-58deg); }
+  65% { transform: rotate(-42deg); }
+  80% { transform: rotate(-55deg); }
+}
+
+/* ---------- grooming: paw lick ---------- */
+.cat-item.licking .cat-svg-inner {
+  animation: lick-bob 0.8s ease-in-out 1;
+  transform-origin: center bottom;
+}
+.cat-item.licking .cat-svg-inner rect:last-of-type {
+  animation: lick-paw 0.8s ease-in-out 1;
+  transform-origin: center 58px;
+}
+
+@keyframes lick-bob {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-2px) rotate(-3deg); }
+  45% { transform: translateY(0) rotate(-3deg); }
+  65% { transform: translateY(-2px) rotate(-3deg); }
+  85% { transform: translateY(0) rotate(-2deg); }
+}
+
+@keyframes lick-paw {
+  0%, 100% { transform: rotate(0); }
+  20%, 80% { transform: rotate(-72deg); }
+  40% { transform: rotate(-64deg); }
+  60% { transform: rotate(-72deg); }
+}
+
+/* ---------- pounce leap (laser/fly/bird catches) ---------- */
+.cat-item.leaping { transition-timing-function: ease-out; }
+
+/* skid stop after a miss */
+.cat-item.skid .cat-svg-inner {
+  animation: skid-stop 0.3s ease-out 1;
+  transform-origin: center bottom;
+}
+
+@keyframes skid-stop {
+  0% { transform: rotate(0); }
+  40% { transform: rotate(-8deg) translateY(-2px); }
+  100% { transform: rotate(0); }
 }
