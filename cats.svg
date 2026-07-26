@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About — Toddler Kitties</title>
-<meta name="description" content="How a household joke about four cats in a trenchcoat became a hand-drawn storybook world.">
-<link rel="canonical" href="https://toddlerkitties.com/about.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Toddler Kitties">
-<meta property="og:title" content="About — Toddler Kitties">
-<meta property="og:description" content="How a household joke about four cats in a trenchcoat became a hand-drawn storybook world.">
-<meta property="og:url" content="https://toddlerkitties.com/about.html">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="assets/tk.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
   <!-- ============ BAKER — B1 — grey-brown tabby, heart nose, pointed ears ============ -->
   <symbol id="tk-baker" viewBox="-6 -6 152 152">
@@ -190,66 +170,4 @@
     </g>
   </symbol>
 
-</svg><header class="nav"><div class="wrap nav__in"><a class="brand" href="home.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="3" fill="none" stroke="#241F2E" stroke-width="3"/><path d="M9 3 L9 24 M4 9 L14 9" stroke="#241F2E" stroke-width="3"/><path d="M19 3 L19 24 M19 13 Q28 13 28 18.5 Q28 24 19 24" stroke="#241F2E" stroke-width="3" fill="none"/></svg>Toddler&nbsp;Kitties</a><nav aria-label="Main"><ul><li><a href="home.html">Home</a></li><li><a href="baker.html">Baker</a></li><li><a href="doc.html">Doc</a></li><li><a href="lulu.html">Lulu</a></li><li><a href="ilona.html">Ilona</a></li><li><a href="books.html">Books</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html" aria-current="page">About</a></li></ul></nav></div></header><main id="main">
-<section class="hero wrap">
-  <span class="stamp hero__stamp">Origin</span>
-  <span class="label">About</span>
-  <h1>It started as a joke about a trenchcoat.</h1>
-  <p class="deck">Four cats live here. They have opinions, grudges, routines, and expressions that
-  are frankly too human for comfort. At some point someone said it out loud: a toddler is just
-  4 cats in a trenchcoat. The joke did not go away. It got a website.</p>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-  <div class="trio">
-    <div class="file rv"><span class="tab">01</span><h3>They&rsquo;re all real</h3>
-      <p>Baker, Doc, Lulu and Ilona are four actual cats in one actual apartment. Nothing on this
-      site is invented except the courtroom, and honestly that part is barely invented.</p></div>
-    <div class="file rv"><span class="tab">02</span><h3>Drawn by hand</h3>
-      <p>Every character is drawn from photographs of the real cat, on an iPad, at the kitchen
-      table, by someone learning as they go. The heart-shaped nose is deliberate.</p></div>
-    <div class="file rv"><span class="tab">03</span><h3>Told in order</h3>
-      <p>Each book is one cat&rsquo;s origin story, published in the order they arrived. Then
-      everybody ends up in the same room and the ensemble book happens.</p></div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-  <div class="file rv" style="max-width:44rem"><span class="tab">Ack.</span>
-  <span class="label">With thanks</span>
-  <h2 style="margin-bottom:1rem">Three of these four came from the same place</h2>
-  <p class="deck">One shelter is responsible for most of this household. They get a proper
-  thank-you in the books, where there is room to do it justice.</p>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="file rv" style="max-width:44rem"><span class="tab">Contact</span>
-  <span class="label">Reach the court</span>
-  <h2 style="margin-bottom:1rem">Say hello</h2>
-  <p class="deck">Questions, hellos, or photos of your own tiny defendants:
-  <a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a>, or
-  <a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a> on Instagram.</p>
-  </div>
-</section>
-
-<section class="wrap"><div class="signup file rv"><span class="tab">Notice</span>
-<span class="label">Request to be notified</span>
-<h2>Be first to meet the books</h2>
-<p class="deck">No schedule, no spam. One note when Volume I is actually finished.</p>
-<form data-signup novalidate>
-<label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label>
-<label class="hp" for="tk-email">Email address</label>
-<input id="tk-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-<button class="btn" type="submit">Add me to the docket</button>
-</form>
-<p class="signup__note" role="status" aria-live="polite"></p>
-<p class="fine">Or find them misbehaving on <a href="https://www.instagram.com/toddlerkitties/">Instagram</a>.</p>
-</div></section>
-</main><section class="bench" aria-label="The bench"><div class="wrap"><div class="board-label" style="text-align:center"><span class="label label--quiet">The bench &mdash; pick a cat</span></div><div class="bench__row"><a href="baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span>Baker · B1</span></a><a href="doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span>Doc · D2</span></a><a href="lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><span>Lulu · L3</span></a><a href="ilona.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-ilona"></use></svg><span>Ilona · I4</span></a></div></div></section><footer class="foot"><div class="wrap"><p class="foot__motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot__meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script src="assets/tk.js" defer></script>
-</body>
-</html>
+</svg>
