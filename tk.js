@@ -2,7 +2,7 @@
    Toddler Kitties — site behaviour
    ==========================================================================
    ►► THE ONLY LINE YOU NEED TO EDIT ◄◄
-   Paste your form endpoint below (Buttondown, Formspree, MailerLite...).
+   Paste your form endpoint below (Formspree or Buttondown — see README).
    While it is empty, the signup form falls back to opening an email.
    ========================================================================== */
 
@@ -14,22 +14,204 @@ const FALLBACK_MAILTO =
   "&body="    + encodeURIComponent("Please let me know when the first book is ready.");
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const R = (a, b) => a + Math.random() * (b - a);
+
+/* ---------- shared sprite snippets --------------------------------------- */
+
+const SPR = {
+  paw:
+    '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
+    '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
+    '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
+    '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>',
+  pom:
+    '<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">' +
+    '<circle cx="15" cy="15" r="12" fill="#7FC7E8"/>' +
+    '<circle cx="11" cy="11" r="5" fill="#BDE6F8"/>' +
+    '<circle cx="24" cy="6" r="2.4" fill="#FFF3B0"/>' +
+    '<circle cx="5" cy="22" r="2" fill="#FFF3B0"/></svg>',
+  petal: '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>',
+  cuke:  '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>',
+  heart: '<svg width="17" height="17" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>',
+  seed:  '<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>',
+  laserCss: "width:13px;height:13px;border-radius:50%;background:#FF3B2E;box-shadow:0 0 12px 5px rgba(255,59,46,.55)"
+};
+
+const PAGE_BG = { baker:"#EDE7FA", doc:"#EFF3FF", lulu:"#EAF7EF", ilona:"#FFF6DF" };
+
+/* ---------- exit-transition helpers -------------------------------------- */
+
+function txOverlay(bg) {
+  const o = document.createElement("div");
+  o.className = "tx-ov";
+  o.style.cssText = "position:fixed;inset:0;z-index:999;pointer-events:none;overflow:hidden";
+  const wash = document.createElement("div");
+  wash.style.cssText = `position:absolute;inset:0;background:${bg};opacity:0`;
+  wash.animate([{ opacity: 0 }, { opacity: 0.94 }],
+               { duration: 240, fill: "forwards", easing: "ease-out" });
+  o.appendChild(wash);
+  document.body.appendChild(o);
+  return o;
+}
+
+function put(o, html, css) {
+  const s = document.createElement("span");
+  s.style.cssText = "position:absolute;left:0;top:0;will-change:transform,opacity;" + css;
+  s.innerHTML = html;
+  o.appendChild(s);
+  return s;
+}
+
+/* Each cat in the bottom menu gets their own send-off. */
+function catExit(slug, href) {
+  const o = txOverlay(PAGE_BG[slug] || "#F4EFFF");
+  const W = innerWidth, H = innerHeight;
+
+  if (slug === "baker") {
+    // her laser zips across, the paw swats, the page flinches
+    const dot = put(o, "", SPR.laserCss);
+    dot.animate([
+      { transform: `translate(${-30}px, ${H * 0.25}px)` },
+      { transform: `translate(${W * 0.3}px, ${H * 0.6}px)`, offset: 0.3 },
+      { transform: `translate(${W * 0.55}px, ${H * 0.3}px)`, offset: 0.55 },
+      { transform: `translate(${W * 0.5}px, ${H * 0.52}px)`, offset: 0.75 },
+      { transform: `translate(${W + 40}px, ${H * 0.4}px)` }
+    ], { duration: 700, easing: "ease-in-out", fill: "forwards" });
+    const paw = put(o, SPR.paw, "transform-origin:50% 100%");
+    paw.animate([
+      { transform: `translate(${W * 0.5 - 40}px, ${H + 90}px) scale(2.2)` },
+      { transform: `translate(${W * 0.5 - 40}px, ${H * 0.42}px) scale(2.2)` }
+    ], { duration: 260, delay: 300, easing: "cubic-bezier(.2,.9,.3,1.1)", fill: "forwards" });
+    document.body.animate([
+      { transform: "translate(0,0)" }, { transform: "translate(-5px,3px)" },
+      { transform: "translate(4px,-3px)" }, { transform: "translate(-3px,2px)" },
+      { transform: "translate(0,0)" }
+    ], { duration: 260, delay: 560 });
+  }
+
+  if (slug === "doc") {
+    // the pom pom is thrown; he is already on his way
+    const pom = put(o, SPR.pom, "");
+    const base = H * 0.72;
+    pom.animate([
+      { transform: `translate(-40px, ${base}px) rotate(0deg)` },
+      { transform: `translate(${W * 0.22}px, ${base - H * 0.3}px) rotate(180deg)`, offset: 0.28 },
+      { transform: `translate(${W * 0.45}px, ${base}px) rotate(340deg)`, offset: 0.52 },
+      { transform: `translate(${W * 0.68}px, ${base - H * 0.18}px) rotate(520deg)`, offset: 0.76 },
+      { transform: `translate(${W + 50}px, ${base}px) rotate(720deg)` }
+    ], { duration: 820, easing: "linear", fill: "forwards" });
+    for (let i = 0; i < 6; i++) {
+      const s = put(o, "", "width:6px;height:6px;border-radius:50%;background:#FFF3B0;box-shadow:0 0 7px #FFE066");
+      s.animate([
+        { transform: `translate(${W * (0.1 + i * 0.15)}px, ${base + R(-30, 20)}px)`, opacity: 0 },
+        { opacity: 1, offset: 0.5 },
+        { transform: `translate(${W * (0.1 + i * 0.15) + R(-25, 25)}px, ${base + R(-70, -30)}px)`, opacity: 0 }
+      ], { duration: 520, delay: i * 90, easing: "ease-out" });
+    }
+  }
+
+  if (slug === "lulu") {
+    // petals and cucumber, everywhere at once
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.35 ? SPR.cuke : SPR.petal, "");
+      const x = R(0, W), sway = R(-70, 70), spin = R(-380, 380);
+      el.animate([
+        { transform: `translate(${x}px, -30px) rotate(0deg)`, opacity: 1 },
+        { transform: `translate(${x + sway}px, ${H + 40}px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(620, 900), delay: i * 26, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  if (slug === "ilona") {
+    // hearts and dandelion seeds, rising all together
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.5 ? SPR.heart : SPR.seed, "");
+      const x = R(0, W), sway = R(-60, 60), spin = R(-160, 160);
+      el.animate([
+        { transform: `translate(${x}px, ${H + 30}px) rotate(0deg) scale(${R(0.9, 1.6)})`, opacity: 0 },
+        { opacity: 1, offset: 0.15 },
+        { transform: `translate(${x + sway}px, -50px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(650, 900), delay: i * 28, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  setTimeout(() => { window.location.href = href; }, 880);
+}
+
+/* Leaving the About page: all four cats run home into the empty coat. */
+function coatExit(href) {
+  const o = txOverlay(getComputedStyle(document.body).backgroundColor);
+  const W = innerWidth, H = innerHeight;
+
+  // the coat, centre stage (clone the page's own if it's there)
+  const src = document.getElementById("aboutCoat");
+  const holder = put(o, "", "left:50%;top:50%;transform:translate(-50%,-52%);width:min(46vw,220px)");
+  if (src) {
+    const clone = src.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.style.width = "100%"; clone.style.height = "auto";
+    holder.appendChild(clone);
+  }
+  holder.animate([{ opacity: 0, offset: 0 }, { opacity: 1 }],
+                 { duration: 200, fill: "forwards", easing: "ease-out" });
+
+  // four runners, two per side, staggered
+  const cx = W / 2, cy = H / 2 + 6;
+  const runners = [
+    { slug: "baker", fromX: -110,   y: H * 0.30, delay: 0   },
+    { slug: "doc",   fromX: W + 110, y: H * 0.34, delay: 110 },
+    { slug: "lulu",  fromX: -110,   y: H * 0.62, delay: 220 },
+    { slug: "ilona", fromX: W + 110, y: H * 0.66, delay: 330 }
+  ];
+  runners.forEach(({ slug, fromX, y, delay }) => {
+    const el = put(o,
+      `<svg width="86" height="86" viewBox="-6 -6 152 152" aria-hidden="true"><use href="#tk-${slug}"></use></svg>`, "");
+    const dir = fromX < 0 ? 1 : -1;
+    const midX = fromX + (cx - fromX) * 0.55;
+    el.animate([
+      { transform: `translate(${fromX - 43}px, ${y - 43}px) rotate(0deg) scale(1)`, opacity: 1 },
+      { transform: `translate(${midX - 43}px, ${(y + cy) / 2 - 58}px) rotate(${dir * 8}deg) scale(1)`, offset: 0.45 },
+      { transform: `translate(${(midX + cx) / 2 - 43}px, ${cy - 40}px) rotate(${dir * -7}deg) scale(.8)`, offset: 0.75 },
+      { transform: `translate(${cx - 43}px, ${cy - 30}px) rotate(0deg) scale(.06)`, opacity: 0 }
+    ], { duration: 640, delay, easing: "ease-in", fill: "forwards" });
+  });
+
+  setTimeout(() => { window.location.href = href; }, 1050);
+}
 
 /* ---------- 1. page-turn transitions ------------------------------------- */
 (function pageTurn() {
   if (reduced) return;
+  let navigating = false;
   document.addEventListener("click", (e) => {
+    if (navigating) { e.preventDefault(); return; }
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     const a = e.target.closest("a");
     if (!a || a.target === "_blank") return;
     const href = a.getAttribute("href") || "";
     if (!href.endsWith(".html") || href.startsWith("http") || href.startsWith("mailto")) return;
     e.preventDefault();
-    document.body.classList.add("leaving");
-    setTimeout(() => { window.location.href = href; }, 200);
+    navigating = true;
+
+    const item = a.closest(".cat-item");
+    if (document.body.dataset.exit === "coat") {
+      coatExit(href);                                   // About: everybody into the coat
+    } else if (item) {
+      const cls = [...item.classList].find(c => c.startsWith("ci-"));
+      catExit(cls ? cls.slice(3) : "", href);           // bottom menu: that cat's send-off
+    } else {
+      document.body.classList.add("leaving");           // everything else: quick fade
+      setTimeout(() => { window.location.href = href; }, 200);
+    }
   });
   // restore state when arriving via back/forward cache
-  window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("leaving");
+    document.querySelectorAll(".tx-ov").forEach(el => el.remove());
+  });
 })();
 
 /* ---------- 2. scroll reveal ---------------------------------------------- */
@@ -73,10 +255,11 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       }
       if (note) note.textContent = "Signing you up…";
       try {
+        // form-encoded body: works for both Formspree and Buttondown
         const res = await fetch(SIGNUP_ENDPOINT, {
           method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
+          headers: { "Accept": "application/json" },
+          body: new URLSearchParams({ email })
         });
         if (!res.ok) throw new Error(res.status);
         form.reset();
@@ -93,7 +276,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduced) return;
   const stage = document.querySelector("[data-stage]");
   if (!stage) return;
-  const cat = document.body.dataset.theme;   // pages set data-theme="baker" etc.
+  const cat = document.body.dataset.theme;
 
   const mk = (cls, html) => {
     const el = document.createElement("span");
@@ -102,30 +285,18 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     stage.appendChild(el);
     return el;
   };
-  const R = (a, b) => a + Math.random() * (b - a);
 
   /* --- Baker: laser dot; her eyes track it, and sometimes she swats --- */
   if (cat === "baker") {
     const dot = mk("laser");
-    const pupils = stage.querySelector(".bk-pupils"); // stage art is inlined, so reachable
-    const PAW =
-      '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
-      '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
-      '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
-      '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
-      '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
-      '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
-      '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>';
-    const paw = mk("bk-paw", PAW);
+    const pupils = stage.querySelector(".bk-pupils");
+    const paw = mk("bk-paw", SPR.paw);
 
     let t = R(0, 100), tx = 0.5, ty = 0.4, hold = 0;
     let x = 0, y = 0, swatting = false;
 
-    const restPaw = () => {
-      paw.style.transition = "none";
-      paw.style.transform = `translate(${x - 18}px, ${stage.clientHeight + 70}px)`;
-    };
-    restPaw();
+    paw.style.transition = "none";
+    paw.style.transform = `translate(-100px, 9999px)`;
 
     (function step() {
       t += 0.016;
@@ -136,7 +307,6 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       y = (ty + Math.cos(t * 3.1) * 0.05) * h;
       dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
       if (pupils) {
-        // nudge the pupils toward wherever the dot is (SVG user units, so tiny values)
         const dx = (x / w - 0.5) * 7;
         const dy = (y / h - 0.45) * 5;
         pupils.setAttribute("transform",
@@ -149,15 +319,13 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (swatting) return;
       swatting = true;
       const h = stage.clientHeight;
-      // wind up under the dot, off-stage
       paw.style.transition = "none";
       paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
-      void paw.offsetWidth; // reflow so the next transform animates
+      void paw.offsetWidth;
       paw.style.transition = "transform .26s cubic-bezier(.2,.9,.3,1.15)";
       paw.style.transform = `translate(${x - 18}px, ${y - 10}px)`;
       setTimeout(() => {
-        // the dot escapes, obviously
-        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;
+        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;   // the dot escapes, obviously
         paw.style.transition = "transform .3s ease-in";
         paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
         setTimeout(() => { swatting = false; }, 320);
@@ -192,10 +360,8 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Lulu: rose petals and, inexplicably, cucumber --- */
   if (cat === "lulu") {
-    const petal = '<svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>';
-    const cuke  = '<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>';
     const drop = () => {
-      const el = mk("", Math.random() < 0.32 ? cuke : petal);
+      const el = mk("", Math.random() < 0.32 ? SPR.cuke : SPR.petal);
       const x0 = R(0, 100), dur = R(7000, 12000), sway = R(14, 46), spin = R(-360, 360);
       el.style.left = x0 + "%"; el.style.top = "-8%";
       const t0 = performance.now();
@@ -214,10 +380,8 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Ilona: hearts and dandelion seeds, at heartbeat tempo (72 bpm) --- */
   if (cat === "ilona") {
-    const heart = '<svg width="15" height="15" viewBox="0 0 16 16"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>';
-    const seed  = '<svg width="16" height="18" viewBox="0 0 16 18"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>';
     const rise = () => {
-      const el = mk("", Math.random() < 0.45 ? heart : seed);
+      const el = mk("", Math.random() < 0.45 ? SPR.heart : SPR.seed);
       const dur = R(6500, 10500), sway = R(16, 44), spin = R(-140, 140);
       el.style.left = R(6, 94) + "%"; el.style.top = "100%";
       const t0 = performance.now();

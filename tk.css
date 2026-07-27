@@ -201,6 +201,10 @@ header nav a.active{ background:var(--accent); border-color:var(--outline); }
 .coat-bit{ text-align:center; padding-block:clamp(2rem,5vw,3.2rem); }
 .coat{ width:min(64vw,250px); height:auto; }
 .coat-bit .cap{ font-weight:700; color:var(--ink-soft); margin-top:1rem; }
+@keyframes tkWobble{ 0%,100%{ transform:rotate(-1.1deg); } 50%{ transform:rotate(1.1deg) translateY(-5px); } }
+@keyframes tkHat{ 0%,100%{ transform:translateY(0) rotate(3deg); } 50%{ transform:translateY(-6px) rotate(-2deg); } }
+.coat-anim{ transform-origin:160px 440px; animation:tkWobble 5.5s ease-in-out infinite; }
+.hat-anim{ transform-origin:160px 118px; animation:tkHat 5.5s ease-in-out infinite; }
 
 /* ---------- cat menu ----------------------------------------------------- */
 

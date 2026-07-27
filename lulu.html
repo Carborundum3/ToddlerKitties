@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lulu — Toddler Kitties</title>
-<meta name="description" content="Lulu (L3), Garden Kitty. She was already home before anybody in the house had seen her.">
-<link rel="canonical" href="https://toddlerkitties.com/lulu.html">
+<title>Toddler Kitties</title>
+<meta name="description" content="Four real cats, one storybook world. A toddler is just 4 cats in a trenchcoat.">
+<link rel="canonical" href="https://toddlerkitties.com/index.html">
 <meta name="keywords" content="toddler kitties, toddlerkitties, toddler kitties com, cute cats for kids, 4 cats in a trenchcoat">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toddler Kitties">
-<meta property="og:title" content="Lulu — Toddler Kitties">
-<meta property="og:description" content="Lulu (L3), Garden Kitty. She was already home before anybody in the house had seen her.">
-<meta property="og:url" content="https://toddlerkitties.com/lulu.html">
+<meta property="og:title" content="Toddler Kitties">
+<meta property="og:description" content="Four real cats, one storybook world. A toddler is just 4 cats in a trenchcoat.">
+<meta property="og:url" content="https://toddlerkitties.com/index.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjUuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTAgMTggSDI4IE0xOSAxOCBWNDYiLz48cGF0aCBkPSJNMzYgMTggVjQ2IE01MCAxOCBMMzcuNSAzMCBNMzkuNCAyOC40IEw1MSA0NiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
@@ -219,6 +219,10 @@ header nav a.active{ background:var(--accent); border-color:var(--outline); }
 .coat-bit{ text-align:center; padding-block:clamp(2rem,5vw,3.2rem); }
 .coat{ width:min(64vw,250px); height:auto; }
 .coat-bit .cap{ font-weight:700; color:var(--ink-soft); margin-top:1rem; }
+@keyframes tkWobble{ 0%,100%{ transform:rotate(-1.1deg); } 50%{ transform:rotate(1.1deg) translateY(-5px); } }
+@keyframes tkHat{ 0%,100%{ transform:translateY(0) rotate(3deg); } 50%{ transform:translateY(-6px) rotate(-2deg); } }
+.coat-anim{ transform-origin:160px 440px; animation:tkWobble 5.5s ease-in-out infinite; }
+.hat-anim{ transform-origin:160px 118px; animation:tkHat 5.5s ease-in-out infinite; }
 
 /* ---------- cat menu ----------------------------------------------------- */
 
@@ -279,7 +283,7 @@ footer a{ color:#FFC9DA; }
 }
 </style>
 </head>
-<body data-theme="lulu">
+<body>
 <a class="skip" href="#main">Skip to content</a>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 
@@ -504,101 +508,16 @@ footer a{ color:#FFC9DA; }
     <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
   </symbol>
 
-</svg><header><div class="wrap nav-inner"><div class="brandbox"><a class="logo" href="home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><div class="logo-sleep" aria-hidden="true"><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-baker"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-doc"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-lulu"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-ilona"></use></svg></div></div><nav aria-label="Main"><a href="home.html">Home</a><a href="baker.html">Baker</a><a href="doc.html">Doc</a><a href="lulu.html" class="active">Lulu</a><a href="ilona.html">Ilona</a><a href="books.html">Books</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav></div></header><main id="main">
-<section class="wrap meet">
-  <div class="stage rv" data-stage><svg class="stage__cat" viewBox="-6 -6 152 152" role="img"><title>Lulu, cartoon portrait</title>
-    <g>
-      <!-- tail -->
-      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#8B7A6C" stroke-width="11" stroke-linecap="round"/>
-      <path d="M122 96 c6 6 4 12 -1 14" fill="none" stroke="#A9714A" stroke-width="9" stroke-linecap="round"/>
-      <!-- body -->
-      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#8B7A6C"/>
-      <path d="M20 138 C20 116 28 100 44 96 L46 138 Z" fill="#5E4E44"/>
-      <ellipse cx="84" cy="124" rx="10" ry="12" fill="#A9714A"/>
-      <ellipse cx="60" cy="132" rx="16" ry="12" fill="#EFE3D2"/>
-      <!-- ears -->
-      <path d="M26 42 L18 5 L53 27 Z" fill="#8B7A6C"/>
-      <path d="M94 42 L102 5 L67 27 Z" fill="#A9714A"/>
-      <path d="M30 37 L25 15 L45 27 Z" fill="#E0A6A6"/>
-      <path d="M90 37 L95 15 L75 27 Z" fill="#E0A6A6"/>
-      <!-- head -->
-      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#8B7A6C"/>
-      <!-- tortie mottling -->
-      <path d="M60 22 C78 22 94 32 98 50 C88 56 74 52 66 42 C62 36 60 28 60 22 Z" fill="#A9714A"/>
-      <path d="M22 48 C26 33 38 24 52 22 C50 34 44 44 34 52 Z" fill="#5E4E44"/>
-      <path d="M92 66 q6 6 4 12" stroke="#5E4E44" stroke-width="4" stroke-linecap="round" fill="none"/>
-      <!-- muzzle -->
-      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
-      <!-- eyes, soft green, wide and deep -->
-      <circle cx="43" cy="57" r="8.5" fill="#6E9A5A"/>
-      <circle cx="77" cy="57" r="8.5" fill="#6E9A5A"/>
-      <circle cx="43" cy="57" r="4" fill="#241F2E"/>
-      <circle cx="77" cy="57" r="4" fill="#241F2E"/>
-      <circle cx="45.5" cy="54" r="2" fill="#FFFFFF"/>
-      <circle cx="79.5" cy="54" r="2" fill="#FFFFFF"/>
-      <!-- nose + gentle mouth -->
-      <path d="M55 70 h10 l-5 5.5 Z" fill="#D96A7A"/>
-      <path d="M60 76 q-5 5 -9 1 M60 76 q5 5 9 1" stroke="#5E4E44" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-      <!-- collar: green with white daisies -->
-      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#2F6B44" stroke-width="9" stroke-linecap="round"/>
-      <g fill="#FFFFFF">
-        <circle cx="44" cy="110.5" r="1.9"/><circle cx="47.6" cy="110.5" r="1.9"/><circle cx="45.8" cy="107.6" r="1.9"/><circle cx="45.8" cy="113.4" r="1.9"/>
-        <circle cx="72" cy="112.5" r="1.9"/><circle cx="75.6" cy="112.5" r="1.9"/><circle cx="73.8" cy="109.6" r="1.9"/><circle cx="73.8" cy="115.4" r="1.9"/>
-      </g>
-      <circle cx="45.8" cy="110.5" r="1.7" fill="#E8C33D"/>
-      <circle cx="73.8" cy="112.5" r="1.7" fill="#E8C33D"/>
-      <circle cx="60" cy="115.5" r="6.5" fill="#F2F2E8"/>
-      <text x="60" y="119.4" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F6B44">L</text>
-    </g>
-  </svg></div>
-  <div class="rv">
-    <span class="eyebrow">L3 &middot; Garden Kitty</span>
-    <h1>Lulu</h1>
-    <p class="lede" style="margin-top:.7rem">She was already home before anybody in the house had seen her.</p>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="panel rv">
-    <h2 style="margin-bottom:.9rem">Things Lulu does</h2>
-    <ul class="tally"><li><span>Eats cucumber. On purpose. With enthusiasm.</span></li><li><span>Works the portable air conditioner &mdash; power, mode, fan speed &mdash; then lies on it belly-up.</span></li><li><span>Holds fingers, and keeps holding them.</span></li><li><span>Sits bolt upright like a person, usually behind something that resembles a desk.</span></li><li><span>Sleeps like we have world peace.</span></li></ul>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="panel rv">
-    <span class="pill">Book Three</span>
-    <h2 style="margin:.7rem 0 .8rem">Her story, roughly</h2>
-    <p class="lede">Book Three starts in the garden. Something had been taking bites out of it for weeks and slipping away behind the shed. Everybody suspected a raccoon. Everybody had been wrong for longer than they realised.</p>
-  </div>
-</section>
-
-<section class="wrap says rv">
-  <p class="bubble">I&rsquo;d already been coming in. Nobody asked.</p>
-  <span class="who">&mdash; Lulu, mid-cucumber</span>
-</section>
-
-<section class="wrap center" style="padding-top:0">
-  <a class="btn btn-ghost" href="ilona.html">Meet Ilona &rarr;</a>
-</section>
-
-<section class="wrap"><div class="signup panel rv">
-<h2>Be first to meet the books</h2>
-<p class="lede">No spam, no schedules &mdash; just a note when something real happens.</p>
-<form data-signup novalidate>
-<label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label>
-<label class="hp" for="tk-email">Email address</label>
-<input id="tk-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-<button class="btn" type="submit">Join the list</button>
-</form>
-<p class="signup__note" role="status" aria-live="polite"></p>
-<p class="fine">Or follow along on <a href="https://www.instagram.com/toddlerkitties/">Instagram</a>.</p>
-</div></section>
-</main><section class="cat-menu" aria-label="Pick a cat"><div class="wrap"><div class="cat-row"><a class="cat-item ci-baker" href="baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span class="cat-label">Baker</span></a><a class="cat-item ci-doc" href="doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span class="cat-label">Doc</span></a><a class="cat-item ci-ilona" href="ilona.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-ilona"></use></svg><span class="cat-label">Ilona</span></a></div></div></section><footer><div class="wrap"><p class="foot-motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot-meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script>/* ==========================================================================
+</svg><main id="main"><div class="splash"><div class="splash-in">
+<div class="peek-row"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-ilona"></use></svg></div>
+<h1>Toddler <span class="accent">Kitties</span></h1>
+<span class="eyebrow">A toddler is just 4 cats in a trenchcoat</span>
+<a class="btn" href="home.html">Continue &rarr;</a>
+</div></div></main><script>/* ==========================================================================
    Toddler Kitties — site behaviour
    ==========================================================================
    ►► THE ONLY LINE YOU NEED TO EDIT ◄◄
-   Paste your form endpoint below (Buttondown, Formspree, MailerLite...).
+   Paste your form endpoint below (Formspree or Buttondown — see README).
    While it is empty, the signup form falls back to opening an email.
    ========================================================================== */
 
@@ -610,22 +529,204 @@ const FALLBACK_MAILTO =
   "&body="    + encodeURIComponent("Please let me know when the first book is ready.");
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const R = (a, b) => a + Math.random() * (b - a);
+
+/* ---------- shared sprite snippets --------------------------------------- */
+
+const SPR = {
+  paw:
+    '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
+    '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
+    '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
+    '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>',
+  pom:
+    '<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">' +
+    '<circle cx="15" cy="15" r="12" fill="#7FC7E8"/>' +
+    '<circle cx="11" cy="11" r="5" fill="#BDE6F8"/>' +
+    '<circle cx="24" cy="6" r="2.4" fill="#FFF3B0"/>' +
+    '<circle cx="5" cy="22" r="2" fill="#FFF3B0"/></svg>',
+  petal: '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>',
+  cuke:  '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>',
+  heart: '<svg width="17" height="17" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>',
+  seed:  '<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>',
+  laserCss: "width:13px;height:13px;border-radius:50%;background:#FF3B2E;box-shadow:0 0 12px 5px rgba(255,59,46,.55)"
+};
+
+const PAGE_BG = { baker:"#EDE7FA", doc:"#EFF3FF", lulu:"#EAF7EF", ilona:"#FFF6DF" };
+
+/* ---------- exit-transition helpers -------------------------------------- */
+
+function txOverlay(bg) {
+  const o = document.createElement("div");
+  o.className = "tx-ov";
+  o.style.cssText = "position:fixed;inset:0;z-index:999;pointer-events:none;overflow:hidden";
+  const wash = document.createElement("div");
+  wash.style.cssText = `position:absolute;inset:0;background:${bg};opacity:0`;
+  wash.animate([{ opacity: 0 }, { opacity: 0.94 }],
+               { duration: 240, fill: "forwards", easing: "ease-out" });
+  o.appendChild(wash);
+  document.body.appendChild(o);
+  return o;
+}
+
+function put(o, html, css) {
+  const s = document.createElement("span");
+  s.style.cssText = "position:absolute;left:0;top:0;will-change:transform,opacity;" + css;
+  s.innerHTML = html;
+  o.appendChild(s);
+  return s;
+}
+
+/* Each cat in the bottom menu gets their own send-off. */
+function catExit(slug, href) {
+  const o = txOverlay(PAGE_BG[slug] || "#F4EFFF");
+  const W = innerWidth, H = innerHeight;
+
+  if (slug === "baker") {
+    // her laser zips across, the paw swats, the page flinches
+    const dot = put(o, "", SPR.laserCss);
+    dot.animate([
+      { transform: `translate(${-30}px, ${H * 0.25}px)` },
+      { transform: `translate(${W * 0.3}px, ${H * 0.6}px)`, offset: 0.3 },
+      { transform: `translate(${W * 0.55}px, ${H * 0.3}px)`, offset: 0.55 },
+      { transform: `translate(${W * 0.5}px, ${H * 0.52}px)`, offset: 0.75 },
+      { transform: `translate(${W + 40}px, ${H * 0.4}px)` }
+    ], { duration: 700, easing: "ease-in-out", fill: "forwards" });
+    const paw = put(o, SPR.paw, "transform-origin:50% 100%");
+    paw.animate([
+      { transform: `translate(${W * 0.5 - 40}px, ${H + 90}px) scale(2.2)` },
+      { transform: `translate(${W * 0.5 - 40}px, ${H * 0.42}px) scale(2.2)` }
+    ], { duration: 260, delay: 300, easing: "cubic-bezier(.2,.9,.3,1.1)", fill: "forwards" });
+    document.body.animate([
+      { transform: "translate(0,0)" }, { transform: "translate(-5px,3px)" },
+      { transform: "translate(4px,-3px)" }, { transform: "translate(-3px,2px)" },
+      { transform: "translate(0,0)" }
+    ], { duration: 260, delay: 560 });
+  }
+
+  if (slug === "doc") {
+    // the pom pom is thrown; he is already on his way
+    const pom = put(o, SPR.pom, "");
+    const base = H * 0.72;
+    pom.animate([
+      { transform: `translate(-40px, ${base}px) rotate(0deg)` },
+      { transform: `translate(${W * 0.22}px, ${base - H * 0.3}px) rotate(180deg)`, offset: 0.28 },
+      { transform: `translate(${W * 0.45}px, ${base}px) rotate(340deg)`, offset: 0.52 },
+      { transform: `translate(${W * 0.68}px, ${base - H * 0.18}px) rotate(520deg)`, offset: 0.76 },
+      { transform: `translate(${W + 50}px, ${base}px) rotate(720deg)` }
+    ], { duration: 820, easing: "linear", fill: "forwards" });
+    for (let i = 0; i < 6; i++) {
+      const s = put(o, "", "width:6px;height:6px;border-radius:50%;background:#FFF3B0;box-shadow:0 0 7px #FFE066");
+      s.animate([
+        { transform: `translate(${W * (0.1 + i * 0.15)}px, ${base + R(-30, 20)}px)`, opacity: 0 },
+        { opacity: 1, offset: 0.5 },
+        { transform: `translate(${W * (0.1 + i * 0.15) + R(-25, 25)}px, ${base + R(-70, -30)}px)`, opacity: 0 }
+      ], { duration: 520, delay: i * 90, easing: "ease-out" });
+    }
+  }
+
+  if (slug === "lulu") {
+    // petals and cucumber, everywhere at once
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.35 ? SPR.cuke : SPR.petal, "");
+      const x = R(0, W), sway = R(-70, 70), spin = R(-380, 380);
+      el.animate([
+        { transform: `translate(${x}px, -30px) rotate(0deg)`, opacity: 1 },
+        { transform: `translate(${x + sway}px, ${H + 40}px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(620, 900), delay: i * 26, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  if (slug === "ilona") {
+    // hearts and dandelion seeds, rising all together
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.5 ? SPR.heart : SPR.seed, "");
+      const x = R(0, W), sway = R(-60, 60), spin = R(-160, 160);
+      el.animate([
+        { transform: `translate(${x}px, ${H + 30}px) rotate(0deg) scale(${R(0.9, 1.6)})`, opacity: 0 },
+        { opacity: 1, offset: 0.15 },
+        { transform: `translate(${x + sway}px, -50px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(650, 900), delay: i * 28, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  setTimeout(() => { window.location.href = href; }, 880);
+}
+
+/* Leaving the About page: all four cats run home into the empty coat. */
+function coatExit(href) {
+  const o = txOverlay(getComputedStyle(document.body).backgroundColor);
+  const W = innerWidth, H = innerHeight;
+
+  // the coat, centre stage (clone the page's own if it's there)
+  const src = document.getElementById("aboutCoat");
+  const holder = put(o, "", "left:50%;top:50%;transform:translate(-50%,-52%);width:min(46vw,220px)");
+  if (src) {
+    const clone = src.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.style.width = "100%"; clone.style.height = "auto";
+    holder.appendChild(clone);
+  }
+  holder.animate([{ opacity: 0, offset: 0 }, { opacity: 1 }],
+                 { duration: 200, fill: "forwards", easing: "ease-out" });
+
+  // four runners, two per side, staggered
+  const cx = W / 2, cy = H / 2 + 6;
+  const runners = [
+    { slug: "baker", fromX: -110,   y: H * 0.30, delay: 0   },
+    { slug: "doc",   fromX: W + 110, y: H * 0.34, delay: 110 },
+    { slug: "lulu",  fromX: -110,   y: H * 0.62, delay: 220 },
+    { slug: "ilona", fromX: W + 110, y: H * 0.66, delay: 330 }
+  ];
+  runners.forEach(({ slug, fromX, y, delay }) => {
+    const el = put(o,
+      `<svg width="86" height="86" viewBox="-6 -6 152 152" aria-hidden="true"><use href="#tk-${slug}"></use></svg>`, "");
+    const dir = fromX < 0 ? 1 : -1;
+    const midX = fromX + (cx - fromX) * 0.55;
+    el.animate([
+      { transform: `translate(${fromX - 43}px, ${y - 43}px) rotate(0deg) scale(1)`, opacity: 1 },
+      { transform: `translate(${midX - 43}px, ${(y + cy) / 2 - 58}px) rotate(${dir * 8}deg) scale(1)`, offset: 0.45 },
+      { transform: `translate(${(midX + cx) / 2 - 43}px, ${cy - 40}px) rotate(${dir * -7}deg) scale(.8)`, offset: 0.75 },
+      { transform: `translate(${cx - 43}px, ${cy - 30}px) rotate(0deg) scale(.06)`, opacity: 0 }
+    ], { duration: 640, delay, easing: "ease-in", fill: "forwards" });
+  });
+
+  setTimeout(() => { window.location.href = href; }, 1050);
+}
 
 /* ---------- 1. page-turn transitions ------------------------------------- */
 (function pageTurn() {
   if (reduced) return;
+  let navigating = false;
   document.addEventListener("click", (e) => {
+    if (navigating) { e.preventDefault(); return; }
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     const a = e.target.closest("a");
     if (!a || a.target === "_blank") return;
     const href = a.getAttribute("href") || "";
     if (!href.endsWith(".html") || href.startsWith("http") || href.startsWith("mailto")) return;
     e.preventDefault();
-    document.body.classList.add("leaving");
-    setTimeout(() => { window.location.href = href; }, 200);
+    navigating = true;
+
+    const item = a.closest(".cat-item");
+    if (document.body.dataset.exit === "coat") {
+      coatExit(href);                                   // About: everybody into the coat
+    } else if (item) {
+      const cls = [...item.classList].find(c => c.startsWith("ci-"));
+      catExit(cls ? cls.slice(3) : "", href);           // bottom menu: that cat's send-off
+    } else {
+      document.body.classList.add("leaving");           // everything else: quick fade
+      setTimeout(() => { window.location.href = href; }, 200);
+    }
   });
   // restore state when arriving via back/forward cache
-  window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("leaving");
+    document.querySelectorAll(".tx-ov").forEach(el => el.remove());
+  });
 })();
 
 /* ---------- 2. scroll reveal ---------------------------------------------- */
@@ -669,10 +770,11 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       }
       if (note) note.textContent = "Signing you up…";
       try {
+        // form-encoded body: works for both Formspree and Buttondown
         const res = await fetch(SIGNUP_ENDPOINT, {
           method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
+          headers: { "Accept": "application/json" },
+          body: new URLSearchParams({ email })
         });
         if (!res.ok) throw new Error(res.status);
         form.reset();
@@ -689,7 +791,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduced) return;
   const stage = document.querySelector("[data-stage]");
   if (!stage) return;
-  const cat = document.body.dataset.theme;   // pages set data-theme="baker" etc.
+  const cat = document.body.dataset.theme;
 
   const mk = (cls, html) => {
     const el = document.createElement("span");
@@ -698,30 +800,18 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     stage.appendChild(el);
     return el;
   };
-  const R = (a, b) => a + Math.random() * (b - a);
 
   /* --- Baker: laser dot; her eyes track it, and sometimes she swats --- */
   if (cat === "baker") {
     const dot = mk("laser");
-    const pupils = stage.querySelector(".bk-pupils"); // stage art is inlined, so reachable
-    const PAW =
-      '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
-      '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
-      '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
-      '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
-      '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
-      '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
-      '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>';
-    const paw = mk("bk-paw", PAW);
+    const pupils = stage.querySelector(".bk-pupils");
+    const paw = mk("bk-paw", SPR.paw);
 
     let t = R(0, 100), tx = 0.5, ty = 0.4, hold = 0;
     let x = 0, y = 0, swatting = false;
 
-    const restPaw = () => {
-      paw.style.transition = "none";
-      paw.style.transform = `translate(${x - 18}px, ${stage.clientHeight + 70}px)`;
-    };
-    restPaw();
+    paw.style.transition = "none";
+    paw.style.transform = `translate(-100px, 9999px)`;
 
     (function step() {
       t += 0.016;
@@ -732,7 +822,6 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       y = (ty + Math.cos(t * 3.1) * 0.05) * h;
       dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
       if (pupils) {
-        // nudge the pupils toward wherever the dot is (SVG user units, so tiny values)
         const dx = (x / w - 0.5) * 7;
         const dy = (y / h - 0.45) * 5;
         pupils.setAttribute("transform",
@@ -745,15 +834,13 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (swatting) return;
       swatting = true;
       const h = stage.clientHeight;
-      // wind up under the dot, off-stage
       paw.style.transition = "none";
       paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
-      void paw.offsetWidth; // reflow so the next transform animates
+      void paw.offsetWidth;
       paw.style.transition = "transform .26s cubic-bezier(.2,.9,.3,1.15)";
       paw.style.transform = `translate(${x - 18}px, ${y - 10}px)`;
       setTimeout(() => {
-        // the dot escapes, obviously
-        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;
+        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;   // the dot escapes, obviously
         paw.style.transition = "transform .3s ease-in";
         paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
         setTimeout(() => { swatting = false; }, 320);
@@ -788,10 +875,8 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Lulu: rose petals and, inexplicably, cucumber --- */
   if (cat === "lulu") {
-    const petal = '<svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>';
-    const cuke  = '<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>';
     const drop = () => {
-      const el = mk("", Math.random() < 0.32 ? cuke : petal);
+      const el = mk("", Math.random() < 0.32 ? SPR.cuke : SPR.petal);
       const x0 = R(0, 100), dur = R(7000, 12000), sway = R(14, 46), spin = R(-360, 360);
       el.style.left = x0 + "%"; el.style.top = "-8%";
       const t0 = performance.now();
@@ -810,10 +895,8 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Ilona: hearts and dandelion seeds, at heartbeat tempo (72 bpm) --- */
   if (cat === "ilona") {
-    const heart = '<svg width="15" height="15" viewBox="0 0 16 16"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>';
-    const seed  = '<svg width="16" height="18" viewBox="0 0 16 18"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>';
     const rise = () => {
-      const el = mk("", Math.random() < 0.45 ? heart : seed);
+      const el = mk("", Math.random() < 0.45 ? SPR.heart : SPR.seed);
       const dur = R(6500, 10500), sway = R(16, 44), spin = R(-140, 140);
       el.style.left = R(6, 94) + "%"; el.style.top = "100%";
       const t0 = performance.now();
