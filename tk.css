@@ -217,6 +217,8 @@ header nav a.active{ background:var(--accent); border-color:var(--outline); }
 .cat-label{ font-size:clamp(12px,2vw,14px); background:var(--accent);
   border:2px solid var(--outline); border-radius:999px; padding:0 12px; margin-top:-6px;
   box-shadow:2px 2px 0 rgba(59,46,74,.2); }
+.ci-coat .coat-mini{ width:clamp(40px,9vw,54px); height:auto; display:block; margin:0 auto; }
+.ci-coat .cat-label{ background:var(--pink); }
 .ci-baker .cat-label{ background:#B39DDB; }
 .ci-doc   .cat-label{ background:#4468C4; color:#fff; }
 .ci-lulu  .cat-label{ background:#4E9B62; color:#fff; }

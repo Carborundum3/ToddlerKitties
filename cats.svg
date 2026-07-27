@@ -41,28 +41,24 @@
   <!-- ============ DOC — D2 — cow-patterned, huge ears, moon-and-stars collar ============ -->
   <symbol id="tk-doc" viewBox="-6 -6 152 152">
     <g>
-      <!-- tail -->
+      <!-- tail: black with a white tip -->
       <path d="M98 130 C126 128 132 110 122 94" fill="none" stroke="#2A2730" stroke-width="11" stroke-linecap="round"/>
-      <path d="M104 122 C118 120 124 112 122 102" fill="none" stroke="#FAF7F2" stroke-width="6" stroke-linecap="round"/>
-      <!-- body -->
-      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#FAF7F2"/>
-      <ellipse cx="31" cy="122" rx="8" ry="10" fill="#2A2730"/>
-      <ellipse cx="86" cy="131" rx="7" ry="8" fill="#2A2730"/>
-      <ellipse cx="63" cy="136" rx="5" ry="5" fill="#2A2730"/>
+      <path d="M124 103 C124 99 123 96 122 94" fill="none" stroke="#FAF7F2" stroke-width="11" stroke-linecap="round"/>
+      <!-- body: black, white chest + a white shoulder patch -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#2A2730"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#FAF7F2"/>
+      <ellipse cx="30" cy="121" rx="7" ry="9" fill="#FAF7F2"/>
       <!-- ears (very large, upright) -->
       <path d="M24 42 L12 0 L54 26 Z" fill="#2A2730"/>
       <path d="M96 42 L108 0 L66 26 Z" fill="#2A2730"/>
       <path d="M29 37 L21 10 L45 26 Z" fill="#D98F96"/>
       <path d="M91 37 L99 10 L75 26 Z" fill="#D98F96"/>
-      <!-- head -->
-      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#FAF7F2"/>
-      <!-- big black patch over upper face -->
-      <path d="M20 58 C20 31 38 22 60 22 C82 22 100 31 100 58 Z" fill="#2A2730"/>
+      <!-- head: black -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#2A2730"/>
       <!-- white blaze between the eyes -->
-      <path d="M60 23 L53 62 L67 62 Z" fill="#FAF7F2"/>
-      <!-- muzzle + black nose patch -->
+      <path d="M60 23 L52 64 L68 64 Z" fill="#FAF7F2"/>
+      <!-- white muzzle -->
       <ellipse cx="60" cy="75" rx="18" ry="12" fill="#FAF7F2"/>
-      <ellipse cx="60" cy="70" rx="12" ry="8" fill="#2A2730"/>
       <!-- eyes, yellow-green -->
       <circle cx="43" cy="56" r="8" fill="#C6D24A"/>
       <circle cx="77" cy="56" r="8" fill="#C6D24A"/>
@@ -182,14 +178,16 @@
     <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
   </symbol>
   <symbol id="tk-sleep-doc" viewBox="0 0 96 56">
-    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#FAF7F2"/>
-    <ellipse cx="30" cy="40" rx="7" ry="6" fill="#2A2730"/><ellipse cx="50" cy="46" rx="5" ry="4" fill="#2A2730"/>
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#2A2730"/>
+    <ellipse cx="34" cy="43" rx="9" ry="6" fill="#FAF7F2"/>
+    <ellipse cx="52" cy="46" rx="5" ry="4" fill="#FAF7F2"/>
     <path d="M14 44 q20 9 38 3" stroke="#2A2730" stroke-width="6" stroke-linecap="round" fill="none"/>
-    <circle cx="68" cy="29" r="15" fill="#FAF7F2"/>
-    <path d="M53 24 C55 12 62 8 68 8 C74 8 81 12 83 24 Z" fill="#2A2730"/>
-    <path d="M68 8 L64 24 L72 24 Z" fill="#FAF7F2"/>
+    <path d="M14.5 44.2 q3 1.4 6 2.2" stroke="#FAF7F2" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#2A2730"/>
+    <path d="M68 15 L64.5 27 L71.5 27 Z" fill="#FAF7F2"/>
+    <ellipse cx="68" cy="35" rx="8" ry="5.5" fill="#FAF7F2"/>
     <path d="M57 18 L52 3 L66 10 Z" fill="#2A2730"/><path d="M79 18 L84 3 L70 10 Z" fill="#2A2730"/>
-    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M59 28 q3 3 6 0 M71 28 q3 3 6 0" stroke="#F4EFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
     <path d="M65.5 34 h5 l-2.5 3 Z" fill="#5C4148"/>
     <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
     <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>

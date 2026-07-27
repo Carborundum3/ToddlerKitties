@@ -147,7 +147,7 @@ function coatExit(href) {
   const W = innerWidth, H = innerHeight;
 
   // the coat, centre stage (clone the page's own if it's there)
-  const src = document.getElementById("aboutCoat");
+  const src = document.getElementById("aboutCoat") || document.querySelector(".coat-mini");
   const holder = put(o, "", "left:50%;top:50%;transform:translate(-50%,-52%);width:min(46vw,220px)");
   if (src) {
     const clone = src.cloneNode(true);
@@ -197,8 +197,8 @@ function coatExit(href) {
     navigating = true;
 
     const item = a.closest(".cat-item");
-    if (document.body.dataset.exit === "coat") {
-      coatExit(href);                                   // About: everybody into the coat
+    if (document.body.dataset.exit === "coat" || a.closest(".coat-link")) {
+      coatExit(href);                                   // the coat: everybody in
     } else if (item) {
       const cls = [...item.classList].find(c => c.startsWith("ci-"));
       catExit(cls ? cls.slice(3) : "", href);           // bottom menu: that cat's send-off
