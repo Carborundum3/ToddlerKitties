@@ -6,6 +6,8 @@
 <title>Toddler Kitties — Home</title>
 <meta name="description" content="Meet Baker, Doc, Lulu and Ilona — four real cats, one storybook world.">
 <link rel="canonical" href="https://toddlerkitties.com/home.html">
+<meta name="keywords" content="toddler kitties, toddlerkitties, toddler kitties com, cute cats for kids, 4 cats in a trenchcoat">
+<meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toddler Kitties">
 <meta property="og:title" content="Toddler Kitties — Home">
@@ -94,7 +96,11 @@ section{ padding-block:clamp(2.2rem,5vw,3.4rem); }
 
 header{ background:var(--card); border-bottom:3px solid var(--outline); position:sticky; top:0; z-index:30; }
 .nav-inner{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; padding-block:.65rem; }
-.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; margin-right:auto; line-height:1; }
+.brandbox{ display:flex; flex-direction:column; gap:1px; margin-right:auto; }
+.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; line-height:1; }
+.logo-sleep{ display:flex; gap:5px; align-items:flex-end; padding-left:3px; }
+.logo-sleep svg{ width:38px; height:22px; display:block; }
+@media (max-width:430px){ .logo-sleep svg{ width:30px; height:18px; } }
 .logo svg{ width:36px; height:27px; flex:none; color:var(--accent-ink); }
 .logo span{ color:var(--accent-ink); }
 header nav{ display:flex; gap:.1rem; flex-wrap:wrap; }
@@ -164,6 +170,7 @@ header nav a.active{ background:var(--accent); border-color:var(--outline); }
 .laser{ width:11px; height:11px; border-radius:50%; background:#FF3B2E; box-shadow:0 0 10px 4px rgba(255,59,46,.5); z-index:4; }
 .pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.7); }
 .spark{ width:5px; height:5px; background:#FFF3B0; border-radius:50%; box-shadow:0 0 6px #FFE066; }
+.bk-paw{ z-index:4; filter:drop-shadow(1px 2px 0 rgba(59,46,74,.25)); }
 
 .tally{ list-style:none; margin:0; padding:0; }
 .tally li{ display:grid; grid-template-columns:1.5rem 1fr; gap:.7rem; padding:.55rem 0;
@@ -248,6 +255,16 @@ footer a{ color:#FFC9DA; }
 .oops-in{ display:grid; justify-items:center; gap:1rem; }
 .oops svg{ width:min(46vw,180px); height:auto; }
 
+/* ---------- page turn ----------------------------------------------------- */
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes pageIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  main{ animation:pageIn .45s cubic-bezier(.2,.7,.3,1) both; }
+  body.leaving main{ opacity:0; transform:translateY(-10px);
+    transition:opacity .2s ease, transform .2s ease; animation:none; }
+  body.leaving header, body.leaving .cat-menu, body.leaving footer{ opacity:.55; transition:opacity .2s ease; }
+}
+
 /* ---------- reveal ------------------------------------------------------- */
 
 .rv{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.3,1); }
@@ -291,8 +308,7 @@ footer a{ color:#FFC9DA; }
       <!-- half-lidded eyes -->
       <path d="M37 57 C37 66 51 66 51 57 Z" fill="#7C9A4E"/>
       <path d="M69 57 C69 66 83 66 83 57 Z" fill="#7C9A4E"/>
-      <path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/>
-      <path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/>
+      <g class="bk-pupils"><path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/><path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/></g>
       <path d="M36 56 Q44 51 52 56 M68 56 Q76 51 84 56" stroke="#241F2E" stroke-width="3" stroke-linecap="round" fill="none"/>
       <!-- heart nose -->
       <path d="M60 71.5 C56.5 66.5 50 67.5 50 72 C50 76.6 56.5 79.2 60 83 C63.5 79.2 70 76.6 70 72 C70 67.5 63.5 66.5 60 71.5 Z" fill="#D96A7A"/>
@@ -436,7 +452,59 @@ footer a{ color:#FFC9DA; }
     </g>
   </symbol>
 
-</svg><header><div class="wrap nav-inner"><a class="logo" href="home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><nav aria-label="Main"><a href="home.html" class="active">Home</a><a href="baker.html">Baker</a><a href="doc.html">Doc</a><a href="lulu.html">Lulu</a><a href="ilona.html">Ilona</a><a href="books.html">Books</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav></div></header><main id="main">
+  <!-- ============ sleeping loafs (header) ============ -->
+  <symbol id="tk-sleep-baker" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#9C8C7E"/>
+    <path d="M14 44 q20 9 38 3" stroke="#6E6055" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#9C8C7E"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#9C8C7E"/><path d="M78 19 L81 6 L69 13 Z" fill="#9C8C7E"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#6E6055" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M68 35 c-1.4 -2.2 -3.8 -1.7 -3.8 0 c0 1.7 2.4 2.6 3.8 4 c1.4 -1.4 3.8 -2.3 3.8 -4 c0 -1.7 -2.4 -2.2 -3.8 0 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-doc" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#FAF7F2"/>
+    <ellipse cx="30" cy="40" rx="7" ry="6" fill="#2A2730"/><ellipse cx="50" cy="46" rx="5" ry="4" fill="#2A2730"/>
+    <path d="M14 44 q20 9 38 3" stroke="#2A2730" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#FAF7F2"/>
+    <path d="M53 24 C55 12 62 8 68 8 C74 8 81 12 83 24 Z" fill="#2A2730"/>
+    <path d="M68 8 L64 24 L72 24 Z" fill="#FAF7F2"/>
+    <path d="M57 18 L52 3 L66 10 Z" fill="#2A2730"/><path d="M79 18 L84 3 L70 10 Z" fill="#2A2730"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#5C4148"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-lulu" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#8B7A6C"/>
+    <path d="M20 30 C26 26 36 25 44 27 C40 34 30 38 22 36 Z" fill="#5E4E44"/>
+    <ellipse cx="56" cy="44" rx="9" ry="6" fill="#A9714A"/>
+    <path d="M14 44 q20 9 38 3" stroke="#5E4E44" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#8B7A6C"/>
+    <path d="M68 15 C74 14 80 18 82 24 C77 26 71 24 68 20 Z" fill="#A9714A"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#8B7A6C"/><path d="M78 19 L81 6 L69 13 Z" fill="#A9714A"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-ilona" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#E0A05A"/>
+    <path d="M10 40 C6 30 14 22 24 24 C18 27 15 33 18 39 C21 33 27 30 32 32 C26 35 24 40 26 44 Z" fill="#E0A05A"/>
+    <path d="M12 36 q3 -5 9 -6" stroke="#C2803E" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#E0A05A"/>
+    <path d="M58 19 L54 5 L67 12 Z" fill="#E0A05A"/><path d="M78 19 L82 5 L69 12 Z" fill="#E0A05A"/>
+    <path d="M57 12 l-3 -4 M79 12 l3 -4" stroke="#F6E2C4" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#C2803E" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+
+</svg><header><div class="wrap nav-inner"><div class="brandbox"><a class="logo" href="home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><div class="logo-sleep" aria-hidden="true"><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-baker"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-doc"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-lulu"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-ilona"></use></svg></div></div><nav aria-label="Main"><a href="home.html" class="active">Home</a><a href="baker.html">Baker</a><a href="doc.html">Doc</a><a href="lulu.html">Lulu</a><a href="ilona.html">Ilona</a><a href="books.html">Books</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav></div></header><main id="main">
 <section class="hero wrap center">
   <span class="eyebrow">A toddler is just 4 cats in a trenchcoat</span>
   <h1>Toddler <span class="accent">Kitties</span></h1>
@@ -497,7 +565,24 @@ const FALLBACK_MAILTO =
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- 1. scroll reveal --------------------------------------------- */
+/* ---------- 1. page-turn transitions ------------------------------------- */
+(function pageTurn() {
+  if (reduced) return;
+  document.addEventListener("click", (e) => {
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    const a = e.target.closest("a");
+    if (!a || a.target === "_blank") return;
+    const href = a.getAttribute("href") || "";
+    if (!href.endsWith(".html") || href.startsWith("http") || href.startsWith("mailto")) return;
+    e.preventDefault();
+    document.body.classList.add("leaving");
+    setTimeout(() => { window.location.href = href; }, 200);
+  });
+  // restore state when arriving via back/forward cache
+  window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
+})();
+
+/* ---------- 2. scroll reveal ---------------------------------------------- */
 (function reveal() {
   const items = document.querySelectorAll(".rv, .rv-fade");
   if (!items.length) return;
@@ -513,21 +598,21 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   items.forEach(el => io.observe(el));
 })();
 
-/* ---------- 2. email signup ---------------------------------------------- */
+/* ---------- 3. email signup ----------------------------------------------- */
 (function signup() {
   document.querySelectorAll("form[data-signup]").forEach(form => {
     const note  = form.parentElement.querySelector(".signup__note");
     const input = form.querySelector('input[type="email"]');
     const trap  = form.querySelector('input[name="_hp"]');
 
-    if (SIGNUP_ENDPOINT) { form.setAttribute("action", SIGNUP_ENDPOINT); }
+    if (SIGNUP_ENDPOINT) form.setAttribute("action", SIGNUP_ENDPOINT);
 
     form.addEventListener("submit", async (ev) => {
       ev.preventDefault();
-      if (trap && trap.value) return;            // bot caught in the honeypot
+      if (trap && trap.value) return;
       const email = (input.value || "").trim();
       if (!email || !input.checkValidity()) {
-        if (note) note.textContent = "That address didn't parse. Try again?";
+        if (note) note.textContent = "That address didn't look right. Try again?";
         input.focus();
         return;
       }
@@ -536,7 +621,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (note) note.textContent = "Opening your email app — just hit send.";
         return;
       }
-      if (note) note.textContent = "Filing…";
+      if (note) note.textContent = "Signing you up…";
       try {
         const res = await fetch(SIGNUP_ENDPOINT, {
           method: "POST",
@@ -545,7 +630,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         });
         if (!res.ok) throw new Error(res.status);
         form.reset();
-        if (note) note.textContent = "You're on the list. The bailiff has your name.";
+        if (note) note.textContent = "You're on the list!";
       } catch (err) {
         if (note) note.textContent = "That didn't go through. Email toddlerkitties@gmail.com instead.";
       }
@@ -553,12 +638,12 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
 })();
 
-/* ---------- 3. per-cat ambient motion ------------------------------------ */
+/* ---------- 4. per-cat stage animations ----------------------------------- */
 (function ambient() {
   if (reduced) return;
   const stage = document.querySelector("[data-stage]");
   if (!stage) return;
-  const cat = document.body.dataset.cat;
+  const cat = document.body.dataset.theme;   // pages set data-theme="baker" etc.
 
   const mk = (cls, html) => {
     const el = document.createElement("span");
@@ -569,19 +654,67 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   };
   const R = (a, b) => a + Math.random() * (b - a);
 
-  /* --- Baker: a laser dot she is definitely not falling for --- */
+  /* --- Baker: laser dot; her eyes track it, and sometimes she swats --- */
   if (cat === "baker") {
     const dot = mk("laser");
-    let t = R(0, 100), tx = 0.5, ty = 0.5, hold = 0;
+    const pupils = stage.querySelector(".bk-pupils"); // stage art is inlined, so reachable
+    const PAW =
+      '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
+      '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
+      '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
+      '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+      '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
+      '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+      '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>';
+    const paw = mk("bk-paw", PAW);
+
+    let t = R(0, 100), tx = 0.5, ty = 0.4, hold = 0;
+    let x = 0, y = 0, swatting = false;
+
+    const restPaw = () => {
+      paw.style.transition = "none";
+      paw.style.transform = `translate(${x - 18}px, ${stage.clientHeight + 70}px)`;
+    };
+    restPaw();
+
     (function step() {
       t += 0.016;
-      if (hold > 0) { hold -= 1; }
-      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.15, 0.9); }
+      if (hold > 0) hold -= 1;
+      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.12, 0.85); }
       const w = stage.clientWidth, h = stage.clientHeight;
-      const x = (tx + Math.sin(t * 2.3) * 0.05) * w;
-      const y = (ty + Math.cos(t * 3.1) * 0.05) * h;
+      x = (tx + Math.sin(t * 2.3) * 0.05) * w;
+      y = (ty + Math.cos(t * 3.1) * 0.05) * h;
       dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
+      if (pupils) {
+        // nudge the pupils toward wherever the dot is (SVG user units, so tiny values)
+        const dx = (x / w - 0.5) * 7;
+        const dy = (y / h - 0.45) * 5;
+        pupils.setAttribute("transform",
+          `translate(${Math.max(-3.5, Math.min(3.5, dx))} ${Math.max(-2, Math.min(3, dy))})`);
+      }
       requestAnimationFrame(step);
+    })();
+
+    const swat = () => {
+      if (swatting) return;
+      swatting = true;
+      const h = stage.clientHeight;
+      // wind up under the dot, off-stage
+      paw.style.transition = "none";
+      paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+      void paw.offsetWidth; // reflow so the next transform animates
+      paw.style.transition = "transform .26s cubic-bezier(.2,.9,.3,1.15)";
+      paw.style.transform = `translate(${x - 18}px, ${y - 10}px)`;
+      setTimeout(() => {
+        // the dot escapes, obviously
+        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;
+        paw.style.transition = "transform .3s ease-in";
+        paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+        setTimeout(() => { swatting = false; }, 320);
+      }, 420);
+    };
+    (function scheduleSwat() {
+      setTimeout(() => { swat(); scheduleSwat(); }, R(4500, 8500));
     })();
   }
 

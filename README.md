@@ -29,7 +29,7 @@ Everything else can be replaced.
 | `books.html` `shop.html` `about.html` | The books / shop / origin (trenchcoat lives here) |
 | `404.html` | Ilona's fault |
 | `assets/tk.css` | All styling |
-| `assets/tk.js` | Reveals, signup, per-cat animations |
+| `assets/tk.js` | Page transitions, reveals, signup, per-cat stage animations |
 | `assets/cats.svg` | Master art file for the four chibi cats |
 | `assets/favicon.svg` | Tab icon |
 | `sitemap.xml` `robots.txt` | For Search Console |
@@ -83,6 +83,16 @@ of self-contained pages. If you'd rather not touch Python, edit the `<style>`, `
 `<symbol>` blocks directly inside the HTML files instead.
 
 ---
+
+## The little animations
+
+- **Page turns:** every page fades/slides in, and clicking an internal link fades out before it
+  navigates. Both switch off automatically for anyone with "reduce motion" set.
+- **Baker's page:** the laser is back — her pupils track it around the stage, and every few
+  seconds a paw (toe beans out) darts up to swat it. The dot escapes. Doc's pom pom, Lulu's
+  petals-and-cucumber, and Ilona's hearts-and-seeds all run again too.
+- **Header:** the four sleeping loafs sit under the TK wordmark on every page. They're decorative
+  (the cat menu at the bottom is still the navigation).
 
 ## Two things to double-check
 

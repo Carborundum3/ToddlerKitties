@@ -25,8 +25,7 @@
       <!-- half-lidded eyes -->
       <path d="M37 57 C37 66 51 66 51 57 Z" fill="#7C9A4E"/>
       <path d="M69 57 C69 66 83 66 83 57 Z" fill="#7C9A4E"/>
-      <path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/>
-      <path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/>
+      <g class="bk-pupils"><path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/><path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/></g>
       <path d="M36 56 Q44 51 52 56 M68 56 Q76 51 84 56" stroke="#241F2E" stroke-width="3" stroke-linecap="round" fill="none"/>
       <!-- heart nose -->
       <path d="M60 71.5 C56.5 66.5 50 67.5 50 72 C50 76.6 56.5 79.2 60 83 C63.5 79.2 70 76.6 70 72 C70 67.5 63.5 66.5 60 71.5 Z" fill="#D96A7A"/>
@@ -168,6 +167,58 @@
       <path d="M60 115 L73 108 L73 122 Z" fill="#241F2E"/>
       <rect x="55.5" y="110.5" width="9" height="9" rx="2.5" fill="#FAF7F2"/>
     </g>
+  </symbol>
+
+  <!-- ============ sleeping loafs (header) ============ -->
+  <symbol id="tk-sleep-baker" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#9C8C7E"/>
+    <path d="M14 44 q20 9 38 3" stroke="#6E6055" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#9C8C7E"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#9C8C7E"/><path d="M78 19 L81 6 L69 13 Z" fill="#9C8C7E"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#6E6055" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M68 35 c-1.4 -2.2 -3.8 -1.7 -3.8 0 c0 1.7 2.4 2.6 3.8 4 c1.4 -1.4 3.8 -2.3 3.8 -4 c0 -1.7 -2.4 -2.2 -3.8 0 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-doc" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#FAF7F2"/>
+    <ellipse cx="30" cy="40" rx="7" ry="6" fill="#2A2730"/><ellipse cx="50" cy="46" rx="5" ry="4" fill="#2A2730"/>
+    <path d="M14 44 q20 9 38 3" stroke="#2A2730" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#FAF7F2"/>
+    <path d="M53 24 C55 12 62 8 68 8 C74 8 81 12 83 24 Z" fill="#2A2730"/>
+    <path d="M68 8 L64 24 L72 24 Z" fill="#FAF7F2"/>
+    <path d="M57 18 L52 3 L66 10 Z" fill="#2A2730"/><path d="M79 18 L84 3 L70 10 Z" fill="#2A2730"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#5C4148"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-lulu" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#8B7A6C"/>
+    <path d="M20 30 C26 26 36 25 44 27 C40 34 30 38 22 36 Z" fill="#5E4E44"/>
+    <ellipse cx="56" cy="44" rx="9" ry="6" fill="#A9714A"/>
+    <path d="M14 44 q20 9 38 3" stroke="#5E4E44" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#8B7A6C"/>
+    <path d="M68 15 C74 14 80 18 82 24 C77 26 71 24 68 20 Z" fill="#A9714A"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#8B7A6C"/><path d="M78 19 L81 6 L69 13 Z" fill="#A9714A"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-ilona" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#E0A05A"/>
+    <path d="M10 40 C6 30 14 22 24 24 C18 27 15 33 18 39 C21 33 27 30 32 32 C26 35 24 40 26 44 Z" fill="#E0A05A"/>
+    <path d="M12 36 q3 -5 9 -6" stroke="#C2803E" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#E0A05A"/>
+    <path d="M58 19 L54 5 L67 12 Z" fill="#E0A05A"/><path d="M78 19 L82 5 L69 12 Z" fill="#E0A05A"/>
+    <path d="M57 12 l-3 -4 M79 12 l3 -4" stroke="#F6E2C4" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#C2803E" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
   </symbol>
 
 </svg>

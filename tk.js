@@ -15,7 +15,24 @@ const FALLBACK_MAILTO =
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- 1. scroll reveal --------------------------------------------- */
+/* ---------- 1. page-turn transitions ------------------------------------- */
+(function pageTurn() {
+  if (reduced) return;
+  document.addEventListener("click", (e) => {
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    const a = e.target.closest("a");
+    if (!a || a.target === "_blank") return;
+    const href = a.getAttribute("href") || "";
+    if (!href.endsWith(".html") || href.startsWith("http") || href.startsWith("mailto")) return;
+    e.preventDefault();
+    document.body.classList.add("leaving");
+    setTimeout(() => { window.location.href = href; }, 200);
+  });
+  // restore state when arriving via back/forward cache
+  window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
+})();
+
+/* ---------- 2. scroll reveal ---------------------------------------------- */
 (function reveal() {
   const items = document.querySelectorAll(".rv, .rv-fade");
   if (!items.length) return;
@@ -31,21 +48,21 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   items.forEach(el => io.observe(el));
 })();
 
-/* ---------- 2. email signup ---------------------------------------------- */
+/* ---------- 3. email signup ----------------------------------------------- */
 (function signup() {
   document.querySelectorAll("form[data-signup]").forEach(form => {
     const note  = form.parentElement.querySelector(".signup__note");
     const input = form.querySelector('input[type="email"]');
     const trap  = form.querySelector('input[name="_hp"]');
 
-    if (SIGNUP_ENDPOINT) { form.setAttribute("action", SIGNUP_ENDPOINT); }
+    if (SIGNUP_ENDPOINT) form.setAttribute("action", SIGNUP_ENDPOINT);
 
     form.addEventListener("submit", async (ev) => {
       ev.preventDefault();
-      if (trap && trap.value) return;            // bot caught in the honeypot
+      if (trap && trap.value) return;
       const email = (input.value || "").trim();
       if (!email || !input.checkValidity()) {
-        if (note) note.textContent = "That address didn't parse. Try again?";
+        if (note) note.textContent = "That address didn't look right. Try again?";
         input.focus();
         return;
       }
@@ -54,7 +71,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (note) note.textContent = "Opening your email app — just hit send.";
         return;
       }
-      if (note) note.textContent = "Filing…";
+      if (note) note.textContent = "Signing you up…";
       try {
         const res = await fetch(SIGNUP_ENDPOINT, {
           method: "POST",
@@ -63,7 +80,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         });
         if (!res.ok) throw new Error(res.status);
         form.reset();
-        if (note) note.textContent = "You're on the list. The bailiff has your name.";
+        if (note) note.textContent = "You're on the list!";
       } catch (err) {
         if (note) note.textContent = "That didn't go through. Email toddlerkitties@gmail.com instead.";
       }
@@ -71,12 +88,12 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
 })();
 
-/* ---------- 3. per-cat ambient motion ------------------------------------ */
+/* ---------- 4. per-cat stage animations ----------------------------------- */
 (function ambient() {
   if (reduced) return;
   const stage = document.querySelector("[data-stage]");
   if (!stage) return;
-  const cat = document.body.dataset.cat;
+  const cat = document.body.dataset.theme;   // pages set data-theme="baker" etc.
 
   const mk = (cls, html) => {
     const el = document.createElement("span");
@@ -87,19 +104,67 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   };
   const R = (a, b) => a + Math.random() * (b - a);
 
-  /* --- Baker: a laser dot she is definitely not falling for --- */
+  /* --- Baker: laser dot; her eyes track it, and sometimes she swats --- */
   if (cat === "baker") {
     const dot = mk("laser");
-    let t = R(0, 100), tx = 0.5, ty = 0.5, hold = 0;
+    const pupils = stage.querySelector(".bk-pupils"); // stage art is inlined, so reachable
+    const PAW =
+      '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
+      '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
+      '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
+      '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+      '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
+      '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+      '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>';
+    const paw = mk("bk-paw", PAW);
+
+    let t = R(0, 100), tx = 0.5, ty = 0.4, hold = 0;
+    let x = 0, y = 0, swatting = false;
+
+    const restPaw = () => {
+      paw.style.transition = "none";
+      paw.style.transform = `translate(${x - 18}px, ${stage.clientHeight + 70}px)`;
+    };
+    restPaw();
+
     (function step() {
       t += 0.016;
-      if (hold > 0) { hold -= 1; }
-      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.15, 0.9); }
+      if (hold > 0) hold -= 1;
+      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.12, 0.85); }
       const w = stage.clientWidth, h = stage.clientHeight;
-      const x = (tx + Math.sin(t * 2.3) * 0.05) * w;
-      const y = (ty + Math.cos(t * 3.1) * 0.05) * h;
+      x = (tx + Math.sin(t * 2.3) * 0.05) * w;
+      y = (ty + Math.cos(t * 3.1) * 0.05) * h;
       dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
+      if (pupils) {
+        // nudge the pupils toward wherever the dot is (SVG user units, so tiny values)
+        const dx = (x / w - 0.5) * 7;
+        const dy = (y / h - 0.45) * 5;
+        pupils.setAttribute("transform",
+          `translate(${Math.max(-3.5, Math.min(3.5, dx))} ${Math.max(-2, Math.min(3, dy))})`);
+      }
       requestAnimationFrame(step);
+    })();
+
+    const swat = () => {
+      if (swatting) return;
+      swatting = true;
+      const h = stage.clientHeight;
+      // wind up under the dot, off-stage
+      paw.style.transition = "none";
+      paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+      void paw.offsetWidth; // reflow so the next transform animates
+      paw.style.transition = "transform .26s cubic-bezier(.2,.9,.3,1.15)";
+      paw.style.transform = `translate(${x - 18}px, ${y - 10}px)`;
+      setTimeout(() => {
+        // the dot escapes, obviously
+        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;
+        paw.style.transition = "transform .3s ease-in";
+        paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+        setTimeout(() => { swatting = false; }, 320);
+      }, 420);
+    };
+    (function scheduleSwat() {
+      setTimeout(() => { swat(); scheduleSwat(); }, R(4500, 8500));
     })();
   }
 

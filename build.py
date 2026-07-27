@@ -41,7 +41,7 @@ ICONS = {
  "heart":'<svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M24 40C10 31 4 25 4 17.5 4 11.1 9.1 6 15.5 6 19.4 6 22.5 8 24 11c1.5-3 4.6-5 8.5-5C38.9 6 44 11.1 44 17.5 44 25 38 31 24 40Z"/></svg>',
 }
 
-SPRITE = ""; CSS = ""; JS = ""; FAVI = ""
+SPRITE = ""; CSS = ""; JS = ""; FAVI = ""; SYMBOLS = {}
 
 def load_assets():
     global SPRITE, CSS, JS, FAVI
@@ -50,24 +50,34 @@ def load_assets():
     body = raw.split(">", 1)[1].rsplit("</svg>", 1)[0]
     SPRITE = ('<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" '
               'style="position:absolute" aria-hidden="true" focusable="false">' + body + "</svg>")
+    global SYMBOLS
+    SYMBOLS = dict(re.findall(r'<symbol id="(tk-[\w-]+)"[^>]*>(.*?)</symbol>', raw, re.S))
     CSS  = "<style>" + open("assets/tk.css").read() + "</style>"
     JS   = "<script>" + open("assets/tk.js").read() + "</script>"
     FAVI = "data:image/svg+xml;base64," + base64.b64encode(FAVICON_SVG.encode()).decode()
 
 
-def cat_svg(slug, cls="", title=None):
+def cat_svg(slug, cls="", title=None, inline=False):
     t = f"<title>{title}</title>" if title else ""
     aria = "" if title else ' aria-hidden="true"'
     c = f' class="{cls}"' if cls else ""
-    return (f'<svg{c} viewBox="-6 -6 152 152" role="img"{aria}>{t}'
-            f'<use href="#tk-{slug}"></use></svg>')
+    inner = SYMBOLS[f"tk-{slug}"] if inline else f'<use href="#tk-{slug}"></use>'
+    return (f'<svg{c} viewBox="-6 -6 152 152" role="img"{aria}>{t}{inner}</svg>')
+
+
+def sleep_svg(slug):
+    return (f'<svg viewBox="0 0 96 56" aria-hidden="true">'
+            f'<use href="#tk-sleep-{slug}"></use></svg>')
 
 
 def header(active):
     links = "".join(f'<a href="{h}"{" class=\"active\"" if h == active else ""}>{t}</a>'
                     for h, t in NAV)
+    loafs = "".join(sleep_svg(s) for s, _, _, _ in CATS)
     return (f'<header><div class="wrap nav-inner">'
+            f'<div class="brandbox">'
             f'<a class="logo" href="home.html">{LOGO}Toddler <span>Kitties</span></a>'
+            f'<div class="logo-sleep" aria-hidden="true">{loafs}</div></div>'
             f'<nav aria-label="Main">{links}</nav></div></header>')
 
 
@@ -114,6 +124,8 @@ def page(fn, title, desc, body, active=None, theme=None, chrome=True, rooted=Fal
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{SITE}/{fn}">
+<meta name="keywords" content="toddler kitties, toddlerkitties, toddler kitties com, cute cats for kids, 4 cats in a trenchcoat">
+<meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toddler Kitties">
 <meta property="og:title" content="{title}">
@@ -213,7 +225,7 @@ def cat_page(slug, name, code, role, tagline, tally, story, book_no, quote, who,
     ns, nn = nxt
     return f'''
 <section class="wrap meet">
-  <div class="stage rv" data-stage>{cat_svg(slug, "stage__cat", f"{name}, cartoon portrait")}</div>
+  <div class="stage rv" data-stage>{cat_svg(slug, "stage__cat", f"{name}, cartoon portrait", inline=True)}</div>
   <div class="rv">
     <span class="eyebrow">{code} &middot; {role}</span>
     <h1>{name}</h1>

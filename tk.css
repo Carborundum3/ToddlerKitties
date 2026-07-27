@@ -78,7 +78,11 @@ section{ padding-block:clamp(2.2rem,5vw,3.4rem); }
 
 header{ background:var(--card); border-bottom:3px solid var(--outline); position:sticky; top:0; z-index:30; }
 .nav-inner{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; padding-block:.65rem; }
-.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; margin-right:auto; line-height:1; }
+.brandbox{ display:flex; flex-direction:column; gap:1px; margin-right:auto; }
+.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; line-height:1; }
+.logo-sleep{ display:flex; gap:5px; align-items:flex-end; padding-left:3px; }
+.logo-sleep svg{ width:38px; height:22px; display:block; }
+@media (max-width:430px){ .logo-sleep svg{ width:30px; height:18px; } }
 .logo svg{ width:36px; height:27px; flex:none; color:var(--accent-ink); }
 .logo span{ color:var(--accent-ink); }
 header nav{ display:flex; gap:.1rem; flex-wrap:wrap; }
@@ -148,6 +152,7 @@ header nav a.active{ background:var(--accent); border-color:var(--outline); }
 .laser{ width:11px; height:11px; border-radius:50%; background:#FF3B2E; box-shadow:0 0 10px 4px rgba(255,59,46,.5); z-index:4; }
 .pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.7); }
 .spark{ width:5px; height:5px; background:#FFF3B0; border-radius:50%; box-shadow:0 0 6px #FFE066; }
+.bk-paw{ z-index:4; filter:drop-shadow(1px 2px 0 rgba(59,46,74,.25)); }
 
 .tally{ list-style:none; margin:0; padding:0; }
 .tally li{ display:grid; grid-template-columns:1.5rem 1fr; gap:.7rem; padding:.55rem 0;
@@ -231,6 +236,16 @@ footer a{ color:#FFC9DA; }
 .oops{ min-height:64svh; display:grid; place-items:center; text-align:center; }
 .oops-in{ display:grid; justify-items:center; gap:1rem; }
 .oops svg{ width:min(46vw,180px); height:auto; }
+
+/* ---------- page turn ----------------------------------------------------- */
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes pageIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  main{ animation:pageIn .45s cubic-bezier(.2,.7,.3,1) both; }
+  body.leaving main{ opacity:0; transform:translateY(-10px);
+    transition:opacity .2s ease, transform .2s ease; animation:none; }
+  body.leaving header, body.leaving .cat-menu, body.leaving footer{ opacity:.55; transition:opacity .2s ease; }
+}
 
 /* ---------- reveal ------------------------------------------------------- */
 
