@@ -28,16 +28,22 @@ Everything else can be replaced.
 | `baker.html` `doc.html` `lulu.html` `ilona.html` | One page per cat, each in that cat's colour |
 | `books.html` `shop.html` `about.html` | The books / shop / origin (trenchcoat lives here) |
 | `404.html` | Ilona's fault |
-| `assets/tk.css` | All styling |
-| `assets/tk.js` | Page transitions, reveals, signup, per-cat stage animations |
-| `assets/cats.svg` | Master art file for the four chibi cats |
-| `assets/favicon.svg` | Tab icon |
+| `tk.css` | All styling (source) |
+| `tk.js` | Page transitions, tail wags, all animations (source) |
+| `cats.svg` | Master art file for the cats (source) |
+| `favicon.svg` | Tab icon |
 | `sitemap.xml` `robots.txt` | For Search Console |
 | `build.py` | Regenerates every page (optional, see below) |
 
 ---
 
 ## Turning on the real email signup
+
+**The signup sections are currently hidden site-wide** (until your endpoint is ready).
+To bring them back: (1) paste your endpoint into line 10 of `tk.js`, (2) open `build.py` and
+change `SHOW_SIGNUP = False` to `SHOW_SIGNUP = True`, (3) run `python3 build.py`, commit, push.
+
+### Getting the endpoint
 
 Right now the form opens the visitor's email app addressed to you — that works but loses people.
 To actually collect addresses, pick ONE of these (both free):
@@ -56,7 +62,7 @@ when a book launches, not just collect)
 1. Go to [buttondown.com](https://buttondown.com) → create account (pick a username, e.g. `toddlerkitties`)
 2. Your endpoint is: `https://buttondown.com/api/emails/embed-subscribe/toddlerkitties`
    (swap in your actual username)
-3. Paste that into line 10 of `assets/tk.js`, run `python3 build.py`, commit.
+3. Paste that into line 10 of `tk.js`, run `python3 build.py`, commit.
 4. Free tier: up to 100 subscribers; subscribers get a confirmation email (good — proves consent).
 
 The form already sends data in the format both services expect, includes a honeypot spam trap,
@@ -77,11 +83,9 @@ Georgia / Courier New, which looks plainer but not broken.
 
 ## Changing the cat art later
 
-`assets/` holds the **source** files — `cats.svg` (art), `tk.css` (styling), `tk.js` (behaviour).
 The pages don't read them at runtime; they get stamped in at build time.
 
-So after editing anything in `assets/`, run this once:
-
+So after editing anything in 
 ```bash
 python3 build.py
 ```
@@ -89,6 +93,8 @@ python3 build.py
 Then commit. **If you skip this step nothing on the site will change** — that's the one gotcha
 of self-contained pages. If you'd rather not touch Python, edit the `<style>`, `<script>` or
 `<symbol>` blocks directly inside the HTML files instead.
+
+Everything is one flat folder now — no subfolders to upload.
 
 ---
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generates the Toddler Kitties static site.
 Each output page is fully self-contained: CSS, JS and cat art are stamped in.
-Edit anything in assets/ then re-run:  python3 build.py
+Edit cats.svg / tk.css / tk.js then re-run:  python3 build.py
 """
 import os, re, html
 
@@ -55,6 +55,7 @@ COAT = '''<svg class="coat" id="aboutCoat" viewBox="0 0 320 470" role="img" aria
   <path d="M128 128 L160 146 L142 196 L112 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
   <path d="M192 128 L160 146 L178 196 L208 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
   <path d="M142 196 L178 196 L176 372 L144 372 Z" fill="#4A3F58"/>
+  <g id="coatPeek"></g>
   <rect x="86" y="286" width="148" height="26" rx="6" fill="#A87F4C" stroke="#3B2E4A" stroke-width="5"/>
   <rect x="146" y="282" width="30" height="34" rx="6" fill="#D8B87A" stroke="#3B2E4A" stroke-width="5"/>
   <circle cx="120" cy="230" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
@@ -64,6 +65,8 @@ COAT = '''<svg class="coat" id="aboutCoat" viewBox="0 0 320 470" role="img" aria
   <path d="M88 424 h144" stroke="#3B2E4A" stroke-width="5"/>
 </g></svg>'''
 
+SHOW_SIGNUP = False   # flip to True once SIGNUP_ENDPOINT is set in tk.js, then re-run build
+
 MINI_COAT = COAT.replace('class="coat" id="aboutCoat"', 'class="coat-mini"')
 
 SPRITE = ""; CSS = ""; JS = ""; FAVI = ""; SYMBOLS = {}
@@ -71,14 +74,14 @@ SPRITE = ""; CSS = ""; JS = ""; FAVI = ""; SYMBOLS = {}
 def load_assets():
     global SPRITE, CSS, JS, FAVI
     import base64
-    raw = open("assets/cats.svg").read()
+    raw = open("cats.svg").read()
     body = raw.split(">", 1)[1].rsplit("</svg>", 1)[0]
     SPRITE = ('<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" '
               'style="position:absolute" aria-hidden="true" focusable="false">' + body + "</svg>")
     global SYMBOLS
     SYMBOLS = dict(re.findall(r'<symbol id="(tk-[\w-]+)"[^>]*>(.*?)</symbol>', raw, re.S))
-    CSS  = "<style>" + open("assets/tk.css").read() + "</style>"
-    JS   = "<script>" + open("assets/tk.js").read() + "</script>"
+    CSS  = "<style>" + open("tk.css").read() + "</style>"
+    JS   = "<script>" + open("tk.js").read() + "</script>"
     FAVI = "data:image/svg+xml;base64," + base64.b64encode(FAVICON_SVG.encode()).decode()
 
 
@@ -108,7 +111,7 @@ def header(active):
 
 def cat_menu(exclude=None, coat=True):
     items = "".join(
-        f'<a class="cat-item ci-{s}" href="{s}.html">{cat_svg(s)}'
+        f'<a class="cat-item ci-{s}" href="{s}.html">{cat_svg(s, inline=True)}'
         f'<span class="cat-label">{n}</span></a>'
         for s, n, _, _ in CATS if s != exclude)
     if coat:
@@ -120,6 +123,8 @@ def cat_menu(exclude=None, coat=True):
 
 def signup(heading="Be first to meet the books",
            copy="No spam, no schedules &mdash; just a note when something real happens."):
+    if not SHOW_SIGNUP:
+        return ""
     return f'''<div class="signup panel rv">
 <h2>{heading}</h2>
 <p class="lede">{copy}</p>
@@ -241,7 +246,6 @@ HOME = f'''
   </div>
 </section>
 
-<section class="wrap">{signup()}</section>
 '''
 page("home.html", "Toddler Kitties — Home",
      "Meet Baker, Doc, Lulu and Ilona — four real cats, one storybook world.",
@@ -286,7 +290,6 @@ def cat_page(slug, name, code, role, tagline, tally, story, book_no, quote, who,
   <a class="btn btn-ghost" href="{ns}.html">Meet {nn} &rarr;</a>
 </section>
 
-<section class="wrap">{signup()}</section>
 '''
 
 CAT_DATA = [
@@ -388,7 +391,6 @@ BOOKS = f'''
   </div>
 </section>
 
-<section class="wrap">{signup("Tell me when Book One lands","One email, when the book is actually finished &mdash; not when it is nearly finished.")}</section>
 '''
 page("books.html", "Books — Toddler Kitties",
      "Four hand-drawn origin storybooks — Baker, Doc, Lulu and Ilona — plus the ensemble book, The Cat Council.",
@@ -407,12 +409,11 @@ SHOP = f'''
 <section class="wrap">
   <div class="panel rv center">
     <h2>When there&rsquo;s something worth sending you</h2>
-    <p class="lede">It will show up here first and go to the list first. No pre-orders,
+    <p class="lede">It will show up here first. No pre-orders,
     no limited drops, no urgency you didn&rsquo;t ask for.</p>
   </div>
 </section>
 
-<section class="wrap">{signup("Be told when the shop opens","You&rsquo;ll hear about it here before anywhere else.")}</section>
 '''
 page("shop.html", "Shop — Toddler Kitties",
      "The Toddler Kitties shop isn't open yet. Join the list to hear first.",
@@ -460,11 +461,10 @@ ABOUT = f'''
   </div>
 </section>
 
-<section class="wrap">{signup()}</section>
 
 <section class="coat-bit wrap rv">
   {COAT}
-  <p class="cap">A toddler is just 4 cats in a trenchcoat. The coat is ready.</p>
+  <p class="cap">A toddler is just 4 cats in a trenchcoat.</p>
 </section>
 '''
 page("about.html", "About — Toddler Kitties",
@@ -475,12 +475,40 @@ page("about.html", "About — Toddler Kitties",
 
 NOTFOUND = f'''
 <div class="oops wrap"><div class="oops-in">
-  {cat_svg("ilona", "", "Ilona, cartoon portrait")}
+  <svg class="nf-scene" viewBox="0 0 380 232" role="img" aria-labelledby="nfT">
+    <title id="nfT">Ilona meowing at the wrong door while the right door waits</title>
+    <line x1="14" y1="206" x2="366" y2="206" stroke="#3B2E4A" stroke-width="3" stroke-linecap="round"/>
+    <!-- the wrong door (hers, apparently) -->
+    <g>
+      <rect x="46" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
+      <rect x="59" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
+      <rect x="59" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
+      <circle cx="131" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+    </g>
+    <!-- the right door -->
+    <g>
+      <rect x="238" y="36" width="96" height="170" rx="8" fill="#FFE9A8" stroke="#3B2E4A" stroke-width="4"/>
+      <g id="nfPanel">
+        <rect x="238" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
+        <rect x="251" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
+        <rect x="251" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
+        <circle cx="249" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+      </g>
+    </g>
+    <!-- Ilona, committed to the wrong one -->
+    <svg x="66" y="126" width="86" height="86" viewBox="-6 -6 152 152"><use href="#tk-ilona"></use></svg>
+    <!-- the meow -->
+    <g id="nfBubble" opacity="0">
+      <path d="M146 124 l7 14 l7 -11 Z" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="126" y="92" width="80" height="35" rx="15" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3"/>
+      <text x="166" y="116" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" font-size="17" fill="#3B2E4A">Mrow!</text>
+    </g>
+  </svg>
   <span class="eyebrow">Page not found</span>
   <h1>Wrong door.</h1>
-  <p class="lede">Whatever was here is gone, but Ilona is sitting outside it anyway, meowing at
-  the handle. The page you actually want is about three feet that way.</p>
-  <a class="btn" href="home.html">Take the right door &rarr;</a>
+  <p class="lede">Whatever was here is gone, but Ilona is meowing at the handle anyway.
+  The page you actually want is about three feet that way.</p>
+  <a class="btn" id="nfBtn" href="home.html">Take the right door &rarr;</a>
 </div></div>
 '''
 page("404.html", "Page not found — Toddler Kitties",
@@ -488,7 +516,7 @@ page("404.html", "Page not found — Toddler Kitties",
 
 # ================================================================== extras ===
 
-open("assets/favicon.svg", "w").write(FAVICON_SVG)
+open("favicon.svg", "w").write(FAVICON_SVG)
 open("robots.txt", "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 urls = ["", "home.html", "baker.html", "doc.html", "lulu.html", "ilona.html",
         "books.html", "shop.html", "about.html"]

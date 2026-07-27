@@ -4,9 +4,11 @@
   <symbol id="tk-baker" viewBox="-6 -6 152 152">
     <g>
       <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
       <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#6E6055" stroke-width="11" stroke-linecap="round"/>
       <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#9C8C7E" stroke-width="7" stroke-linecap="round"/>
       <path d="M118 96 l9 5 M112 108 l10 3" stroke="#6E6055" stroke-width="4" stroke-linecap="round"/>
+      </g>
       <!-- body -->
       <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#9C8C7E"/>
       <ellipse cx="60" cy="130" rx="19" ry="15" fill="#EFE3D2"/>
@@ -42,8 +44,10 @@
   <symbol id="tk-doc" viewBox="-6 -6 152 152">
     <g>
       <!-- tail: black with a white tip -->
+      <g class="tk-tail" data-o="98 130">
       <path d="M98 130 C126 128 132 110 122 94" fill="none" stroke="#2A2730" stroke-width="11" stroke-linecap="round"/>
       <path d="M124 103 C124 99 123 96 122 94" fill="none" stroke="#FAF7F2" stroke-width="11" stroke-linecap="round"/>
+      </g>
       <!-- body: black, white chest + a white shoulder patch -->
       <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#2A2730"/>
       <ellipse cx="60" cy="130" rx="19" ry="15" fill="#FAF7F2"/>
@@ -81,8 +85,10 @@
   <symbol id="tk-lulu" viewBox="-6 -6 152 152">
     <g>
       <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
       <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#8B7A6C" stroke-width="11" stroke-linecap="round"/>
       <path d="M122 96 c6 6 4 12 -1 14" fill="none" stroke="#A9714A" stroke-width="9" stroke-linecap="round"/>
+      </g>
       <!-- body -->
       <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#8B7A6C"/>
       <path d="M20 138 C20 116 28 100 44 96 L46 138 Z" fill="#5E4E44"/>
@@ -128,8 +134,10 @@
   <symbol id="tk-ilona" viewBox="-6 -6 152 152">
     <g>
       <!-- plume tail -->
+      <g class="tk-tail" data-o="98 132">
       <path d="M96 132 C122 132 136 112 126 88 C134 106 124 120 108 122 C120 116 124 104 118 96 C120 110 106 118 94 120 Z" fill="#E0A05A"/>
       <path d="M124 94 c4 8 2 14 -3 18" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
       <!-- body with long-hair edge -->
       <path d="M18 138 C18 121 23 107 34 100 q-4 5 -3 7 q5 -7 10 -9 q-3 4 -2 6 q6 -6 11 -8 C48 94 54 94 60 94 C83 94 102 106 102 138 Z" fill="#E0A05A"/>
       <ellipse cx="60" cy="130" rx="20" ry="16" fill="#F6E2C4"/>
