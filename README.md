@@ -48,27 +48,35 @@ about half the people who click it. To collect addresses properly:
    const SIGNUP_ENDPOINT = "https://formspree.io/f/xxxxxxx";
    ```
 
-4. Save, commit, done. Every form on the site starts working at once.
+4. Run `python3 build.py`, then commit. Every form on the site starts working at once.
 
 ---
 
 ## Previewing before you push
 
-Just double-click `index.html`. Everything is self-contained — the cat art is embedded in each
-page, so it works straight off your hard drive.
+Double-click any `.html` file. **Each page is completely self-contained** — the styling, the
+scripts and the cat art are all embedded inside the file itself. You can email yourself a single
+page and it will still look right.
+
+The only thing loaded from outside is the three Google fonts. With no internet it falls back to
+Georgia / Courier New, which looks plainer but not broken.
 
 ---
 
 ## Changing the cat art later
 
-Edit `assets/cats.svg` (the four `<symbol>` blocks), then run:
+`assets/` holds the **source** files — `cats.svg` (art), `tk.css` (styling), `tk.js` (behaviour).
+The pages don't read them at runtime; they get stamped in at build time.
+
+So after editing anything in `assets/`, run this once:
 
 ```bash
 python3 build.py
 ```
 
-That re-stamps the art into all nine pages. If you'd rather not touch Python, you can also edit
-the `<symbol>` blocks directly inside each HTML file — they're at the very top of the `<body>`.
+Then commit. **If you skip this step nothing on the site will change** — that's the one gotcha
+of self-contained pages. If you'd rather not touch Python, edit the `<style>`, `<script>` or
+`<symbol>` blocks directly inside the HTML files instead.
 
 ---
 

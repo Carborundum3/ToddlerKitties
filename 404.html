@@ -13,9 +13,407 @@
 <meta property="og:description" content="This page is missing. Ilona was nearby.">
 <meta property="og:url" content="https://toddlerkitties.com/404.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iOCIgZmlsbD0iI0Y0RTVDMSIvPjxwYXRoIGQ9Ik0xNCAxMiBMMTQgNTAgTTYgMjAgTDI0IDIwIiBzdHJva2U9IiMyNDFGMkUiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM4IDEyIEwzOCA1MCBNMzggMzAgUTU2IDMwIDU2IDQwIFE1NiA1MCAzOCA1MCIgc3Ryb2tlPSIjMjQxRjJFIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/assets/tk.css">
+<style>/* ==========================================================================
+   Toddler Kitties — case-file design system
+   Palette: lilac desk + manila folders + aubergine ink + stamp red
+   Type: Bricolage Grotesque (display) / Newsreader (body) / Courier Prime (docket)
+   ========================================================================== */
+
+:root{
+  --ink:        #241F2E;
+  --ink-soft:   #574C67;
+  --field:      #E6E3F0;
+  --field-deep: #D5D0E5;
+  --file:       #F4E5C1;
+  --file-warm:  #EFDCAE;
+  --file-edge:  #DCC698;
+  --stamp:      #B32D24;
+  --thread:     #8E86A8;
+  --white:      #FBF9F4;
+
+  --accent:      #6E2340;
+  --accent-soft: #A8762C;
+
+  --shadow-file: 0 1px 0 var(--file-edge), 0 14px 30px -20px rgba(36,31,46,.6);
+  --shadow-lift: 0 1px 0 var(--file-edge), 0 26px 44px -24px rgba(36,31,46,.55);
+
+  --wrap: 1080px;
+  --gut: clamp(1.15rem, 4vw, 2.75rem);
+}
+
+body[data-cat="baker"]{ --accent:#6E2340; --accent-soft:#A8762C; }
+body[data-cat="doc"]  { --accent:#23407E; --accent-soft:#B4832C; }
+body[data-cat="lulu"] { --accent:#2F6B44; --accent-soft:#C24765; }
+body[data-cat="ilona"]{ --accent:#A8641C; --accent-soft:#D8912A; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  margin:0;
+  background-color:var(--field);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.55), transparent 42%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  color:var(--ink);
+  font-family:"Newsreader", Georgia, "Times New Roman", serif;
+  font-size:clamp(1rem, .96rem + .2vw, 1.09rem);
+  line-height:1.62;
+  overflow-x:hidden;
+}
+
+img,svg{ max-width:100%; }
+
+/* ---------- typographic roles ------------------------------------------- */
+
+.display,h1,h2,h3{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:800;
+  letter-spacing:-.028em;
+  line-height:.98;
+  margin:0;
+  text-wrap:balance;
+}
+h1{ font-size:clamp(2.5rem, 1.4rem + 5.2vw, 5rem); }
+h2{ font-size:clamp(1.7rem, 1.1rem + 2.3vw, 2.6rem); }
+h3{ font-size:clamp(1.15rem, 1rem + .7vw, 1.45rem); letter-spacing:-.018em; }
+
+.label,.docket,.stamp,.btn,.nav a,.tab,.status{
+  font-family:"Courier Prime","Courier New",monospace;
+}
+.label{
+  font-size:.72rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.185em; color:var(--stamp);
+  display:block; margin:0 0 .9rem;
+}
+.label--quiet{ color:var(--thread); }
+.deck{
+  font-size:clamp(1.08rem, 1rem + .5vw, 1.3rem);
+  line-height:1.5; color:var(--ink-soft);
+  max-width:46ch; margin:1.1rem 0 0; text-wrap:pretty;
+}
+p{ margin:0 0 1rem; text-wrap:pretty; }
+p:last-child{ margin-bottom:0; }
+a{ color:inherit; }
+
+/* ---------- structure ---------------------------------------------------- */
+
+.wrap{ width:min(100% - (var(--gut) * 2), var(--wrap)); margin-inline:auto; }
+section{ padding-block:clamp(3rem, 7vw, 5.5rem); }
+.rule{ height:2px; background:var(--ink); opacity:.14; border:0; margin:0; }
+
+.skip{
+  position:absolute; left:-9999px; top:0; background:var(--ink); color:var(--file);
+  padding:.7rem 1rem; z-index:99; font-family:"Courier Prime",monospace; font-size:.8rem;
+}
+.skip:focus{ left:.5rem; top:.5rem; }
+
+:focus-visible{ outline:3px solid var(--stamp); outline-offset:3px; border-radius:2px; }
+
+/* ---------- nav ---------------------------------------------------------- */
+
+.nav{
+  position:sticky; top:0; z-index:30;
+  background:var(--file);
+  border-bottom:2px solid var(--ink);
+}
+.nav__in{
+  display:flex; align-items:center; gap:1rem;
+  padding-block:.7rem; flex-wrap:wrap;
+}
+.brand{
+  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
+  font-size:1.05rem; letter-spacing:-.03em; text-decoration:none;
+  margin-right:auto; display:flex; align-items:center; gap:.55rem; line-height:1;
+}
+.brand svg{ width:26px; height:26px; flex:none; }
+.nav ul{ display:flex; gap:.15rem; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+.nav a{
+  text-decoration:none; font-size:.72rem; font-weight:700; letter-spacing:.11em;
+  text-transform:uppercase; padding:.42rem .55rem; display:block;
+  border-bottom:3px solid transparent; color:var(--ink);
+}
+.nav a:hover{ border-bottom-color:var(--stamp); }
+.nav a[aria-current="page"]{ border-bottom-color:var(--accent); color:var(--accent); }
+
+/* ---------- manila file card -------------------------------------------- */
+
+.file{
+  position:relative;
+  background:var(--file);
+  border:2px solid var(--ink);
+  border-radius:3px;
+  box-shadow:var(--shadow-file);
+  padding:clamp(1.3rem, 3vw, 2.1rem);
+}
+.file--warm{ background:var(--file-warm); }
+.tab{
+  position:absolute; top:-1.55rem; left:1.4rem;
+  background:var(--accent); color:var(--file);
+  border:2px solid var(--ink); border-bottom:0;
+  border-radius:3px 3px 0 0;
+  padding:.2rem .8rem .3rem;
+  font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+}
+.stamp{
+  display:inline-block;
+  border:3px solid var(--stamp); color:var(--stamp);
+  padding:.32rem .7rem; border-radius:3px;
+  font-size:.74rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+  transform:rotate(-6deg); opacity:.88;
+  mix-blend-mode:multiply;
+}
+.stamp--accent{ border-color:var(--accent); color:var(--accent); }
+
+/* ---------- buttons ------------------------------------------------------ */
+
+.btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  background:var(--ink); color:var(--file);
+  border:2px solid var(--ink); border-radius:3px;
+  padding:.72rem 1.35rem;
+  font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  box-shadow:4px 4px 0 var(--accent);
+  transition:transform .13s ease, box-shadow .13s ease;
+}
+.btn:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--accent); }
+.btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--accent); }
+.btn--ghost{ background:transparent; color:var(--ink); box-shadow:4px 4px 0 var(--thread); }
+.btn--ghost:hover{ box-shadow:2px 2px 0 var(--thread); }
+
+/* ---------- home: hero --------------------------------------------------- */
+
+.hero{ padding-block:clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); position:relative; }
+.hero__stamp{ position:absolute; right:0; top:clamp(2.4rem,7vw,5rem); font-size:.9rem; padding:.5rem 1rem; }
+@media (max-width:640px){ .hero__stamp{ position:static; display:inline-block; margin-bottom:1.2rem; } }
+
+/* ---------- home: docket board ------------------------------------------ */
+
+.board{ display:grid; gap:clamp(2.4rem, 4vw, 3rem); grid-template-columns:1fr; }
+@media (min-width:760px){ .board{ grid-template-columns:1fr 1fr; } }
+
+.card{
+  display:grid; grid-template-columns:104px 1fr; gap:1.1rem; align-items:start;
+  text-decoration:none; color:inherit;
+  transition:transform .2s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease;
+}
+.card:nth-child(1){ transform:rotate(-.7deg); }
+.card:nth-child(2){ transform:rotate(.55deg); }
+.card:nth-child(3){ transform:rotate(.4deg); }
+.card:nth-child(4){ transform:rotate(-.6deg); }
+.card:hover,.card:focus-visible{ transform:rotate(0deg) translateY(-4px); box-shadow:var(--shadow-lift); }
+.card__art{ width:104px; height:104px; display:block; }
+.card__name{ margin:.1rem 0 .25rem; }
+.card__role{
+  font-family:"Courier Prime",monospace; font-size:.72rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--accent); display:block;
+}
+.card__charge{ font-size:.96rem; line-height:1.5; color:var(--ink-soft); margin:.55rem 0 0; }
+@media (max-width:420px){
+  .card{ grid-template-columns:1fr; justify-items:start; }
+  .card__art{ width:96px; height:96px; }
+}
+
+/* per-card accent without changing the whole page */
+.card[data-cat="baker"]{ --accent:#6E2340; }
+.card[data-cat="doc"]  { --accent:#23407E; }
+.card[data-cat="lulu"] { --accent:#2F6B44; }
+.card[data-cat="ilona"]{ --accent:#A8641C; }
+
+/* ---------- generic 3-up ------------------------------------------------- */
+
+.trio{ display:grid; gap:clamp(2.2rem,3.5vw,2.6rem); grid-template-columns:1fr; }
+@media (min-width:720px){ .trio{ grid-template-columns:repeat(3,1fr); } }
+.trio .file{ display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
+a.file:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+.trio h3{ margin-bottom:.5rem; }
+.trio p{ color:var(--ink-soft); font-size:.98rem; }
+
+/* ---------- cat page hero ------------------------------------------------ */
+
+.dossier{ display:grid; gap:clamp(1.8rem,4vw,2.6rem); grid-template-columns:1fr; align-items:center; padding-block:clamp(2.4rem,6vw,4.2rem); }
+@media (min-width:820px){ .dossier{ grid-template-columns:minmax(0,42%) minmax(0,1fr); } }
+
+.stage{
+  position:relative; overflow:hidden;
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(36,31,46,.045) 13px 14px),
+    var(--file);
+  border:2px solid var(--ink); border-radius:3px;
+  box-shadow:var(--shadow-file);
+  aspect-ratio:1/1; display:grid; place-items:center;
+  padding:7%;
+}
+.stage__cat{ width:100%; height:100%; position:relative; z-index:2; }
+.dossier__title{ display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap; }
+.dossier__code{
+  font-family:"Courier Prime",monospace; font-weight:700; font-size:1.1rem;
+  letter-spacing:.1em; color:var(--accent);
+}
+.dossier .deck{ max-width:38ch; }
+.dossier__meta{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.6rem; align-items:center; }
+
+/* ambient critters */
+.crit{ position:absolute; left:0; top:0; pointer-events:none; z-index:3; will-change:transform,opacity; }
+.laser{ width:11px; height:11px; border-radius:50%; background:#FF3B2E; box-shadow:0 0 10px 4px rgba(255,59,46,.5); z-index:4; }
+.pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.75); }
+.spark{ width:5px; height:5px; background:#FFF3B0; border-radius:50%; box-shadow:0 0 6px #FFE066; }
+
+/* ---------- exhibits ----------------------------------------------------- */
+
+.exhibits{ list-style:none; margin:0; padding:0; }
+.exhibits li{
+  display:grid; grid-template-columns:4.6rem 1fr; gap:1rem;
+  padding:.95rem 0;
+  border-bottom:1px dashed var(--thread);
+}
+.exhibits li:last-child{ border-bottom:0; padding-bottom:0; }
+.exhibits code{
+  font-family:"Courier Prime",monospace; font-size:.78rem; font-weight:700;
+  letter-spacing:.05em; color:var(--accent); padding-top:.28rem;
+}
+@media (max-width:520px){
+  .exhibits li{ grid-template-columns:1fr; gap:.2rem; }
+  .exhibits code{ padding-top:0; }
+}
+
+/* sealed panel */
+.sealed{
+  display:flex; flex-direction:column; align-items:flex-start;
+  background-color:var(--file-warm);
+  background-image:repeating-linear-gradient(38deg,
+    rgba(179,45,36,.18) 0 9px, rgba(179,45,36,.05) 9px 18px);
+  background-size:250px 52px;
+  background-position:right -34px top -14px;
+  background-repeat:no-repeat;
+}
+.sealed .stamp{ align-self:flex-end; margin-top:1.5rem; transform:rotate(-9deg); font-size:.9rem; }
+.sealed p{ max-width:52ch; }
+
+/* testimony */
+.testimony{ text-align:center; padding-block:clamp(2.5rem,6vw,4rem); }
+.testimony blockquote{
+  margin:0 auto; max-width:22ch;
+  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
+  font-size:clamp(1.7rem,1rem + 3.6vw, 3.1rem); line-height:1.03; letter-spacing:-.03em;
+}
+.testimony cite{
+  display:block; margin-top:1.1rem; font-style:normal;
+  font-family:"Courier Prime",monospace; font-size:.74rem; font-weight:700;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--thread);
+}
+
+/* ---------- volumes (books) ---------------------------------------------- */
+
+.volumes{ display:grid; gap:clamp(2.3rem,4vw,2.8rem); grid-template-columns:1fr; }
+@media (min-width:700px){ .volumes{ grid-template-columns:1fr 1fr; } }
+.volume{ display:grid; grid-template-columns:84px 1fr; gap:1.1rem; align-items:start; }
+.volume--wide{ grid-column:1/-1; }
+.volume__art{ width:84px; height:84px; }
+.status{
+  display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.15em;
+  text-transform:uppercase; border:2px solid currentColor; border-radius:2px;
+  padding:.16rem .5rem; margin-top:.7rem;
+}
+.status--now{ color:var(--stamp); }
+.status--next{ color:var(--thread); }
+.volume p{ font-size:.96rem; color:var(--ink-soft); margin-top:.5rem; }
+.volume h3 small{
+  display:block; font-family:"Courier Prime",monospace; font-size:.68rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:.3rem;
+}
+@media (max-width:420px){ .volume{ grid-template-columns:1fr; } }
+
+/* ---------- signup ------------------------------------------------------- */
+
+.signup{ max-width:640px; }
+.signup form{ display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.3rem; }
+.signup input[type="email"]{
+  flex:1 1 15rem; min-width:0;
+  font-family:"Courier Prime",monospace; font-size:.95rem;
+  padding:.7rem .85rem; color:var(--ink);
+  background:var(--white); border:2px solid var(--ink); border-radius:3px;
+}
+.signup input::placeholder{ color:var(--thread); }
+.signup .fine{ font-size:.82rem; color:var(--ink-soft); margin-top:.9rem; }
+.signup__note{
+  font-family:"Courier Prime",monospace; font-size:.8rem; margin-top:.9rem;
+  color:var(--stamp); min-height:1.2em;
+}
+.hp{ position:absolute; left:-9999px; opacity:0; height:0; width:0; }
+
+/* ---------- the bench (bottom cat menu) ---------------------------------- */
+
+.bench{ border-top:2px solid var(--ink); background:var(--field-deep); padding-block:1.6rem; }
+.bench__row{ display:flex; justify-content:center; gap:clamp(.4rem,3vw,2rem); flex-wrap:wrap; }
+.bench a{
+  text-decoration:none; text-align:center; display:block; padding:.4rem;
+  transition:transform .22s cubic-bezier(.2,.8,.3,1);
+}
+.bench a:hover,.bench a:focus-visible{ transform:translateY(-9px) rotate(-3deg); }
+.bench svg{ width:clamp(58px,15vw,80px); height:clamp(58px,15vw,80px); display:block; }
+.bench span{
+  display:block; margin-top:.3rem;
+  font-family:"Courier Prime",monospace; font-size:.63rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft);
+}
+
+/* ---------- footer ------------------------------------------------------- */
+
+.foot{ background:var(--ink); color:var(--field); padding-block:2.6rem; }
+.foot a{ color:var(--file); }
+.foot__motto{
+  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
+  font-size:clamp(1.15rem,1rem + 1.4vw,1.9rem); letter-spacing:-.025em; line-height:1.05;
+  margin:0 0 1.2rem; max-width:20ch;
+}
+.foot__meta{
+  font-family:"Courier Prime",monospace; font-size:.72rem; letter-spacing:.09em;
+  color:#B9B1CE; display:flex; gap:1.1rem; flex-wrap:wrap;
+}
+
+/* ---------- splash ------------------------------------------------------- */
+
+.splash{
+  min-height:100svh; display:grid; place-items:center; text-align:center;
+  padding:clamp(1.5rem,5vw,3rem) var(--gut);
+}
+.splash__in{ display:grid; justify-items:center; gap:1.4rem; }
+.coat{ width:min(76vw, 300px); height:auto; }
+.splash h1{ font-size:clamp(2.4rem,1.2rem + 6vw,4.6rem); }
+.splash__motto{
+  font-family:"Courier Prime",monospace; font-size:clamp(.78rem,.7rem + .5vw,.95rem);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); max-width:30ch;
+}
+.splash__file{
+  font-family:"Courier Prime",monospace; font-size:.66rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--thread);
+}
+
+/* ---------- 404 ---------------------------------------------------------- */
+
+.oops{ min-height:70svh; display:grid; place-items:center; text-align:center; }
+.oops__in{ display:grid; justify-items:center; gap:1.2rem; }
+.oops svg{ width:min(48vw,190px); height:auto; }
+
+/* ---------- reveal ------------------------------------------------------- */
+
+.rv-fade{ opacity:0; transition:opacity .6s ease; }
+.rv-fade.is-in{ opacity:1; }
+.rv{ opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s cubic-bezier(.2,.7,.3,1); }
+.rv.is-in{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion:reduce){
+  .rv,.rv-fade{ opacity:1; transform:none; transition:none; }
+  .crit{ display:none !important; }
+  .btn,.card,.bench a,a.file{ transition:none; }
+  *{ animation:none !important; }
+}
+</style>
 </head>
 <body data-cat="ilona">
 <a class="skip" href="#main">Skip to content</a>
@@ -200,6 +598,177 @@
   before it went missing. That is all the court has been able to establish.</p>
   <a class="btn" href="/home.html">Back to the courtroom</a>
 </div></div>
-</main><section class="bench" aria-label="The bench"><div class="wrap"><div class="board-label" style="text-align:center"><span class="label label--quiet">The bench &mdash; pick a cat</span></div><div class="bench__row"><a href="/baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span>Baker · B1</span></a><a href="/doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span>Doc · D2</span></a><a href="/lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><span>Lulu · L3</span></a></div></div></section><footer class="foot"><div class="wrap"><p class="foot__motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot__meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script src="/assets/tk.js" defer></script>
+</main><section class="bench" aria-label="The bench"><div class="wrap"><div class="board-label" style="text-align:center"><span class="label label--quiet">The bench &mdash; pick a cat</span></div><div class="bench__row"><a href="/baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span>Baker · B1</span></a><a href="/doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span>Doc · D2</span></a><a href="/lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><span>Lulu · L3</span></a></div></div></section><footer class="foot"><div class="wrap"><p class="foot__motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot__meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script>/* ==========================================================================
+   Toddler Kitties — site behaviour
+   ==========================================================================
+   ►► THE ONLY LINE YOU NEED TO EDIT ◄◄
+   Paste your form endpoint below (Buttondown, Formspree, MailerLite...).
+   While it is empty, the signup form falls back to opening an email.
+   ========================================================================== */
+
+const SIGNUP_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx"
+
+const FALLBACK_MAILTO =
+  "mailto:toddlerkitties@gmail.com" +
+  "?subject=" + encodeURIComponent("Add me to the Toddler Kitties list") +
+  "&body="    + encodeURIComponent("Please let me know when the first book is ready.");
+
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- 1. scroll reveal --------------------------------------------- */
+(function reveal() {
+  const items = document.querySelectorAll(".rv, .rv-fade");
+  if (!items.length) return;
+  if (reduced || !("IntersectionObserver" in window)) {
+    items.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+  items.forEach(el => io.observe(el));
+})();
+
+/* ---------- 2. email signup ---------------------------------------------- */
+(function signup() {
+  document.querySelectorAll("form[data-signup]").forEach(form => {
+    const note  = form.parentElement.querySelector(".signup__note");
+    const input = form.querySelector('input[type="email"]');
+    const trap  = form.querySelector('input[name="_hp"]');
+
+    if (SIGNUP_ENDPOINT) { form.setAttribute("action", SIGNUP_ENDPOINT); }
+
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      if (trap && trap.value) return;            // bot caught in the honeypot
+      const email = (input.value || "").trim();
+      if (!email || !input.checkValidity()) {
+        if (note) note.textContent = "That address didn't parse. Try again?";
+        input.focus();
+        return;
+      }
+      if (!SIGNUP_ENDPOINT) {
+        window.location.href = FALLBACK_MAILTO;
+        if (note) note.textContent = "Opening your email app — just hit send.";
+        return;
+      }
+      if (note) note.textContent = "Filing…";
+      try {
+        const res = await fetch(SIGNUP_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        if (note) note.textContent = "You're on the list. The bailiff has your name.";
+      } catch (err) {
+        if (note) note.textContent = "That didn't go through. Email toddlerkitties@gmail.com instead.";
+      }
+    });
+  });
+})();
+
+/* ---------- 3. per-cat ambient motion ------------------------------------ */
+(function ambient() {
+  if (reduced) return;
+  const stage = document.querySelector("[data-stage]");
+  if (!stage) return;
+  const cat = document.body.dataset.cat;
+
+  const mk = (cls, html) => {
+    const el = document.createElement("span");
+    el.className = "crit " + cls;
+    if (html) el.innerHTML = html;
+    stage.appendChild(el);
+    return el;
+  };
+  const R = (a, b) => a + Math.random() * (b - a);
+
+  /* --- Baker: a laser dot she is definitely not falling for --- */
+  if (cat === "baker") {
+    const dot = mk("laser");
+    let t = R(0, 100), tx = 0.5, ty = 0.5, hold = 0;
+    (function step() {
+      t += 0.016;
+      if (hold > 0) { hold -= 1; }
+      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.15, 0.9); }
+      const w = stage.clientWidth, h = stage.clientHeight;
+      const x = (tx + Math.sin(t * 2.3) * 0.05) * w;
+      const y = (ty + Math.cos(t * 3.1) * 0.05) * h;
+      dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
+      requestAnimationFrame(step);
+    })();
+  }
+
+  /* --- Doc: a sparkly pom pom, being fetched --- */
+  if (cat === "doc") {
+    const pom = mk("pom");
+    const sparks = [mk("spark"), mk("spark"), mk("spark")];
+    let t = R(0, 6);
+    (function step() {
+      t += 0.0055;
+      const p = (t % 1);
+      const w = stage.clientWidth, h = stage.clientHeight;
+      const dir = Math.floor(t) % 2 === 0 ? p : 1 - p;
+      const x = (0.06 + dir * 0.88) * w;
+      const y = h * 0.88 - Math.abs(Math.sin(p * Math.PI * 5)) * h * 0.1;
+      pom.style.transform = `translate(${x - 10}px, ${y - 10}px)`;
+      sparks.forEach((s, i) => {
+        const a = t * (7 + i * 2) + i * 2.1;
+        s.style.transform = `translate(${x - 2 + Math.cos(a) * 15}px, ${y - 2 + Math.sin(a) * 13}px)`;
+        s.style.opacity = 0.35 + 0.65 * Math.abs(Math.sin(a));
+      });
+      requestAnimationFrame(step);
+    })();
+  }
+
+  /* --- Lulu: rose petals and, inexplicably, cucumber --- */
+  if (cat === "lulu") {
+    const petal = '<svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>';
+    const cuke  = '<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>';
+    const drop = () => {
+      const el = mk("", Math.random() < 0.32 ? cuke : petal);
+      const x0 = R(0, 100), dur = R(7000, 12000), sway = R(14, 46), spin = R(-360, 360);
+      el.style.left = x0 + "%"; el.style.top = "-8%";
+      const t0 = performance.now();
+      (function fall(now) {
+        const p = (now - t0) / dur;
+        if (p >= 1) { el.remove(); return; }
+        el.style.transform =
+          `translate(${Math.sin(p * 5.5) * sway}px, ${p * stage.clientHeight * 1.2}px) rotate(${spin * p}deg)`;
+        el.style.opacity = p > 0.82 ? (1 - p) / 0.18 : 1;
+        requestAnimationFrame(fall);
+      })(t0);
+    };
+    for (let i = 0; i < 5; i++) setTimeout(drop, i * 900);
+    setInterval(drop, 1500);
+  }
+
+  /* --- Ilona: hearts and dandelion seeds, at heartbeat tempo (72 bpm) --- */
+  if (cat === "ilona") {
+    const heart = '<svg width="15" height="15" viewBox="0 0 16 16"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>';
+    const seed  = '<svg width="16" height="18" viewBox="0 0 16 18"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>';
+    const rise = () => {
+      const el = mk("", Math.random() < 0.45 ? heart : seed);
+      const dur = R(6500, 10500), sway = R(16, 44), spin = R(-140, 140);
+      el.style.left = R(6, 94) + "%"; el.style.top = "100%";
+      const t0 = performance.now();
+      (function up(now) {
+        const p = (now - t0) / dur;
+        if (p >= 1) { el.remove(); return; }
+        el.style.transform =
+          `translate(${Math.sin(p * 4.2) * sway}px, ${-p * stage.clientHeight * 1.15}px) rotate(${spin * p}deg)`;
+        el.style.opacity = p < 0.12 ? p / 0.12 : (p > 0.78 ? (1 - p) / 0.22 : 1);
+        requestAnimationFrame(up);
+      })(t0);
+    };
+    rise();
+    setInterval(rise, 833); // 72 bpm
+  }
+})();
+</script>
 </body>
 </html>

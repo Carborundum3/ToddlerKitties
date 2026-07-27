@@ -2,6 +2,12 @@
 """Generates the Toddler Kitties static site. Output = plain HTML, no build step needed after this."""
 import os, re, html
 
+FAVICON_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
+    '<rect width="64" height="64" rx="8" fill="#F4E5C1"/>'
+    '<path d="M14 12 L14 50 M6 20 L24 20" stroke="#241F2E" stroke-width="6" stroke-linecap="round"/>'
+    '<path d="M38 12 L38 50 M38 30 Q56 30 56 40 Q56 50 38 50" stroke="#241F2E" stroke-width="6" '
+    'fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
 SITE = "https://toddlerkitties.com"
 IG = "https://www.instagram.com/toddlerkitties/"
 MAIL = "toddlerkitties@gmail.com"
@@ -29,8 +35,16 @@ MARK = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width
 
 
 SPRITE = ""
+FAVI = ""
+CSS = ""
+JS = ""
 def load_sprite():
-    global SPRITE
+    global SPRITE, CSS, JS
+    import base64 as _b64
+    global FAVI
+    FAVI = "data:image/svg+xml;base64," + _b64.b64encode(open("assets/favicon.svg","rb").read()).decode()
+    CSS = "<style>" + open("assets/tk.css").read() + "</style>"
+    JS  = "<script>" + open("assets/tk.js").read() + "</script>"
     raw = open("assets/cats.svg").read()
     body = raw.split(">", 1)[1].rsplit("</svg>", 1)[0]
     SPRITE = ('<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" '
@@ -105,14 +119,14 @@ def page(fn, title, desc, body, active=None, cat=None, chrome=True, rooted=False
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{SITE}/{fn}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{FAVI}" type="image/svg+xml">
 {FONTS}
-<link rel="stylesheet" href="assets/tk.css">
+{CSS}
 </head>
 <body{body_attr}>
 <a class="skip" href="#main">Skip to content</a>
 '''
-    tail = '<script src="assets/tk.js" defer></script>\n</body>\n</html>\n'
+    tail = JS + '\n</body>\n</html>\n'
     parts = [head, SPRITE]
     if chrome:
         parts.append(nav(active))
@@ -124,13 +138,14 @@ def page(fn, title, desc, body, active=None, cat=None, chrome=True, rooted=False
     out = "".join(parts)
     if rooted:
         # 404 is served at arbitrary depths, so every path must be absolute
-        out = re.sub(r'(href|src)="(?!https?:|mailto:|#|/)([^"]+)"', r'\1="/\2"', out)
+        out = re.sub(r'(href|src)="(?!https?:|mailto:|data:|#|/)([^"]+)"', r'\1="/\2"', out)
         out = out.replace('<meta name="viewport"',
                           '<meta name="robots" content="noindex">\n<meta name="viewport"')
     open(fn, "w").write(out)
     print("wrote", fn)
 
 
+open("assets/favicon.svg", "w").write(FAVICON_SVG)
 load_sprite()
 
 # ============================================================== index (splash)
@@ -542,12 +557,5 @@ entries = "\n".join(
 open("sitemap.xml", "w").write(
     f'<?xml version="1.0" encoding="UTF-8"?>\n'
     f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}\n</urlset>\n')
-
-open("assets/favicon.svg", "w").write(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-    '<rect width="64" height="64" rx="8" fill="#F4E5C1"/>'
-    '<path d="M14 12 L14 50 M6 20 L24 20" stroke="#241F2E" stroke-width="6" stroke-linecap="round"/>'
-    '<path d="M38 12 L38 50 M38 30 Q56 30 56 40 Q56 50 38 50" stroke="#241F2E" stroke-width="6" '
-    'fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 print("robots.txt, sitemap.xml, favicon.svg written")
