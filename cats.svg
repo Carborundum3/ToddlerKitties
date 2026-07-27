@@ -33,9 +33,9 @@
       <!-- little frown -->
       <path d="M52 90 Q60 85.5 68 90" stroke="#241F2E" stroke-width="2.6" stroke-linecap="round" fill="none"/>
       <!-- collar on chest + B tag -->
-      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#6E2340" stroke-width="9" stroke-linecap="round"/>
-      <circle cx="60" cy="122" r="9" fill="#A8762C"/>
-      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#3A2412">B</text>
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#7E5BA6" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="60" cy="122" r="9" fill="#E8DAF6"/>
+      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B3E82">B</text>
     </g>
   </symbol>
 

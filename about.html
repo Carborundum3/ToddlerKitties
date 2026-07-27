@@ -12,405 +12,253 @@
 <meta property="og:description" content="How a household joke about four cats in a trenchcoat became a hand-drawn storybook world.">
 <meta property="og:url" content="https://toddlerkitties.com/about.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iOCIgZmlsbD0iI0Y0RTVDMSIvPjxwYXRoIGQ9Ik0xNCAxMiBMMTQgNTAgTTYgMjAgTDI0IDIwIiBzdHJva2U9IiMyNDFGMkUiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM4IDEyIEwzOCA1MCBNMzggMzAgUTU2IDMwIDU2IDQwIFE1NiA1MCAzOCA1MCIgc3Ryb2tlPSIjMjQxRjJFIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Courier+Prime:wght@400;700&display=swap">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjUuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTAgMTggSDI4IE0xOSAxOCBWNDYiLz48cGF0aCBkPSJNMzYgMTggVjQ2IE01MCAxOCBMMzcuNSAzMCBNMzkuNCAyOC40IEw1MSA0NiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>/* ==========================================================================
-   Toddler Kitties — case-file design system
-   Palette: lilac desk + manila folders + aubergine ink + stamp red
-   Type: Bricolage Grotesque (display) / Newsreader (body) / Courier Prime (docket)
+   Toddler Kitties
+   Sticker-storybook theme: chunky outlines, hard offset shadows, rounded type.
+   Every page can take on one cat's colour via body[data-theme].
    ========================================================================== */
 
 :root{
-  --ink:        #241F2E;
-  --ink-soft:   #574C67;
-  --field:      #E6E3F0;
-  --field-deep: #D5D0E5;
-  --file:       #F4E5C1;
-  --file-warm:  #EFDCAE;
-  --file-edge:  #DCC698;
-  --stamp:      #B32D24;
-  --thread:     #8E86A8;
-  --white:      #FBF9F4;
+  --ink:      #3B2E4A;
+  --ink-soft: #6B5C7D;
+  --outline:  #3B2E4A;
+  --card:     #FFFFFF;
+  --page-bg:  #F4EFFF;
+  --pink:     #FF8FB1;
 
-  --accent:      #6E2340;
-  --accent-soft: #A8762C;
+  --accent:     var(--pink);
+  --accent-ink: #C2456E;
 
-  --shadow-file: 0 1px 0 var(--file-edge), 0 14px 30px -20px rgba(36,31,46,.6);
-  --shadow-lift: 0 1px 0 var(--file-edge), 0 26px 44px -24px rgba(36,31,46,.55);
+  --shadow: 6px 6px 0 rgba(59,46,74,.15);
 
-  --wrap: 1080px;
-  --gut: clamp(1.15rem, 4vw, 2.75rem);
+  --wrap: 1060px;
+  --gut:  clamp(1.1rem, 4vw, 2.5rem);
+  --r:    26px;
 }
 
-body[data-cat="baker"]{ --accent:#6E2340; --accent-soft:#A8762C; }
-body[data-cat="doc"]  { --accent:#23407E; --accent-soft:#B4832C; }
-body[data-cat="lulu"] { --accent:#2F6B44; --accent-soft:#C24765; }
-body[data-cat="ilona"]{ --accent:#A8641C; --accent-soft:#D8912A; }
+body[data-theme="baker"]{ --page-bg:#EDE7FA; --accent:#B39DDB; --accent-ink:#6A4A9C; }
+body[data-theme="doc"]  { --page-bg:#EFF3FF; --accent:#4468C4; --accent-ink:#33509E; }
+body[data-theme="lulu"] { --page-bg:#EAF7EF; --accent:#4E9B62; --accent-ink:#337A48; }
+body[data-theme="ilona"]{ --page-bg:#FFF6DF; --accent:#F2C542; --accent-ink:#8F6206; }
 
 *,*::before,*::after{ box-sizing:border-box; }
-
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
 
 body{
   margin:0;
-  background-color:var(--field);
-  background-image:
-    radial-gradient(circle at 18% 12%, rgba(255,255,255,.55), transparent 42%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  background:var(--page-bg);
   color:var(--ink);
-  font-family:"Newsreader", Georgia, "Times New Roman", serif;
-  font-size:clamp(1rem, .96rem + .2vw, 1.09rem);
-  line-height:1.62;
+  font-family:"Nunito","Segoe UI",system-ui,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.08rem);
+  line-height:1.65;
   overflow-x:hidden;
 }
-
 img,svg{ max-width:100%; }
-
-/* ---------- typographic roles ------------------------------------------- */
-
-.display,h1,h2,h3{
-  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  font-weight:800;
-  letter-spacing:-.028em;
-  line-height:.98;
-  margin:0;
-  text-wrap:balance;
-}
-h1{ font-size:clamp(2.5rem, 1.4rem + 5.2vw, 5rem); }
-h2{ font-size:clamp(1.7rem, 1.1rem + 2.3vw, 2.6rem); }
-h3{ font-size:clamp(1.15rem, 1rem + .7vw, 1.45rem); letter-spacing:-.018em; }
-
-.label,.docket,.stamp,.btn,.nav a,.tab,.status{
-  font-family:"Courier Prime","Courier New",monospace;
-}
-.label{
-  font-size:.72rem; font-weight:700; text-transform:uppercase;
-  letter-spacing:.185em; color:var(--stamp);
-  display:block; margin:0 0 .9rem;
-}
-.label--quiet{ color:var(--thread); }
-.deck{
-  font-size:clamp(1.08rem, 1rem + .5vw, 1.3rem);
-  line-height:1.5; color:var(--ink-soft);
-  max-width:46ch; margin:1.1rem 0 0; text-wrap:pretty;
-}
+a{ color:inherit; }
 p{ margin:0 0 1rem; text-wrap:pretty; }
 p:last-child{ margin-bottom:0; }
-a{ color:inherit; }
 
-/* ---------- structure ---------------------------------------------------- */
+h1,h2,h3,.logo,.btn,.pill,.cat-label,.eyebrow,.bubble{
+  font-family:"Baloo 2","Nunito",system-ui,sans-serif;
+  font-weight:800;
+}
+h1,h2,h3{ margin:0; line-height:1.1; text-wrap:balance; }
+h1{ font-size:clamp(2.3rem,1.4rem + 4.4vw,4.1rem); }
+h2{ font-size:clamp(1.7rem,1.2rem + 2vw,2.5rem); }
+h3{ font-size:clamp(1.2rem,1.05rem + .7vw,1.5rem); }
+
+.eyebrow{
+  display:inline-block; font-weight:700;
+  font-size:clamp(.8rem,.75rem + .3vw,.95rem);
+  background:var(--card); color:var(--ink);
+  border:3px solid var(--outline); border-radius:999px;
+  padding:.15rem 1rem; margin-bottom:1.1rem;
+  box-shadow:3px 3px 0 var(--accent);
+}
+.lede{ font-size:clamp(1.05rem,1rem + .5vw,1.25rem); color:var(--ink-soft); max-width:52ch; }
+.center{ text-align:center; }
+.center .lede{ margin-inline:auto; }
+.accent{ color:var(--accent-ink); }
 
 .wrap{ width:min(100% - (var(--gut) * 2), var(--wrap)); margin-inline:auto; }
-section{ padding-block:clamp(3rem, 7vw, 5.5rem); }
-.rule{ height:2px; background:var(--ink); opacity:.14; border:0; margin:0; }
+section{ padding-block:clamp(2.2rem,5vw,3.4rem); }
 
-.skip{
-  position:absolute; left:-9999px; top:0; background:var(--ink); color:var(--file);
-  padding:.7rem 1rem; z-index:99; font-family:"Courier Prime",monospace; font-size:.8rem;
-}
+.skip{ position:absolute; left:-9999px; background:var(--ink); color:#fff; padding:.7rem 1rem; z-index:99; }
 .skip:focus{ left:.5rem; top:.5rem; }
+:focus-visible{ outline:3px solid var(--accent-ink); outline-offset:3px; border-radius:6px; }
 
-:focus-visible{ outline:3px solid var(--stamp); outline-offset:3px; border-radius:2px; }
+/* ---------- header ------------------------------------------------------- */
 
-/* ---------- nav ---------------------------------------------------------- */
+header{ background:var(--card); border-bottom:3px solid var(--outline); position:sticky; top:0; z-index:30; }
+.nav-inner{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; padding-block:.65rem; }
+.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; margin-right:auto; line-height:1; }
+.logo svg{ width:36px; height:27px; flex:none; color:var(--accent-ink); }
+.logo span{ color:var(--accent-ink); }
+header nav{ display:flex; gap:.1rem; flex-wrap:wrap; }
+header nav a{ text-decoration:none; font-weight:700; font-size:.9rem; padding:.3rem .6rem; border-radius:999px; border:2px solid transparent; }
+header nav a:hover{ border-color:var(--outline); }
+header nav a.active{ background:var(--accent); border-color:var(--outline); }
 
-.nav{
-  position:sticky; top:0; z-index:30;
-  background:var(--file);
-  border-bottom:2px solid var(--ink);
-}
-.nav__in{
-  display:flex; align-items:center; gap:1rem;
-  padding-block:.7rem; flex-wrap:wrap;
-}
-.brand{
-  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
-  font-size:1.05rem; letter-spacing:-.03em; text-decoration:none;
-  margin-right:auto; display:flex; align-items:center; gap:.55rem; line-height:1;
-}
-.brand svg{ width:26px; height:26px; flex:none; }
-.nav ul{ display:flex; gap:.15rem; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
-.nav a{
-  text-decoration:none; font-size:.72rem; font-weight:700; letter-spacing:.11em;
-  text-transform:uppercase; padding:.42rem .55rem; display:block;
-  border-bottom:3px solid transparent; color:var(--ink);
-}
-.nav a:hover{ border-bottom-color:var(--stamp); }
-.nav a[aria-current="page"]{ border-bottom-color:var(--accent); color:var(--accent); }
+/* ---------- panels + buttons --------------------------------------------- */
 
-/* ---------- manila file card -------------------------------------------- */
-
-.file{
-  position:relative;
-  background:var(--file);
-  border:2px solid var(--ink);
-  border-radius:3px;
-  box-shadow:var(--shadow-file);
-  padding:clamp(1.3rem, 3vw, 2.1rem);
+.panel{
+  background:var(--card); border:3px solid var(--outline); border-radius:var(--r);
+  box-shadow:var(--shadow); padding:clamp(1.3rem,3vw,2rem);
 }
-.file--warm{ background:var(--file-warm); }
-.tab{
-  position:absolute; top:-1.55rem; left:1.4rem;
-  background:var(--accent); color:var(--file);
-  border:2px solid var(--ink); border-bottom:0;
-  border-radius:3px 3px 0 0;
-  padding:.2rem .8rem .3rem;
-  font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
-}
-.stamp{
-  display:inline-block;
-  border:3px solid var(--stamp); color:var(--stamp);
-  padding:.32rem .7rem; border-radius:3px;
-  font-size:.74rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
-  transform:rotate(-6deg); opacity:.88;
-  mix-blend-mode:multiply;
-}
-.stamp--accent{ border-color:var(--accent); color:var(--accent); }
-
-/* ---------- buttons ------------------------------------------------------ */
+.hero{ padding-block:clamp(2.2rem,6vw,4rem) clamp(1.4rem,3vw,2.2rem); }
 
 .btn{
   display:inline-block; text-decoration:none; cursor:pointer;
-  background:var(--ink); color:var(--file);
-  border:2px solid var(--ink); border-radius:3px;
-  padding:.72rem 1.35rem;
-  font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
-  box-shadow:4px 4px 0 var(--accent);
-  transition:transform .13s ease, box-shadow .13s ease;
+  background:var(--accent); color:var(--ink);
+  border:3px solid var(--outline); border-radius:999px;
+  padding:.6rem 1.4rem; font-size:1rem;
+  box-shadow:4px 4px 0 var(--outline);
+  transition:transform .12s ease, box-shadow .12s ease;
 }
-.btn:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--accent); }
-.btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--accent); }
-.btn--ghost{ background:transparent; color:var(--ink); box-shadow:4px 4px 0 var(--thread); }
-.btn--ghost:hover{ box-shadow:2px 2px 0 var(--thread); }
+.btn:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--outline); }
+.btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--outline); }
+.btn-ghost{ background:var(--card); }
 
-/* ---------- home: hero --------------------------------------------------- */
+.pill{ display:inline-block; font-size:.78rem; font-weight:700; background:var(--accent);
+  border:2px solid var(--outline); border-radius:999px; padding:.05rem .7rem; }
+.pill-soon{ background:var(--card); color:var(--ink-soft); }
 
-.hero{ padding-block:clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); position:relative; }
-.hero__stamp{ position:absolute; right:0; top:clamp(2.4rem,7vw,5rem); font-size:.9rem; padding:.5rem 1rem; }
-@media (max-width:640px){ .hero__stamp{ position:static; display:inline-block; margin-bottom:1.2rem; } }
+/* ---------- crew cards --------------------------------------------------- */
 
-/* ---------- home: docket board ------------------------------------------ */
+.card-grid{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); }
+.card{ display:block; text-decoration:none; color:inherit; text-align:center;
+  transition:transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s ease; }
+.card:hover,.card:focus-visible{ transform:translateY(-6px); box-shadow:6px 6px 0 var(--accent); }
+.card .art{ width:132px; height:132px; margin:0 auto .4rem; display:block; }
+.card h3{ margin-bottom:.15rem; }
+.card .role{ font-weight:800; color:var(--accent-ink); font-size:.9rem; display:block; margin-bottom:.5rem; }
+.card p{ font-size:.94rem; color:var(--ink-soft); margin:0; }
+.card-baker{ --accent:#B39DDB; --accent-ink:#6A4A9C; }
+.card-doc  { --accent:#4468C4; --accent-ink:#33509E; }
+.card-lulu { --accent:#4E9B62; --accent-ink:#337A48; }
+.card-ilona{ --accent:#F2C542; --accent-ink:#8F6206; }
 
-.board{ display:grid; gap:clamp(2.4rem, 4vw, 3rem); grid-template-columns:1fr; }
-@media (min-width:760px){ .board{ grid-template-columns:1fr 1fr; } }
+/* ---------- explore ------------------------------------------------------ */
 
-.card{
-  display:grid; grid-template-columns:104px 1fr; gap:1.1rem; align-items:start;
-  text-decoration:none; color:inherit;
-  transition:transform .2s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease;
-}
-.card:nth-child(1){ transform:rotate(-.7deg); }
-.card:nth-child(2){ transform:rotate(.55deg); }
-.card:nth-child(3){ transform:rotate(.4deg); }
-.card:nth-child(4){ transform:rotate(-.6deg); }
-.card:hover,.card:focus-visible{ transform:rotate(0deg) translateY(-4px); box-shadow:var(--shadow-lift); }
-.card__art{ width:104px; height:104px; display:block; }
-.card__name{ margin:.1rem 0 .25rem; }
-.card__role{
-  font-family:"Courier Prime",monospace; font-size:.72rem; font-weight:700;
-  letter-spacing:.13em; text-transform:uppercase; color:var(--accent); display:block;
-}
-.card__charge{ font-size:.96rem; line-height:1.5; color:var(--ink-soft); margin:.55rem 0 0; }
-@media (max-width:420px){
-  .card{ grid-template-columns:1fr; justify-items:start; }
-  .card__art{ width:96px; height:96px; }
-}
+.trio{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.trio .panel{ text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
+.trio .panel:hover{ transform:translateY(-6px); box-shadow:6px 6px 0 var(--accent); }
+.ico{ width:46px; height:46px; color:var(--accent-ink); display:block; margin-bottom:.6rem; }
+.trio h3{ margin-bottom:.3rem; }
+.trio p{ color:var(--ink-soft); font-size:.95rem; }
 
-/* per-card accent without changing the whole page */
-.card[data-cat="baker"]{ --accent:#6E2340; }
-.card[data-cat="doc"]  { --accent:#23407E; }
-.card[data-cat="lulu"] { --accent:#2F6B44; }
-.card[data-cat="ilona"]{ --accent:#A8641C; }
+/* ---------- cat page ----------------------------------------------------- */
 
-/* ---------- generic 3-up ------------------------------------------------- */
-
-.trio{ display:grid; gap:clamp(2.2rem,3.5vw,2.6rem); grid-template-columns:1fr; }
-@media (min-width:720px){ .trio{ grid-template-columns:repeat(3,1fr); } }
-.trio .file{ display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
-a.file:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
-.trio h3{ margin-bottom:.5rem; }
-.trio p{ color:var(--ink-soft); font-size:.98rem; }
-
-/* ---------- cat page hero ------------------------------------------------ */
-
-.dossier{ display:grid; gap:clamp(1.8rem,4vw,2.6rem); grid-template-columns:1fr; align-items:center; padding-block:clamp(2.4rem,6vw,4.2rem); }
-@media (min-width:820px){ .dossier{ grid-template-columns:minmax(0,42%) minmax(0,1fr); } }
-
+.meet{ display:grid; gap:clamp(1.4rem,3vw,2.2rem); grid-template-columns:1fr; align-items:center; }
+@media (min-width:800px){ .meet{ grid-template-columns:minmax(0,40%) minmax(0,1fr); } }
 .stage{
-  position:relative; overflow:hidden;
-  background:
-    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(36,31,46,.045) 13px 14px),
-    var(--file);
-  border:2px solid var(--ink); border-radius:3px;
-  box-shadow:var(--shadow-file);
-  aspect-ratio:1/1; display:grid; place-items:center;
-  padding:7%;
+  position:relative; overflow:hidden; background:var(--card);
+  border:3px solid var(--outline); border-radius:var(--r); box-shadow:var(--shadow);
+  aspect-ratio:1/1; display:grid; place-items:center; padding:7%;
 }
 .stage__cat{ width:100%; height:100%; position:relative; z-index:2; }
-.dossier__title{ display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap; }
-.dossier__code{
-  font-family:"Courier Prime",monospace; font-weight:700; font-size:1.1rem;
-  letter-spacing:.1em; color:var(--accent);
-}
-.dossier .deck{ max-width:38ch; }
-.dossier__meta{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.6rem; align-items:center; }
-
-/* ambient critters */
 .crit{ position:absolute; left:0; top:0; pointer-events:none; z-index:3; will-change:transform,opacity; }
 .laser{ width:11px; height:11px; border-radius:50%; background:#FF3B2E; box-shadow:0 0 10px 4px rgba(255,59,46,.5); z-index:4; }
-.pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.75); }
+.pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.7); }
 .spark{ width:5px; height:5px; background:#FFF3B0; border-radius:50%; box-shadow:0 0 6px #FFE066; }
 
-/* ---------- exhibits ----------------------------------------------------- */
+.tally{ list-style:none; margin:0; padding:0; }
+.tally li{ display:grid; grid-template-columns:1.5rem 1fr; gap:.7rem; padding:.55rem 0;
+  border-bottom:2px dotted rgba(59,46,74,.18); }
+.tally li:last-child{ border-bottom:0; }
+.tally li::before{ content:""; width:15px; height:15px; margin-top:.45rem; border-radius:50%;
+  background:var(--accent); border:2px solid var(--outline); }
 
-.exhibits{ list-style:none; margin:0; padding:0; }
-.exhibits li{
-  display:grid; grid-template-columns:4.6rem 1fr; gap:1rem;
-  padding:.95rem 0;
-  border-bottom:1px dashed var(--thread);
+.says{ text-align:center; }
+.bubble{
+  position:relative; display:inline-block; max-width:24ch; margin:0 auto;
+  background:var(--card); border:3px solid var(--outline); border-radius:var(--r);
+  box-shadow:var(--shadow); padding:1.2rem 1.6rem;
+  font-size:clamp(1.3rem,1rem + 2vw,2.1rem); line-height:1.16;
 }
-.exhibits li:last-child{ border-bottom:0; padding-bottom:0; }
-.exhibits code{
-  font-family:"Courier Prime",monospace; font-size:.78rem; font-weight:700;
-  letter-spacing:.05em; color:var(--accent); padding-top:.28rem;
-}
-@media (max-width:520px){
-  .exhibits li{ grid-template-columns:1fr; gap:.2rem; }
-  .exhibits code{ padding-top:0; }
-}
+.bubble::before,.bubble::after{ content:""; position:absolute; left:50%; width:0; height:0; }
+.bubble::before{ bottom:-19px; transform:translateX(-50%); border-left:17px solid transparent; border-right:17px solid transparent; border-top:19px solid var(--outline); }
+.bubble::after{ bottom:-13px; transform:translateX(-50%); border-left:13px solid transparent; border-right:13px solid transparent; border-top:15px solid var(--card); }
+.says .who{ display:block; margin-top:2rem; font-weight:700; color:var(--ink-soft); font-size:.92rem; }
 
-/* sealed panel */
-.sealed{
-  display:flex; flex-direction:column; align-items:flex-start;
-  background-color:var(--file-warm);
-  background-image:repeating-linear-gradient(38deg,
-    rgba(179,45,36,.18) 0 9px, rgba(179,45,36,.05) 9px 18px);
-  background-size:250px 52px;
-  background-position:right -34px top -14px;
-  background-repeat:no-repeat;
-}
-.sealed .stamp{ align-self:flex-end; margin-top:1.5rem; transform:rotate(-9deg); font-size:.9rem; }
-.sealed p{ max-width:52ch; }
+/* ---------- books -------------------------------------------------------- */
 
-/* testimony */
-.testimony{ text-align:center; padding-block:clamp(2.5rem,6vw,4rem); }
-.testimony blockquote{
-  margin:0 auto; max-width:22ch;
-  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
-  font-size:clamp(1.7rem,1rem + 3.6vw, 3.1rem); line-height:1.03; letter-spacing:-.03em;
-}
-.testimony cite{
-  display:block; margin-top:1.1rem; font-style:normal;
-  font-family:"Courier Prime",monospace; font-size:.74rem; font-weight:700;
-  letter-spacing:.17em; text-transform:uppercase; color:var(--thread);
-}
-
-/* ---------- volumes (books) ---------------------------------------------- */
-
-.volumes{ display:grid; gap:clamp(2.3rem,4vw,2.8rem); grid-template-columns:1fr; }
-@media (min-width:700px){ .volumes{ grid-template-columns:1fr 1fr; } }
-.volume{ display:grid; grid-template-columns:84px 1fr; gap:1.1rem; align-items:start; }
-.volume--wide{ grid-column:1/-1; }
-.volume__art{ width:84px; height:84px; }
-.status{
-  display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.15em;
-  text-transform:uppercase; border:2px solid currentColor; border-radius:2px;
-  padding:.16rem .5rem; margin-top:.7rem;
-}
-.status--now{ color:var(--stamp); }
-.status--next{ color:var(--thread); }
-.volume p{ font-size:.96rem; color:var(--ink-soft); margin-top:.5rem; }
-.volume h3 small{
-  display:block; font-family:"Courier Prime",monospace; font-size:.68rem; font-weight:700;
-  letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:.3rem;
-}
-@media (max-width:420px){ .volume{ grid-template-columns:1fr; } }
+.books{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(265px,1fr)); }
+.book{ display:grid; grid-template-columns:92px 1fr; gap:1rem; align-items:start; }
+.book .art{ width:92px; height:92px; }
+.book .num{ display:block; font-weight:800; color:var(--accent-ink); font-size:.85rem; }
+.book h3{ margin:.1rem 0 .35rem; }
+.book p{ font-size:.94rem; color:var(--ink-soft); margin:0 0 .7rem; }
+.book-wide{ grid-column:1/-1; }
+@media (max-width:420px){ .book{ grid-template-columns:1fr; } }
 
 /* ---------- signup ------------------------------------------------------- */
 
-.signup{ max-width:640px; }
-.signup form{ display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.3rem; }
-.signup input[type="email"]{
-  flex:1 1 15rem; min-width:0;
-  font-family:"Courier Prime",monospace; font-size:.95rem;
-  padding:.7rem .85rem; color:var(--ink);
-  background:var(--white); border:2px solid var(--ink); border-radius:3px;
-}
-.signup input::placeholder{ color:var(--thread); }
-.signup .fine{ font-size:.82rem; color:var(--ink-soft); margin-top:.9rem; }
-.signup__note{
-  font-family:"Courier Prime",monospace; font-size:.8rem; margin-top:.9rem;
-  color:var(--stamp); min-height:1.2em;
-}
+.signup{ max-width:660px; margin-inline:auto; text-align:center; }
+.signup form{ display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:1.2rem; }
+.signup input[type="email"]{ flex:1 1 16rem; min-width:0; font:inherit; font-size:1rem;
+  padding:.6rem 1rem; color:var(--ink); background:#fff;
+  border:3px solid var(--outline); border-radius:999px; }
+.signup input::placeholder{ color:#8E82A0; }
+.signup .fine{ font-size:.9rem; color:var(--ink-soft); margin-top:.9rem; }
+.signup__note{ font-weight:700; color:var(--accent-ink); margin-top:.8rem; min-height:1.2em; }
 .hp{ position:absolute; left:-9999px; opacity:0; height:0; width:0; }
 
-/* ---------- the bench (bottom cat menu) ---------------------------------- */
+/* ---------- trenchcoat (about page only) --------------------------------- */
 
-.bench{ border-top:2px solid var(--ink); background:var(--field-deep); padding-block:1.6rem; }
-.bench__row{ display:flex; justify-content:center; gap:clamp(.4rem,3vw,2rem); flex-wrap:wrap; }
-.bench a{
-  text-decoration:none; text-align:center; display:block; padding:.4rem;
-  transition:transform .22s cubic-bezier(.2,.8,.3,1);
-}
-.bench a:hover,.bench a:focus-visible{ transform:translateY(-9px) rotate(-3deg); }
-.bench svg{ width:clamp(58px,15vw,80px); height:clamp(58px,15vw,80px); display:block; }
-.bench span{
-  display:block; margin-top:.3rem;
-  font-family:"Courier Prime",monospace; font-size:.63rem; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft);
-}
+.coat-bit{ text-align:center; padding-block:clamp(2rem,5vw,3.2rem); }
+.coat{ width:min(64vw,250px); height:auto; }
+.coat-bit .cap{ font-weight:700; color:var(--ink-soft); margin-top:1rem; }
+
+/* ---------- cat menu ----------------------------------------------------- */
+
+.cat-menu{ border-top:3px solid var(--outline); background:var(--card); padding-block:1.5rem; }
+.cat-row{ display:flex; justify-content:center; gap:clamp(.3rem,3vw,1.8rem); flex-wrap:wrap; }
+.cat-item{ display:flex; flex-direction:column; align-items:center; text-decoration:none; color:var(--ink);
+  padding:.3rem; transition:transform .28s cubic-bezier(.2,.8,.3,1); }
+.cat-item:hover,.cat-item:focus-visible{ transform:translateY(-10px) rotate(-4deg); }
+.cat-item svg{ width:clamp(62px,15vw,86px); height:clamp(62px,15vw,86px); display:block; }
+.cat-label{ font-size:clamp(12px,2vw,14px); background:var(--accent);
+  border:2px solid var(--outline); border-radius:999px; padding:0 12px; margin-top:-6px;
+  box-shadow:2px 2px 0 rgba(59,46,74,.2); }
+.ci-baker .cat-label{ background:#B39DDB; }
+.ci-doc   .cat-label{ background:#4468C4; color:#fff; }
+.ci-lulu  .cat-label{ background:#4E9B62; color:#fff; }
+.ci-ilona .cat-label{ background:#F2C542; }
 
 /* ---------- footer ------------------------------------------------------- */
 
-.foot{ background:var(--ink); color:var(--field); padding-block:2.6rem; }
-.foot a{ color:var(--file); }
-.foot__motto{
-  font-family:"Bricolage Grotesque",sans-serif; font-weight:800;
-  font-size:clamp(1.15rem,1rem + 1.4vw,1.9rem); letter-spacing:-.025em; line-height:1.05;
-  margin:0 0 1.2rem; max-width:20ch;
-}
-.foot__meta{
-  font-family:"Courier Prime",monospace; font-size:.72rem; letter-spacing:.09em;
-  color:#B9B1CE; display:flex; gap:1.1rem; flex-wrap:wrap;
-}
+footer{ background:var(--ink); color:#F4EFFF; padding-block:2.2rem; }
+footer a{ color:#FFC9DA; }
+.foot-motto{ font-family:"Baloo 2",sans-serif; font-weight:800; font-size:clamp(1.1rem,1rem + 1.2vw,1.7rem); margin:0 0 .9rem; }
+.foot-meta{ font-size:.9rem; color:#C6BCD6; display:flex; gap:1rem; flex-wrap:wrap; }
 
-/* ---------- splash ------------------------------------------------------- */
+/* ---------- splash + 404 ------------------------------------------------- */
 
-.splash{
-  min-height:100svh; display:grid; place-items:center; text-align:center;
-  padding:clamp(1.5rem,5vw,3rem) var(--gut);
-}
-.splash__in{ display:grid; justify-items:center; gap:1.4rem; }
-.coat{ width:min(76vw, 300px); height:auto; }
-.splash h1{ font-size:clamp(2.4rem,1.2rem + 6vw,4.6rem); }
-.splash__motto{
-  font-family:"Courier Prime",monospace; font-size:clamp(.78rem,.7rem + .5vw,.95rem);
-  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); max-width:30ch;
-}
-.splash__file{
-  font-family:"Courier Prime",monospace; font-size:.66rem; letter-spacing:.2em;
-  text-transform:uppercase; color:var(--thread);
-}
-
-/* ---------- 404 ---------------------------------------------------------- */
-
-.oops{ min-height:70svh; display:grid; place-items:center; text-align:center; }
-.oops__in{ display:grid; justify-items:center; gap:1.2rem; }
-.oops svg{ width:min(48vw,190px); height:auto; }
+.splash{ min-height:100svh; display:grid; place-items:center; text-align:center; padding:2rem var(--gut); }
+.splash-in{ display:grid; justify-items:center; gap:1.1rem; }
+.peek-row{ display:flex; gap:6px; justify-content:center; align-items:flex-end; flex-wrap:wrap; }
+.peek-row svg{ width:clamp(66px,17vw,112px); height:clamp(66px,17vw,112px); }
+.peek-row svg:nth-child(odd){ transform:translateY(8px) rotate(-4deg); }
+.peek-row svg:nth-child(even){ transform:rotate(4deg); }
+.oops{ min-height:64svh; display:grid; place-items:center; text-align:center; }
+.oops-in{ display:grid; justify-items:center; gap:1rem; }
+.oops svg{ width:min(46vw,180px); height:auto; }
 
 /* ---------- reveal ------------------------------------------------------- */
 
-.rv-fade{ opacity:0; transition:opacity .6s ease; }
-.rv-fade.is-in{ opacity:1; }
-.rv{ opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s cubic-bezier(.2,.7,.3,1); }
+.rv{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.3,1); }
 .rv.is-in{ opacity:1; transform:none; }
+.rv-fade{ opacity:0; transition:opacity .55s ease; }
+.rv-fade.is-in{ opacity:1; }
 
 @media (prefers-reduced-motion:reduce){
   .rv,.rv-fade{ opacity:1; transform:none; transition:none; }
   .crit{ display:none !important; }
-  .btn,.card,.bench a,a.file{ transition:none; }
-  *{ animation:none !important; }
+  *{ animation:none !important; transition:none !important; }
 }
 </style>
 </head>
@@ -451,9 +299,9 @@ a.file:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
       <!-- little frown -->
       <path d="M52 90 Q60 85.5 68 90" stroke="#241F2E" stroke-width="2.6" stroke-linecap="round" fill="none"/>
       <!-- collar on chest + B tag -->
-      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#6E2340" stroke-width="9" stroke-linecap="round"/>
-      <circle cx="60" cy="122" r="9" fill="#A8762C"/>
-      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#3A2412">B</text>
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#7E5BA6" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="60" cy="122" r="9" fill="#E8DAF6"/>
+      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B3E82">B</text>
     </g>
   </symbol>
 
@@ -588,67 +436,99 @@ a.file:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
     </g>
   </symbol>
 
-</svg><header class="nav"><div class="wrap nav__in"><a class="brand" href="home.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="3" fill="none" stroke="#241F2E" stroke-width="3"/><path d="M9 3 L9 24 M4 9 L14 9" stroke="#241F2E" stroke-width="3"/><path d="M19 3 L19 24 M19 13 Q28 13 28 18.5 Q28 24 19 24" stroke="#241F2E" stroke-width="3" fill="none"/></svg>Toddler&nbsp;Kitties</a><nav aria-label="Main"><ul><li><a href="home.html">Home</a></li><li><a href="baker.html">Baker</a></li><li><a href="doc.html">Doc</a></li><li><a href="lulu.html">Lulu</a></li><li><a href="ilona.html">Ilona</a></li><li><a href="books.html">Books</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html" aria-current="page">About</a></li></ul></nav></div></header><main id="main">
-<section class="hero wrap">
-  <span class="stamp hero__stamp">Origin</span>
-  <span class="label">About</span>
-  <h1>It started as a joke about a trenchcoat.</h1>
-  <p class="deck">Four cats live here. They have opinions, grudges, routines, and expressions that
-  are frankly too human for comfort. At some point someone said it out loud: a toddler is just
-  4 cats in a trenchcoat. The joke did not go away. It got a website.</p>
+</svg><header><div class="wrap nav-inner"><a class="logo" href="home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><nav aria-label="Main"><a href="home.html">Home</a><a href="baker.html">Baker</a><a href="doc.html">Doc</a><a href="lulu.html">Lulu</a><a href="ilona.html">Ilona</a><a href="books.html">Books</a><a href="shop.html">Shop</a><a href="about.html" class="active">About</a></nav></div></header><main id="main">
+<section class="hero wrap center">
+  <span class="eyebrow">About</span>
+  <h1>It started as a joke about a trenchcoat</h1>
+  <p class="lede">Four cats live here. They have opinions, grudges, routines and expressions
+  that are frankly too human for comfort. At some point somebody said it out loud &mdash;
+  a toddler is just 4 cats in a trenchcoat. The joke never went away.</p>
 </section>
-
-<hr class="rule">
 
 <section class="wrap">
   <div class="trio">
-    <div class="file rv"><span class="tab">01</span><h3>They&rsquo;re all real</h3>
-      <p>Baker, Doc, Lulu and Ilona are four actual cats in one actual apartment. Nothing on this
-      site is invented except the courtroom, and honestly that part is barely invented.</p></div>
-    <div class="file rv"><span class="tab">02</span><h3>Drawn by hand</h3>
+    <div class="panel rv"><h3>They&rsquo;re all real</h3>
+      <p>Baker, Doc, Lulu and Ilona are four actual cats in one actual home. Nothing here is
+      made up, except the bits where we guess what they&rsquo;re thinking.</p></div>
+    <div class="panel rv"><h3>Drawn by hand</h3>
       <p>Every character is drawn from photographs of the real cat, on an iPad, at the kitchen
-      table, by someone learning as they go. The heart-shaped nose is deliberate.</p></div>
-    <div class="file rv"><span class="tab">03</span><h3>Told in order</h3>
-      <p>Each book is one cat&rsquo;s origin story, published in the order they arrived. Then
-      everybody ends up in the same room and the ensemble book happens.</p></div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section class="wrap">
-  <div class="file rv" style="max-width:44rem"><span class="tab">Ack.</span>
-  <span class="label">With thanks</span>
-  <h2 style="margin-bottom:1rem">Three of these four came from the same place</h2>
-  <p class="deck">One shelter is responsible for most of this household. They get a proper
-  thank-you in the books, where there is room to do it justice.</p>
+      table, by somebody learning as they go. The heart-shaped nose is deliberate.</p></div>
+    <div class="panel rv"><h3>Told in order</h3>
+      <p>Each book is one cat&rsquo;s origin story, in the order they arrived. Then everybody
+      ends up in the same room and the last book happens.</p></div>
   </div>
 </section>
 
 <section class="wrap">
-  <div class="file rv" style="max-width:44rem"><span class="tab">Contact</span>
-  <span class="label">Reach the court</span>
-  <h2 style="margin-bottom:1rem">Say hello</h2>
-  <p class="deck">Questions, hellos, or photos of your own tiny defendants:
-  <a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a>, or
-  <a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a> on Instagram.</p>
+  <div class="panel rv center">
+    <h2>Three of these four came from the same place</h2>
+    <p class="lede">One shelter is responsible for most of this household. They get a proper
+    thank-you in the books, where there&rsquo;s room to do it justice.</p>
   </div>
 </section>
 
-<section class="wrap"><div class="signup file rv"><span class="tab">Notice</span>
-<span class="label">Request to be notified</span>
+<section class="wrap">
+  <div class="panel rv center">
+    <h2>Say hello</h2>
+    <p class="lede">Questions, hellos, or photos of your own tiny troublemakers:
+    <a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a>, or <a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a>.</p>
+  </div>
+</section>
+
+<section class="wrap"><div class="signup panel rv">
 <h2>Be first to meet the books</h2>
-<p class="deck">No schedule, no spam. One note when Volume I is actually finished.</p>
+<p class="lede">No spam, no schedules &mdash; just a note when something real happens.</p>
 <form data-signup novalidate>
 <label class="hp" aria-hidden="true">Leave this empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label>
 <label class="hp" for="tk-email">Email address</label>
 <input id="tk-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
-<button class="btn" type="submit">Add me to the docket</button>
+<button class="btn" type="submit">Join the list</button>
 </form>
 <p class="signup__note" role="status" aria-live="polite"></p>
-<p class="fine">Or find them misbehaving on <a href="https://www.instagram.com/toddlerkitties/">Instagram</a>.</p>
+<p class="fine">Or follow along on <a href="https://www.instagram.com/toddlerkitties/">Instagram</a>.</p>
 </div></section>
-</main><section class="bench" aria-label="The bench"><div class="wrap"><div class="board-label" style="text-align:center"><span class="label label--quiet">The bench &mdash; pick a cat</span></div><div class="bench__row"><a href="baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span>Baker · B1</span></a><a href="doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span>Doc · D2</span></a><a href="lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><span>Lulu · L3</span></a><a href="ilona.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-ilona"></use></svg><span>Ilona · I4</span></a></div></div></section><footer class="foot"><div class="wrap"><p class="foot__motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot__meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script>/* ==========================================================================
+
+<section class="coat-bit wrap rv">
+  <svg class="coat" viewBox="0 0 320 470" role="img" aria-labelledby="coatT">
+<title id="coatT">Four cartoon cats stacked inside one trenchcoat</title>
+<g id="coatWobble">
+  <g id="hat">
+    <ellipse cx="160" cy="52" rx="76" ry="15" fill="#4A3A2C" stroke="#3B2E4A" stroke-width="4"/>
+    <path d="M112 52 C112 22 130 12 160 12 C190 12 208 22 208 52 Z" fill="#5C4835" stroke="#3B2E4A" stroke-width="4"/>
+    <path d="M112 45 h96 v8 h-96 Z" fill="#33281E"/>
+  </g>
+  <g><svg x="104" y="46" width="112" height="112" viewBox="-6 -6 152 152"><use href="#tk-baker"></use></svg></g>
+  <path d="M96 150 C96 138 112 130 128 128 L160 146 L192 128 C208 130 224 138 224 150 L232 424 C232 434 224 440 214 440 L106 440 C96 440 88 434 88 424 Z" fill="#C9A26B" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M96 152 C74 160 62 182 60 214 L56 300 C55 314 74 318 78 304 L96 236 Z" fill="#BE9560" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M224 152 C246 160 258 182 260 214 L264 300 C265 314 246 318 242 304 L224 236 Z" fill="#BE9560" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 128 L160 146 L142 196 L112 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M192 128 L160 146 L178 196 L208 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M142 196 L178 196 L176 372 L144 372 Z" fill="#4A3F58"/>
+  <g><svg x="128" y="188" width="64" height="64" viewBox="-6 -6 152 152"><use href="#tk-doc"></use></svg></g>
+  <g><svg x="130" y="252" width="60" height="60" viewBox="-6 -6 152 152"><use href="#tk-lulu"></use></svg></g>
+  <g><svg x="130" y="312" width="60" height="60" viewBox="-6 -6 152 152"><use href="#tk-ilona"></use></svg></g>
+  <rect x="86" y="286" width="148" height="26" rx="6" fill="#A87F4C" stroke="#3B2E4A" stroke-width="5"/>
+  <rect x="146" y="282" width="30" height="34" rx="6" fill="#D8B87A" stroke="#3B2E4A" stroke-width="5"/>
+  <circle cx="120" cy="230" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="200" cy="230" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="120" cy="352" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="200" cy="352" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <path d="M88 424 h144" stroke="#3B2E4A" stroke-width="5"/>
+  <g id="tailOut"><path d="M228 424 C266 424 286 400 274 372 C288 392 280 414 260 420 C272 412 274 400 268 392 C270 408 250 416 232 416 Z" fill="#E0A05A" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/></g>
+  <ellipse cx="124" cy="452" rx="24" ry="13" fill="#F6EFE2" stroke="#3B2E4A" stroke-width="4"/>
+  <ellipse cx="196" cy="452" rx="24" ry="13" fill="#F6EFE2" stroke="#3B2E4A" stroke-width="4"/>
+</g></svg>
+<style>
+@keyframes tkWobble{0%,100%{transform:rotate(-1.1deg)}50%{transform:rotate(1.1deg) translateY(-5px)}}
+@keyframes tkTail{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(9deg)}}
+@keyframes tkHat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+#coatWobble{transform-origin:160px 440px;animation:tkWobble 5.5s ease-in-out infinite}
+#tailOut{transform-origin:230px 420px;animation:tkTail 2.6s ease-in-out infinite}
+#hat{transform-origin:160px 52px;animation:tkHat 5.5s ease-in-out infinite}
+</style>
+  <p class="cap">A toddler is just 4 cats in a trenchcoat.</p>
+</section>
+</main><section class="cat-menu" aria-label="Pick a cat"><div class="wrap"><div class="cat-row"><a class="cat-item ci-baker" href="baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-baker"></use></svg><span class="cat-label">Baker</span></a><a class="cat-item ci-doc" href="doc.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-doc"></use></svg><span class="cat-label">Doc</span></a><a class="cat-item ci-lulu" href="lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-lulu"></use></svg><span class="cat-label">Lulu</span></a><a class="cat-item ci-ilona" href="ilona.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true"><use href="#tk-ilona"></use></svg><span class="cat-label">Ilona</span></a></div></div></section><footer><div class="wrap"><p class="foot-motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot-meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script>/* ==========================================================================
    Toddler Kitties — site behaviour
    ==========================================================================
    ►► THE ONLY LINE YOU NEED TO EDIT ◄◄

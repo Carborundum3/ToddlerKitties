@@ -1,5 +1,9 @@
 # Toddler Kitties — site files
 
+Theme: the original sticker-storybook look — ink `#3B2E4A`, page `#F4EFFF`, pink `#FF8FB1`,
+Baloo 2 + Nunito, 3px outlines and hard offset shadows. Each cat page takes on that cat's
+colour (Baker `#B39DDB`, Doc `#4468C4`, Lulu `#4E9B62`, Ilona `#F2C542`).
+
 Static HTML. No build step required to deploy. Drop these into the `ToddlerKitties` repo root.
 
 ---
@@ -19,10 +23,10 @@ Everything else can be replaced.
 
 | File | What it is |
 |---|---|
-| `index.html` | Splash — the trenchcoat |
-| `home.html` | The docket board |
-| `baker.html` `doc.html` `lulu.html` `ilona.html` | One case file per cat |
-| `books.html` `shop.html` `about.html` | Volumes / sealed locker / origin |
+| `index.html` | Splash — wordmark and the four cats |
+| `home.html` | Hero, Meet the crew, Explore |
+| `baker.html` `doc.html` `lulu.html` `ilona.html` | One page per cat, each in that cat's colour |
+| `books.html` `shop.html` `about.html` | The books / shop / origin (trenchcoat lives here) |
 | `404.html` | Ilona's fault |
 | `assets/tk.css` | All styling |
 | `assets/tk.js` | Reveals, signup, per-cat animations |
@@ -84,6 +88,7 @@ of self-contained pages. If you'd rather not touch Python, edit the `<style>`, `
 
 - **Baker's coat colours are a guess.** I had her heart nose, pointed ears, half-lidded eyes,
   forehead stripes and frown, but not her actual colouring — she's currently a warm grey-brown
-  tabby. Doc, Lulu and Ilona are drawn to the descriptions you gave.
+  tabby with a lavender collar to match her page theme. Doc, Lulu and Ilona are drawn to the
+  descriptions you gave.
 - **The shelter thank-you on `about.html`** is deliberately unnamed. Add the name once you've
   checked they're happy to be mentioned.
