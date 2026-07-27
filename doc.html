@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doc — Toddler Kitties</title>
+<meta name="description" content="Doc, The Bailiff. The gentle giant of the house. Loud about absolutely everything.">
+<link rel="canonical" href="https://toddlerkitties.com/doc.html">
+<meta name="keywords" content="toddler kitties, toddlerkitties, toddler kitties com, cute cats for kids, 4 cats in a trenchcoat">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Toddler Kitties">
+<meta property="og:title" content="Doc — Toddler Kitties">
+<meta property="og:description" content="Doc, The Bailiff. The gentle giant of the house. Loud about absolutely everything.">
+<meta property="og:url" content="https://toddlerkitties.com/doc.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjUuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTAgMTggSDI4IE0xOSAxOCBWNDYiLz48cGF0aCBkPSJNMzYgMTggVjQ2IE01MCAxOCBMMzcuNSAzMCBNMzkuNCAyOC40IEw1MSA0NiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>/* ==========================================================================
+   Toddler Kitties
+   Sticker-storybook theme: chunky outlines, hard offset shadows, rounded type.
+   Every page can take on one cat's colour via body[data-theme].
+   ========================================================================== */
+
+:root{
+  --ink:      #3B2E4A;
+  --ink-soft: #6B5C7D;
+  --outline:  #3B2E4A;
+  --card:     #FFFFFF;
+  --page-bg:  #F4EFFF;
+  --pink:     #FF8FB1;
+
+  --accent:     var(--pink);
+  --accent-ink: #C2456E;
+
+  --shadow: 6px 6px 0 rgba(59,46,74,.15);
+
+  --wrap: 1060px;
+  --gut:  clamp(1.1rem, 4vw, 2.5rem);
+  --r:    26px;
+}
+
+body[data-theme="baker"]{ --page-bg:#EDE7FA; --accent:#B39DDB; --accent-ink:#6A4A9C; }
+body[data-theme="doc"]  { --page-bg:#EFF3FF; --accent:#4468C4; --accent-ink:#33509E; }
+body[data-theme="lulu"] { --page-bg:#EAF7EF; --accent:#4E9B62; --accent-ink:#337A48; }
+body[data-theme="ilona"]{ --page-bg:#FFF6DF; --accent:#F2C542; --accent-ink:#8F6206; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  margin:0;
+  background:var(--page-bg);
+  color:var(--ink);
+  font-family:"Nunito","Segoe UI",system-ui,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.08rem);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img,svg{ max-width:100%; }
+a{ color:inherit; }
+p{ margin:0 0 1rem; text-wrap:pretty; }
+p:last-child{ margin-bottom:0; }
+
+h1,h2,h3,.logo,.btn,.pill,.cat-label,.eyebrow,.bubble{
+  font-family:"Baloo 2","Nunito",system-ui,sans-serif;
+  font-weight:800;
+}
+h1,h2,h3{ margin:0; line-height:1.1; text-wrap:balance; }
+h1{ font-size:clamp(2.3rem,1.4rem + 4.4vw,4.1rem); }
+h2{ font-size:clamp(1.7rem,1.2rem + 2vw,2.5rem); }
+h3{ font-size:clamp(1.2rem,1.05rem + .7vw,1.5rem); }
+
+.eyebrow{
+  display:inline-block; font-weight:700;
+  font-size:clamp(.8rem,.75rem + .3vw,.95rem);
+  background:var(--card); color:var(--ink);
+  border:3px solid var(--outline); border-radius:999px;
+  padding:.15rem 1rem; margin-bottom:1.1rem;
+  box-shadow:3px 3px 0 var(--accent);
+}
+.lede{ font-size:clamp(1.05rem,1rem + .5vw,1.25rem); color:var(--ink-soft); max-width:52ch; }
+.center{ text-align:center; }
+.center .lede{ margin-inline:auto; }
+.accent{ color:var(--accent-ink); }
+
+.wrap{ width:min(100% - (var(--gut) * 2), var(--wrap)); margin-inline:auto; }
+section{ padding-block:clamp(2.2rem,5vw,3.4rem); }
+
+.skip{ position:absolute; left:-9999px; background:var(--ink); color:#fff; padding:.7rem 1rem; z-index:99; }
+.skip:focus{ left:.5rem; top:.5rem; }
+:focus-visible{ outline:3px solid var(--accent-ink); outline-offset:3px; border-radius:6px; }
+
+/* ---------- header ------------------------------------------------------- */
+
+header{ background:var(--card); border-bottom:3px solid var(--outline); position:sticky; top:0; z-index:30; }
+.nav-inner{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; padding-block:.65rem; }
+.brandbox{ display:flex; flex-direction:column; gap:1px; margin-right:auto; }
+.logo{ display:flex; align-items:center; gap:.5rem; font-size:1.12rem; text-decoration:none; line-height:1; }
+.logo-sleep{ display:flex; gap:5px; align-items:flex-end; padding-left:3px; }
+.logo-sleep svg{ width:38px; height:22px; display:block; }
+@media (max-width:430px){ .logo-sleep svg{ width:30px; height:18px; } }
+.logo svg{ width:36px; height:27px; flex:none; color:var(--accent-ink); }
+.logo span{ color:var(--accent-ink); }
+header nav{ display:flex; gap:.1rem; flex-wrap:wrap; }
+header nav a{ text-decoration:none; font-weight:700; font-size:.9rem; padding:.3rem .6rem; border-radius:999px; border:2px solid transparent; }
+header nav a:hover{ border-color:var(--outline); }
+header nav a.active{ background:var(--accent); border-color:var(--outline); }
+
+/* ---------- panels + buttons --------------------------------------------- */
+
+.panel{
+  background:var(--card); border:3px solid var(--outline); border-radius:var(--r);
+  box-shadow:var(--shadow); padding:clamp(1.3rem,3vw,2rem);
+}
+.hero{ padding-block:clamp(2.2rem,6vw,4rem) clamp(1.4rem,3vw,2.2rem); }
+
+.btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  background:var(--accent); color:var(--ink);
+  border:3px solid var(--outline); border-radius:999px;
+  padding:.6rem 1.4rem; font-size:1rem;
+  box-shadow:4px 4px 0 var(--outline);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--outline); }
+.btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--outline); }
+.btn-ghost{ background:var(--card); }
+
+.pill{ display:inline-block; font-size:.78rem; font-weight:700; background:var(--accent);
+  border:2px solid var(--outline); border-radius:999px; padding:.05rem .7rem; }
+.pill-soon{ background:var(--card); color:var(--ink-soft); }
+
+/* ---------- crew cards --------------------------------------------------- */
+
+.card-grid{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); }
+.card{ display:block; text-decoration:none; color:inherit; text-align:center;
+  transition:transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s ease; }
+.card:hover,.card:focus-visible{ transform:translateY(-6px); box-shadow:6px 6px 0 var(--accent); }
+.card .art{ width:132px; height:132px; margin:0 auto .4rem; display:block; }
+.card h3{ margin-bottom:.15rem; }
+.card .role{ font-weight:800; color:var(--accent-ink); font-size:.9rem; display:block; margin-bottom:.5rem; }
+.card p{ font-size:.94rem; color:var(--ink-soft); margin:0; }
+.card-baker{ --accent:#B39DDB; --accent-ink:#6A4A9C; }
+.card-doc  { --accent:#4468C4; --accent-ink:#33509E; }
+.card-lulu { --accent:#4E9B62; --accent-ink:#337A48; }
+.card-ilona{ --accent:#F2C542; --accent-ink:#8F6206; }
+
+/* ---------- explore ------------------------------------------------------ */
+
+.trio{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.trio .panel{ text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease; }
+.trio .panel:hover{ transform:translateY(-6px); box-shadow:6px 6px 0 var(--accent); }
+.ico{ width:46px; height:46px; color:var(--accent-ink); display:block; margin-bottom:.6rem; }
+.trio h3{ margin-bottom:.3rem; }
+.trio p{ color:var(--ink-soft); font-size:.95rem; }
+
+/* ---------- cat page ----------------------------------------------------- */
+
+.meet{ display:grid; gap:clamp(1.4rem,3vw,2.2rem); grid-template-columns:1fr; align-items:center; }
+@media (min-width:800px){ .meet{ grid-template-columns:minmax(0,40%) minmax(0,1fr); } }
+.stage{
+  position:relative; overflow:hidden; background:var(--card);
+  border:3px solid var(--outline); border-radius:var(--r); box-shadow:var(--shadow);
+  aspect-ratio:1/1; display:grid; place-items:center; padding:7%;
+}
+.stage__cat{ width:100%; height:100%; position:relative; z-index:2; }
+.crit{ position:absolute; left:0; top:0; pointer-events:none; z-index:3; will-change:transform,opacity; }
+.laser{ width:11px; height:11px; border-radius:50%; background:#FF3B2E; box-shadow:0 0 10px 4px rgba(255,59,46,.5); z-index:4; }
+.pom{ width:20px; height:20px; border-radius:50%; background:radial-gradient(circle at 34% 32%, #fff, #7FC7E8 45%, #2E86B5); box-shadow:0 0 9px rgba(127,199,232,.7); }
+.spark{ width:5px; height:5px; background:#FFF3B0; border-radius:50%; box-shadow:0 0 6px #FFE066; }
+.bk-paw{ z-index:4; filter:drop-shadow(1px 2px 0 rgba(59,46,74,.25)); }
+
+.tally{ list-style:none; margin:0; padding:0; }
+.tally li{ display:grid; grid-template-columns:1.5rem 1fr; gap:.7rem; padding:.55rem 0;
+  border-bottom:2px dotted rgba(59,46,74,.18); }
+.tally li:last-child{ border-bottom:0; }
+.tally li::before{ content:""; width:15px; height:15px; margin-top:.45rem; border-radius:50%;
+  background:var(--accent); border:2px solid var(--outline); }
+
+.says{ text-align:center; }
+.bubble{
+  position:relative; display:inline-block; max-width:24ch; margin:0 auto;
+  background:var(--card); border:3px solid var(--outline); border-radius:var(--r);
+  box-shadow:var(--shadow); padding:1.2rem 1.6rem;
+  font-size:clamp(1.3rem,1rem + 2vw,2.1rem); line-height:1.16;
+}
+.bubble::before,.bubble::after{ content:""; position:absolute; left:50%; width:0; height:0; }
+.bubble::before{ bottom:-19px; transform:translateX(-50%); border-left:17px solid transparent; border-right:17px solid transparent; border-top:19px solid var(--outline); }
+.bubble::after{ bottom:-13px; transform:translateX(-50%); border-left:13px solid transparent; border-right:13px solid transparent; border-top:15px solid var(--card); }
+.says .who{ display:block; margin-top:2rem; font-weight:700; color:var(--ink-soft); font-size:.92rem; }
+
+/* ---------- books -------------------------------------------------------- */
+
+.books{ display:grid; gap:clamp(1.1rem,2.5vw,1.5rem); grid-template-columns:repeat(auto-fit,minmax(265px,1fr)); }
+.book{ display:grid; grid-template-columns:92px 1fr; gap:1rem; align-items:start; }
+.book .art{ width:92px; height:92px; }
+.book .num{ display:block; font-weight:800; color:var(--accent-ink); font-size:.85rem; }
+.book h3{ margin:.1rem 0 .35rem; }
+.book p{ font-size:.94rem; color:var(--ink-soft); margin:0 0 .7rem; }
+.book-wide{ grid-column:1/-1; }
+@media (max-width:420px){ .book{ grid-template-columns:1fr; } }
+
+/* ---------- signup ------------------------------------------------------- */
+
+.signup{ max-width:660px; margin-inline:auto; text-align:center; }
+.signup form{ display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:1.2rem; }
+.signup input[type="email"]{ flex:1 1 16rem; min-width:0; font:inherit; font-size:1rem;
+  padding:.6rem 1rem; color:var(--ink); background:#fff;
+  border:3px solid var(--outline); border-radius:999px; }
+.signup input::placeholder{ color:#8E82A0; }
+.signup .fine{ font-size:.9rem; color:var(--ink-soft); margin-top:.9rem; }
+.signup__note{ font-weight:700; color:var(--accent-ink); margin-top:.8rem; min-height:1.2em; }
+.hp{ position:absolute; left:-9999px; opacity:0; height:0; width:0; }
+
+/* ---------- trenchcoat (about page only) --------------------------------- */
+
+.coat-bit{ text-align:center; padding-block:clamp(2rem,5vw,3.2rem); }
+.coat{ width:min(64vw,250px); height:auto; }
+.coat-bit .cap{ font-weight:700; color:var(--ink-soft); margin-top:1rem; }
+@keyframes tkWobble{ 0%,100%{ transform:rotate(-1.1deg); } 50%{ transform:rotate(1.1deg) translateY(-5px); } }
+@keyframes tkHat{ 0%,100%{ transform:translateY(0) rotate(3deg); } 50%{ transform:translateY(-6px) rotate(-2deg); } }
+.coat-anim{ transform-origin:160px 440px; animation:tkWobble 5.5s ease-in-out infinite; }
+.hat-anim{ transform-origin:160px 118px; animation:tkHat 5.5s ease-in-out infinite; }
+
+/* ---------- cat menu ----------------------------------------------------- */
+
+.cat-menu{ border-top:3px solid var(--outline); background:var(--card); padding-block:1.5rem; }
+.cat-row{ display:flex; justify-content:center; gap:clamp(.3rem,3vw,1.8rem); flex-wrap:wrap; }
+.cat-item{ display:flex; flex-direction:column; align-items:center; text-decoration:none; color:var(--ink);
+  padding:.3rem; transition:transform .28s cubic-bezier(.2,.8,.3,1); }
+.cat-item:hover,.cat-item:focus-visible{ transform:translateY(-10px) rotate(-4deg); }
+.cat-item svg{ width:clamp(62px,15vw,86px); height:clamp(62px,15vw,86px); display:block; }
+.cat-label{ font-size:clamp(12px,2vw,14px); background:var(--accent);
+  border:2px solid var(--outline); border-radius:999px; padding:0 12px; margin-top:-6px;
+  box-shadow:2px 2px 0 rgba(59,46,74,.2); }
+.ci-coat .coat-mini{ width:clamp(40px,9vw,54px); height:auto; display:block; margin:0 auto; }
+.ci-coat .cat-label{ background:var(--pink); }
+.ci-baker .cat-label{ background:#B39DDB; }
+.ci-doc   .cat-label{ background:#4468C4; color:#fff; }
+.ci-lulu  .cat-label{ background:#4E9B62; color:#fff; }
+.ci-ilona .cat-label{ background:#F2C542; }
+
+/* ---------- footer ------------------------------------------------------- */
+
+footer{ background:var(--ink); color:#F4EFFF; padding-block:2.2rem; }
+footer a{ color:#FFC9DA; }
+.foot-motto{ font-family:"Baloo 2",sans-serif; font-weight:800; font-size:clamp(1.1rem,1rem + 1.2vw,1.7rem); margin:0 0 .9rem; }
+.foot-meta{ font-size:.9rem; color:#C6BCD6; display:flex; gap:1rem; flex-wrap:wrap; }
+
+/* ---------- splash + 404 ------------------------------------------------- */
+
+.splash{ min-height:100svh; display:grid; place-items:center; text-align:center; padding:2rem var(--gut); }
+.splash-in{ display:grid; justify-items:center; gap:1.1rem; }
+.peek-row{ display:flex; gap:6px; justify-content:center; align-items:flex-end; flex-wrap:wrap; }
+.peek-row svg{ width:clamp(66px,17vw,112px); height:clamp(66px,17vw,112px); }
+.peek-row svg:nth-child(odd){ transform:translateY(8px) rotate(-4deg); }
+.peek-row svg:nth-child(even){ transform:rotate(4deg); }
+.oops{ min-height:64svh; display:grid; place-items:center; text-align:center; }
+.oops-in{ display:grid; justify-items:center; gap:1rem; }
+.oops svg{ width:min(46vw,180px); height:auto; }
+
+/* ---------- page turn ----------------------------------------------------- */
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes pageIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  main{ animation:pageIn .45s cubic-bezier(.2,.7,.3,1) both; }
+  body.leaving main{ opacity:0; transform:translateY(-10px);
+    transition:opacity .2s ease, transform .2s ease; animation:none; }
+  body.leaving header, body.leaving .cat-menu, body.leaving footer{ opacity:.55; transition:opacity .2s ease; }
+}
+
+/* ---------- reveal ------------------------------------------------------- */
+
+.rv{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.3,1); }
+.rv.is-in{ opacity:1; transform:none; }
+.rv-fade{ opacity:0; transition:opacity .55s ease; }
+.rv-fade.is-in{ opacity:1; }
+
+@media (prefers-reduced-motion:reduce){
+  .rv,.rv-fade{ opacity:1; transform:none; transition:none; }
+  .crit{ display:none !important; }
+  *{ animation:none !important; transition:none !important; }
+}
+</style>
+</head>
+<body data-theme="doc">
+<a class="skip" href="#main">Skip to content</a>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+
+  <!-- ============ BAKER — B1 — grey-brown tabby, heart nose, pointed ears ============ -->
+  <symbol id="tk-baker" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#6E6055" stroke-width="11" stroke-linecap="round"/>
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#9C8C7E" stroke-width="7" stroke-linecap="round"/>
+      <path d="M118 96 l9 5 M112 108 l10 3" stroke="#6E6055" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#9C8C7E"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#EFE3D2"/>
+      <!-- ears (tall, pointed, sassy) -->
+      <path d="M27 44 L17 2 L53 28 Z" fill="#9C8C7E"/>
+      <path d="M93 44 L103 2 L67 28 Z" fill="#9C8C7E"/>
+      <path d="M31 39 L25 13 L46 28 Z" fill="#E0A6A6"/>
+      <path d="M89 39 L95 13 L74 28 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#9C8C7E"/>
+      <!-- forehead stripes -->
+      <path d="M60 24 v12 M48 27 l3 11 M72 27 l-3 11" stroke="#6E6055" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M26 52 q8 3 13 0 M94 52 q-8 3 -13 0" stroke="#6E6055" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- half-lidded eyes -->
+      <path d="M37 57 C37 66 51 66 51 57 Z" fill="#7C9A4E"/>
+      <path d="M69 57 C69 66 83 66 83 57 Z" fill="#7C9A4E"/>
+      <g class="bk-pupils"><path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/><path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/></g>
+      <path d="M36 56 Q44 51 52 56 M68 56 Q76 51 84 56" stroke="#241F2E" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- heart nose -->
+      <path d="M60 71.5 C56.5 66.5 50 67.5 50 72 C50 76.6 56.5 79.2 60 83 C63.5 79.2 70 76.6 70 72 C70 67.5 63.5 66.5 60 71.5 Z" fill="#D96A7A"/>
+      <!-- little frown -->
+      <path d="M52 90 Q60 85.5 68 90" stroke="#241F2E" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <!-- collar on chest + B tag -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#7E5BA6" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="60" cy="122" r="9" fill="#E8DAF6"/>
+      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B3E82">B</text>
+    </g>
+  </symbol>
+
+  <!-- ============ DOC — D2 — cow-patterned, huge ears, moon-and-stars collar ============ -->
+  <symbol id="tk-doc" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail: black with a white tip -->
+      <g class="tk-tail" data-o="98 130">
+      <path d="M98 130 C126 128 132 110 122 94" fill="none" stroke="#2A2730" stroke-width="11" stroke-linecap="round"/>
+      <path d="M124 103 C124 99 123 96 122 94" fill="none" stroke="#FAF7F2" stroke-width="11" stroke-linecap="round"/>
+      </g>
+      <!-- body: black, white chest + a white shoulder patch -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#2A2730"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#FAF7F2"/>
+      <ellipse cx="30" cy="121" rx="7" ry="9" fill="#FAF7F2"/>
+      <!-- ears (very large, upright) -->
+      <path d="M24 42 L12 0 L54 26 Z" fill="#2A2730"/>
+      <path d="M96 42 L108 0 L66 26 Z" fill="#2A2730"/>
+      <path d="M29 37 L21 10 L45 26 Z" fill="#D98F96"/>
+      <path d="M91 37 L99 10 L75 26 Z" fill="#D98F96"/>
+      <!-- head: black -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#2A2730"/>
+      <!-- white blaze between the eyes -->
+      <path d="M60 23 L52 64 L68 64 Z" fill="#FAF7F2"/>
+      <!-- white muzzle -->
+      <ellipse cx="60" cy="75" rx="18" ry="12" fill="#FAF7F2"/>
+      <!-- eyes, yellow-green -->
+      <circle cx="43" cy="56" r="8" fill="#C6D24A"/>
+      <circle cx="77" cy="56" r="8" fill="#C6D24A"/>
+      <ellipse cx="43" cy="56" rx="3.4" ry="6" fill="#241F2E"/>
+      <ellipse cx="77" cy="56" rx="3.4" ry="6" fill="#241F2E"/>
+      <circle cx="45" cy="53" r="1.8" fill="#FAF7F2"/>
+      <circle cx="79" cy="53" r="1.8" fill="#FAF7F2"/>
+      <!-- nose + open, talking mouth -->
+      <path d="M55 70 h10 l-5 5 Z" fill="#5C4148"/>
+      <ellipse cx="60" cy="84" rx="6" ry="5" fill="#5C4148"/>
+      <!-- collar: navy, moon and stars -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#23407E" stroke-width="9" stroke-linecap="round"/>
+      <path d="M45 110 l1.6 3.6 3.9 .4 -2.9 2.6 .8 3.8 -3.4 -2 -3.4 2 .8 -3.8 -2.9 -2.6 3.9 -.4 Z" fill="#E8C33D"/>
+      <path d="M78 108 a4.6 4.6 0 1 0 3.6 7.4 a3.6 3.6 0 1 1 -3.6 -7.4 Z" fill="#E8C33D"/>
+      <circle cx="62" cy="115" r="1.9" fill="#E8C33D"/>
+    </g>
+  </symbol>
+
+  <!-- ============ LULU — L3 — greyish-brown tortie, daisy collar ============ -->
+  <symbol id="tk-lulu" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#8B7A6C" stroke-width="11" stroke-linecap="round"/>
+      <path d="M122 96 c6 6 4 12 -1 14" fill="none" stroke="#A9714A" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#8B7A6C"/>
+      <path d="M20 138 C20 116 28 100 44 96 L46 138 Z" fill="#5E4E44"/>
+      <ellipse cx="84" cy="124" rx="10" ry="12" fill="#A9714A"/>
+      <ellipse cx="60" cy="132" rx="16" ry="12" fill="#EFE3D2"/>
+      <!-- ears -->
+      <path d="M26 42 L18 5 L53 27 Z" fill="#8B7A6C"/>
+      <path d="M94 42 L102 5 L67 27 Z" fill="#A9714A"/>
+      <path d="M30 37 L25 15 L45 27 Z" fill="#E0A6A6"/>
+      <path d="M90 37 L95 15 L75 27 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#8B7A6C"/>
+      <!-- tortie mottling -->
+      <path d="M60 22 C78 22 94 32 98 50 C88 56 74 52 66 42 C62 36 60 28 60 22 Z" fill="#A9714A"/>
+      <path d="M22 48 C26 33 38 24 52 22 C50 34 44 44 34 52 Z" fill="#5E4E44"/>
+      <path d="M92 66 q6 6 4 12" stroke="#5E4E44" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- eyes, soft green, wide and deep -->
+      <circle cx="43" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="77" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="43" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="77" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="45.5" cy="54" r="2" fill="#FFFFFF"/>
+      <circle cx="79.5" cy="54" r="2" fill="#FFFFFF"/>
+      <!-- nose + gentle mouth -->
+      <path d="M55 70 h10 l-5 5.5 Z" fill="#D96A7A"/>
+      <path d="M60 76 q-5 5 -9 1 M60 76 q5 5 9 1" stroke="#5E4E44" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <!-- collar: green with white daisies -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#2F6B44" stroke-width="9" stroke-linecap="round"/>
+      <g fill="#FFFFFF">
+        <circle cx="44" cy="110.5" r="1.9"/><circle cx="47.6" cy="110.5" r="1.9"/><circle cx="45.8" cy="107.6" r="1.9"/><circle cx="45.8" cy="113.4" r="1.9"/>
+        <circle cx="72" cy="112.5" r="1.9"/><circle cx="75.6" cy="112.5" r="1.9"/><circle cx="73.8" cy="109.6" r="1.9"/><circle cx="73.8" cy="115.4" r="1.9"/>
+      </g>
+      <circle cx="45.8" cy="110.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="73.8" cy="112.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="60" cy="115.5" r="6.5" fill="#F2F2E8"/>
+      <text x="60" y="119.4" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F6B44">L</text>
+    </g>
+  </symbol>
+
+  <!-- ============ ILONA — I4 — long-haired orange/cream tabby, plume tail, bow tie ============ -->
+  <symbol id="tk-ilona" viewBox="-6 -6 152 152">
+    <g>
+      <!-- plume tail -->
+      <g class="tk-tail" data-o="98 132">
+      <path d="M96 132 C122 132 136 112 126 88 C134 106 124 120 108 122 C120 116 124 104 118 96 C120 110 106 118 94 120 Z" fill="#E0A05A"/>
+      <path d="M124 94 c4 8 2 14 -3 18" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
+      <!-- body with long-hair edge -->
+      <path d="M18 138 C18 121 23 107 34 100 q-4 5 -3 7 q5 -7 10 -9 q-3 4 -2 6 q6 -6 11 -8 C48 94 54 94 60 94 C83 94 102 106 102 138 Z" fill="#E0A05A"/>
+      <ellipse cx="60" cy="130" rx="20" ry="16" fill="#F6E2C4"/>
+      <path d="M24 122 q9 3 0 6 M96 118 q-9 3 0 6" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- big ears with tufts -->
+      <path d="M24 42 L14 2 L53 26 Z" fill="#E0A05A"/>
+      <path d="M96 42 L106 2 L67 26 Z" fill="#E0A05A"/>
+      <path d="M29 37 L22 12 L45 26 Z" fill="#E8AFAF"/>
+      <path d="M91 37 L98 12 L75 26 Z" fill="#E8AFAF"/>
+      <path d="M27 30 l-6 -6 M31 24 l-5 -8 M93 30 l6 -6 M89 24 l5 -8" stroke="#F6E2C4" stroke-width="3" stroke-linecap="round"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="42" ry="37" fill="#E0A05A"/>
+      <!-- tabby stripes -->
+      <path d="M60 22 v13 M47 25 l3 11 M73 25 l-3 11" stroke="#C2803E" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M25 50 q9 3 14 0 M95 50 q-9 3 -14 0" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="75" rx="18" ry="12.5" fill="#F6E2C4"/>
+      <!-- huge amber-gold eyes -->
+      <circle cx="42" cy="57" r="9.5" fill="#D8912A"/>
+      <circle cx="78" cy="57" r="9.5" fill="#D8912A"/>
+      <ellipse cx="42" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <ellipse cx="78" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <circle cx="45" cy="53" r="2.3" fill="#FFFFFF"/>
+      <circle cx="81" cy="53" r="2.3" fill="#FFFFFF"/>
+      <!-- nose + mid-sentence mouth -->
+      <path d="M55 70 h10 l-5 5 Z" fill="#D96A7A"/>
+      <ellipse cx="60" cy="83" rx="7" ry="6" fill="#C4626E"/>
+      <!-- collar: yellow with black-and-white bow tie -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#E8C33D" stroke-width="9" stroke-linecap="round"/>
+      <path d="M60 115 L47 108 L47 122 Z" fill="#241F2E"/>
+      <path d="M60 115 L73 108 L73 122 Z" fill="#241F2E"/>
+      <rect x="55.5" y="110.5" width="9" height="9" rx="2.5" fill="#FAF7F2"/>
+    </g>
+  </symbol>
+
+  <!-- ============ sleeping loafs (header) ============ -->
+  <symbol id="tk-sleep-baker" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#9C8C7E"/>
+    <path d="M14 44 q20 9 38 3" stroke="#6E6055" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#9C8C7E"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#9C8C7E"/><path d="M78 19 L81 6 L69 13 Z" fill="#9C8C7E"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#6E6055" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M68 35 c-1.4 -2.2 -3.8 -1.7 -3.8 0 c0 1.7 2.4 2.6 3.8 4 c1.4 -1.4 3.8 -2.3 3.8 -4 c0 -1.7 -2.4 -2.2 -3.8 0 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-doc" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#2A2730"/>
+    <ellipse cx="34" cy="43" rx="9" ry="6" fill="#FAF7F2"/>
+    <ellipse cx="52" cy="46" rx="5" ry="4" fill="#FAF7F2"/>
+    <path d="M14 44 q20 9 38 3" stroke="#2A2730" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M14.5 44.2 q3 1.4 6 2.2" stroke="#FAF7F2" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#2A2730"/>
+    <path d="M68 15 L64.5 27 L71.5 27 Z" fill="#FAF7F2"/>
+    <ellipse cx="68" cy="35" rx="8" ry="5.5" fill="#FAF7F2"/>
+    <path d="M57 18 L52 3 L66 10 Z" fill="#2A2730"/><path d="M79 18 L84 3 L70 10 Z" fill="#2A2730"/>
+    <path d="M59 28 q3 3 6 0 M71 28 q3 3 6 0" stroke="#F4EFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#5C4148"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-lulu" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#8B7A6C"/>
+    <path d="M20 30 C26 26 36 25 44 27 C40 34 30 38 22 36 Z" fill="#5E4E44"/>
+    <ellipse cx="56" cy="44" rx="9" ry="6" fill="#A9714A"/>
+    <path d="M14 44 q20 9 38 3" stroke="#5E4E44" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#8B7A6C"/>
+    <path d="M68 15 C74 14 80 18 82 24 C77 26 71 24 68 20 Z" fill="#A9714A"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#8B7A6C"/><path d="M78 19 L81 6 L69 13 Z" fill="#A9714A"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-ilona" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#E0A05A"/>
+    <path d="M10 40 C6 30 14 22 24 24 C18 27 15 33 18 39 C21 33 27 30 32 32 C26 35 24 40 26 44 Z" fill="#E0A05A"/>
+    <path d="M12 36 q3 -5 9 -6" stroke="#C2803E" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#E0A05A"/>
+    <path d="M58 19 L54 5 L67 12 Z" fill="#E0A05A"/><path d="M78 19 L82 5 L69 12 Z" fill="#E0A05A"/>
+    <path d="M57 12 l-3 -4 M79 12 l3 -4" stroke="#F6E2C4" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#C2803E" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+
+</svg><header><div class="wrap nav-inner"><div class="brandbox"><a class="logo" href="home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><div class="logo-sleep" aria-hidden="true"><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-baker"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-doc"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-lulu"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-ilona"></use></svg></div></div><nav aria-label="Main"><a href="home.html">Home</a><a href="baker.html">Baker</a><a href="doc.html" class="active">Doc</a><a href="lulu.html">Lulu</a><a href="ilona.html">Ilona</a><a href="books.html">Books</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav></div></header><main id="main">
+<section class="wrap meet">
+  <div class="stage rv" data-stage><svg class="stage__cat" viewBox="-6 -6 152 152" role="img"><title>Doc, cartoon portrait</title>
+    <g>
+      <!-- tail: black with a white tip -->
+      <g class="tk-tail" data-o="98 130">
+      <path d="M98 130 C126 128 132 110 122 94" fill="none" stroke="#2A2730" stroke-width="11" stroke-linecap="round"/>
+      <path d="M124 103 C124 99 123 96 122 94" fill="none" stroke="#FAF7F2" stroke-width="11" stroke-linecap="round"/>
+      </g>
+      <!-- body: black, white chest + a white shoulder patch -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#2A2730"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#FAF7F2"/>
+      <ellipse cx="30" cy="121" rx="7" ry="9" fill="#FAF7F2"/>
+      <!-- ears (very large, upright) -->
+      <path d="M24 42 L12 0 L54 26 Z" fill="#2A2730"/>
+      <path d="M96 42 L108 0 L66 26 Z" fill="#2A2730"/>
+      <path d="M29 37 L21 10 L45 26 Z" fill="#D98F96"/>
+      <path d="M91 37 L99 10 L75 26 Z" fill="#D98F96"/>
+      <!-- head: black -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#2A2730"/>
+      <!-- white blaze between the eyes -->
+      <path d="M60 23 L52 64 L68 64 Z" fill="#FAF7F2"/>
+      <!-- white muzzle -->
+      <ellipse cx="60" cy="75" rx="18" ry="12" fill="#FAF7F2"/>
+      <!-- eyes, yellow-green -->
+      <circle cx="43" cy="56" r="8" fill="#C6D24A"/>
+      <circle cx="77" cy="56" r="8" fill="#C6D24A"/>
+      <ellipse cx="43" cy="56" rx="3.4" ry="6" fill="#241F2E"/>
+      <ellipse cx="77" cy="56" rx="3.4" ry="6" fill="#241F2E"/>
+      <circle cx="45" cy="53" r="1.8" fill="#FAF7F2"/>
+      <circle cx="79" cy="53" r="1.8" fill="#FAF7F2"/>
+      <!-- nose + open, talking mouth -->
+      <path d="M55 70 h10 l-5 5 Z" fill="#5C4148"/>
+      <ellipse cx="60" cy="84" rx="6" ry="5" fill="#5C4148"/>
+      <!-- collar: navy, moon and stars -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#23407E" stroke-width="9" stroke-linecap="round"/>
+      <path d="M45 110 l1.6 3.6 3.9 .4 -2.9 2.6 .8 3.8 -3.4 -2 -3.4 2 .8 -3.8 -2.9 -2.6 3.9 -.4 Z" fill="#E8C33D"/>
+      <path d="M78 108 a4.6 4.6 0 1 0 3.6 7.4 a3.6 3.6 0 1 1 -3.6 -7.4 Z" fill="#E8C33D"/>
+      <circle cx="62" cy="115" r="1.9" fill="#E8C33D"/>
+    </g>
+  </svg></div>
+  <div class="rv">
+    <span class="eyebrow">The Bailiff</span>
+    <h1>Doc</h1>
+    <p class="lede" style="margin-top:.7rem">The gentle giant of the house. Loud about absolutely everything.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="panel rv">
+    <h2 style="margin-bottom:.9rem">Things Doc does</h2>
+    <ul class="tally"><li><span>Comes running when you call his name. Slightly less running these days.</span></li><li><span>Plays real fetch with a sparkly pom pom &mdash; chases it, carries it back, drops it in your hand.</span></li><li><span>Drinks water fast enough to sneeze, and has never once revised the technique.</span></li><li><span>Opens cabinets. Retrieved a bag of cookies from the bin and re-hid it exactly where it had been.</span></li><li><span>Wants a seat at the table, and will eat like a person if you put his bowl in front of his chair.</span></li><li><span>Loves baths. With bubbles. And rubber ducks.</span></li></ul>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="panel rv">
+    <span class="pill">Book Two</span>
+    <h2 style="margin:.7rem 0 .8rem">Her story, roughly</h2>
+    <p class="lede">Book Two starts a very long way from here. There is a motel, a long drive north, and three weeks of medicine on a kitchen counter. It does not mention how loud he was about all of it.</p>
+  </div>
+</section>
+
+<section class="wrap says rv">
+  <p class="bubble">I said hello. I said it the whole way.</p>
+  <span class="who">&mdash; Doc, still talking</span>
+</section>
+
+<section class="wrap center" style="padding-top:0">
+  <a class="btn btn-ghost" href="lulu.html">Meet Lulu &rarr;</a>
+</section>
+
+</main><section class="cat-menu" aria-label="Pick a cat"><div class="wrap"><div class="cat-row"><a class="cat-item ci-baker" href="baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#6E6055" stroke-width="11" stroke-linecap="round"/>
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#9C8C7E" stroke-width="7" stroke-linecap="round"/>
+      <path d="M118 96 l9 5 M112 108 l10 3" stroke="#6E6055" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#9C8C7E"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#EFE3D2"/>
+      <!-- ears (tall, pointed, sassy) -->
+      <path d="M27 44 L17 2 L53 28 Z" fill="#9C8C7E"/>
+      <path d="M93 44 L103 2 L67 28 Z" fill="#9C8C7E"/>
+      <path d="M31 39 L25 13 L46 28 Z" fill="#E0A6A6"/>
+      <path d="M89 39 L95 13 L74 28 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#9C8C7E"/>
+      <!-- forehead stripes -->
+      <path d="M60 24 v12 M48 27 l3 11 M72 27 l-3 11" stroke="#6E6055" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M26 52 q8 3 13 0 M94 52 q-8 3 -13 0" stroke="#6E6055" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- half-lidded eyes -->
+      <path d="M37 57 C37 66 51 66 51 57 Z" fill="#7C9A4E"/>
+      <path d="M69 57 C69 66 83 66 83 57 Z" fill="#7C9A4E"/>
+      <g class="bk-pupils"><path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/><path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/></g>
+      <path d="M36 56 Q44 51 52 56 M68 56 Q76 51 84 56" stroke="#241F2E" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- heart nose -->
+      <path d="M60 71.5 C56.5 66.5 50 67.5 50 72 C50 76.6 56.5 79.2 60 83 C63.5 79.2 70 76.6 70 72 C70 67.5 63.5 66.5 60 71.5 Z" fill="#D96A7A"/>
+      <!-- little frown -->
+      <path d="M52 90 Q60 85.5 68 90" stroke="#241F2E" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <!-- collar on chest + B tag -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#7E5BA6" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="60" cy="122" r="9" fill="#E8DAF6"/>
+      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B3E82">B</text>
+    </g>
+  </svg><span class="cat-label">Baker</span></a><a class="cat-item ci-lulu" href="lulu.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#8B7A6C" stroke-width="11" stroke-linecap="round"/>
+      <path d="M122 96 c6 6 4 12 -1 14" fill="none" stroke="#A9714A" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#8B7A6C"/>
+      <path d="M20 138 C20 116 28 100 44 96 L46 138 Z" fill="#5E4E44"/>
+      <ellipse cx="84" cy="124" rx="10" ry="12" fill="#A9714A"/>
+      <ellipse cx="60" cy="132" rx="16" ry="12" fill="#EFE3D2"/>
+      <!-- ears -->
+      <path d="M26 42 L18 5 L53 27 Z" fill="#8B7A6C"/>
+      <path d="M94 42 L102 5 L67 27 Z" fill="#A9714A"/>
+      <path d="M30 37 L25 15 L45 27 Z" fill="#E0A6A6"/>
+      <path d="M90 37 L95 15 L75 27 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#8B7A6C"/>
+      <!-- tortie mottling -->
+      <path d="M60 22 C78 22 94 32 98 50 C88 56 74 52 66 42 C62 36 60 28 60 22 Z" fill="#A9714A"/>
+      <path d="M22 48 C26 33 38 24 52 22 C50 34 44 44 34 52 Z" fill="#5E4E44"/>
+      <path d="M92 66 q6 6 4 12" stroke="#5E4E44" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- eyes, soft green, wide and deep -->
+      <circle cx="43" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="77" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="43" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="77" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="45.5" cy="54" r="2" fill="#FFFFFF"/>
+      <circle cx="79.5" cy="54" r="2" fill="#FFFFFF"/>
+      <!-- nose + gentle mouth -->
+      <path d="M55 70 h10 l-5 5.5 Z" fill="#D96A7A"/>
+      <path d="M60 76 q-5 5 -9 1 M60 76 q5 5 9 1" stroke="#5E4E44" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <!-- collar: green with white daisies -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#2F6B44" stroke-width="9" stroke-linecap="round"/>
+      <g fill="#FFFFFF">
+        <circle cx="44" cy="110.5" r="1.9"/><circle cx="47.6" cy="110.5" r="1.9"/><circle cx="45.8" cy="107.6" r="1.9"/><circle cx="45.8" cy="113.4" r="1.9"/>
+        <circle cx="72" cy="112.5" r="1.9"/><circle cx="75.6" cy="112.5" r="1.9"/><circle cx="73.8" cy="109.6" r="1.9"/><circle cx="73.8" cy="115.4" r="1.9"/>
+      </g>
+      <circle cx="45.8" cy="110.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="73.8" cy="112.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="60" cy="115.5" r="6.5" fill="#F2F2E8"/>
+      <text x="60" y="119.4" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F6B44">L</text>
+    </g>
+  </svg><span class="cat-label">Lulu</span></a><a class="cat-item ci-ilona" href="ilona.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true">
+    <g>
+      <!-- plume tail -->
+      <g class="tk-tail" data-o="98 132">
+      <path d="M96 132 C122 132 136 112 126 88 C134 106 124 120 108 122 C120 116 124 104 118 96 C120 110 106 118 94 120 Z" fill="#E0A05A"/>
+      <path d="M124 94 c4 8 2 14 -3 18" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
+      <!-- body with long-hair edge -->
+      <path d="M18 138 C18 121 23 107 34 100 q-4 5 -3 7 q5 -7 10 -9 q-3 4 -2 6 q6 -6 11 -8 C48 94 54 94 60 94 C83 94 102 106 102 138 Z" fill="#E0A05A"/>
+      <ellipse cx="60" cy="130" rx="20" ry="16" fill="#F6E2C4"/>
+      <path d="M24 122 q9 3 0 6 M96 118 q-9 3 0 6" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- big ears with tufts -->
+      <path d="M24 42 L14 2 L53 26 Z" fill="#E0A05A"/>
+      <path d="M96 42 L106 2 L67 26 Z" fill="#E0A05A"/>
+      <path d="M29 37 L22 12 L45 26 Z" fill="#E8AFAF"/>
+      <path d="M91 37 L98 12 L75 26 Z" fill="#E8AFAF"/>
+      <path d="M27 30 l-6 -6 M31 24 l-5 -8 M93 30 l6 -6 M89 24 l5 -8" stroke="#F6E2C4" stroke-width="3" stroke-linecap="round"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="42" ry="37" fill="#E0A05A"/>
+      <!-- tabby stripes -->
+      <path d="M60 22 v13 M47 25 l3 11 M73 25 l-3 11" stroke="#C2803E" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M25 50 q9 3 14 0 M95 50 q-9 3 -14 0" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="75" rx="18" ry="12.5" fill="#F6E2C4"/>
+      <!-- huge amber-gold eyes -->
+      <circle cx="42" cy="57" r="9.5" fill="#D8912A"/>
+      <circle cx="78" cy="57" r="9.5" fill="#D8912A"/>
+      <ellipse cx="42" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <ellipse cx="78" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <circle cx="45" cy="53" r="2.3" fill="#FFFFFF"/>
+      <circle cx="81" cy="53" r="2.3" fill="#FFFFFF"/>
+      <!-- nose + mid-sentence mouth -->
+      <path d="M55 70 h10 l-5 5 Z" fill="#D96A7A"/>
+      <ellipse cx="60" cy="83" rx="7" ry="6" fill="#C4626E"/>
+      <!-- collar: yellow with black-and-white bow tie -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#E8C33D" stroke-width="9" stroke-linecap="round"/>
+      <path d="M60 115 L47 108 L47 122 Z" fill="#241F2E"/>
+      <path d="M60 115 L73 108 L73 122 Z" fill="#241F2E"/>
+      <rect x="55.5" y="110.5" width="9" height="9" rx="2.5" fill="#FAF7F2"/>
+    </g>
+  </svg><span class="cat-label">Ilona</span></a><a class="cat-item ci-coat coat-link" href="about.html"><svg class="coat-mini" viewBox="0 0 320 470" role="img" aria-labelledby="coatT">
+<title id="coatT">An empty trenchcoat, waiting for four cats</title>
+<g class="coat-anim">
+  <g class="hat-anim">
+    <ellipse cx="160" cy="118" rx="76" ry="15" fill="#4A3A2C" stroke="#3B2E4A" stroke-width="4"/>
+    <path d="M112 118 C112 88 130 78 160 78 C190 78 208 88 208 118 Z" fill="#5C4835" stroke="#3B2E4A" stroke-width="4"/>
+    <path d="M112 111 h96 v8 h-96 Z" fill="#33281E"/>
+  </g>
+  <path d="M96 150 C96 138 112 130 128 128 L160 146 L192 128 C208 130 224 138 224 150 L232 424 C232 434 224 440 214 440 L106 440 C96 440 88 434 88 424 Z" fill="#C9A26B" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M96 152 C74 160 62 182 60 214 L56 300 C55 314 74 318 78 304 L96 236 Z" fill="#BE9560" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M224 152 C246 160 258 182 260 214 L264 300 C265 314 246 318 242 304 L224 236 Z" fill="#BE9560" stroke="#3B2E4A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 128 L160 146 L142 196 L112 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M192 128 L160 146 L178 196 L208 158 Z" fill="#B98C57" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M142 196 L178 196 L176 372 L144 372 Z" fill="#4A3F58"/>
+  <g id="coatPeek"></g>
+  <rect x="86" y="286" width="148" height="26" rx="6" fill="#A87F4C" stroke="#3B2E4A" stroke-width="5"/>
+  <rect x="146" y="282" width="30" height="34" rx="6" fill="#D8B87A" stroke="#3B2E4A" stroke-width="5"/>
+  <circle cx="120" cy="230" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="200" cy="230" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="120" cy="352" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <circle cx="200" cy="352" r="7" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+  <path d="M88 424 h144" stroke="#3B2E4A" stroke-width="5"/>
+</g></svg><span class="cat-label">About</span></a></div></div></section><footer><div class="wrap"><p class="foot-motto">A toddler is just 4 cats in a trenchcoat.</p><div class="foot-meta"><span>&copy; 2026 Toddler Kitties</span><a href="https://www.instagram.com/toddlerkitties/">@toddlerkitties</a><a href="mailto:toddlerkitties@gmail.com">toddlerkitties@gmail.com</a></div></div></footer><script>/* ==========================================================================
+   Toddler Kitties — site behaviour
+   ==========================================================================
+   ►► THE ONLY LINE YOU NEED TO EDIT ◄◄
+   Paste your form endpoint below (Formspree or Buttondown — see README).
+   While it is empty, the signup form falls back to opening an email.
+   ========================================================================== */
+
+const SIGNUP_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx"
+
+const FALLBACK_MAILTO =
+  "mailto:toddlerkitties@gmail.com" +
+  "?subject=" + encodeURIComponent("Add me to the Toddler Kitties list") +
+  "&body="    + encodeURIComponent("Please let me know when the first book is ready.");
+
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const R = (a, b) => a + Math.random() * (b - a);
+
+/* ---------- shared sprite snippets --------------------------------------- */
+
+const SPR = {
+  paw:
+    '<svg width="36" height="64" viewBox="0 0 36 64" aria-hidden="true">' +
+    '<rect x="10" y="16" width="16" height="48" rx="8" fill="#9C8C7E"/>' +
+    '<circle cx="18" cy="13" r="12.5" fill="#9C8C7E"/>' +
+    '<circle cx="11.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="18" cy="5.6" r="3.1" fill="#E0A6A6"/>' +
+    '<circle cx="24.5" cy="8" r="3.1" fill="#E0A6A6"/>' +
+    '<ellipse cx="18" cy="14.5" rx="4.8" ry="4.2" fill="#E0A6A6"/></svg>',
+  pom:
+    '<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">' +
+    '<circle cx="15" cy="15" r="12" fill="#7FC7E8"/>' +
+    '<circle cx="11" cy="11" r="5" fill="#BDE6F8"/>' +
+    '<circle cx="24" cy="6" r="2.4" fill="#FFF3B0"/>' +
+    '<circle cx="5" cy="22" r="2" fill="#FFF3B0"/></svg>',
+  petal: '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><ellipse cx="7" cy="7" rx="6.5" ry="3.4" fill="#E48CA4"/></svg>',
+  cuke:  '<svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6.4" fill="#4E8B45"/><circle cx="7" cy="7" r="4.4" fill="#C9E3A6"/><circle cx="7" cy="7" r="1.5" fill="#EDF6DC"/></svg>',
+  heart: '<svg width="17" height="17" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14C3 10.6 1 8.4 1 5.9 1 3.7 2.7 2 4.8 2 6.1 2 7.3 2.7 8 3.8 8.7 2.7 9.9 2 11.2 2 13.3 2 15 3.7 15 5.9 15 8.4 13 10.6 8 14Z" fill="#D8556F"/></svg>',
+  seed:  '<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V8" stroke="#B9A98B" stroke-width="1.2"/><g stroke="#F3EBD8" stroke-width="1.3" stroke-linecap="round"><path d="M8 8 1 2M8 8 8 0M8 8 15 2M8 8 3 8M8 8 13 8"/></g></svg>',
+  laserCss: "width:13px;height:13px;border-radius:50%;background:#FF3B2E;box-shadow:0 0 12px 5px rgba(255,59,46,.55)"
+};
+
+const PAGE_BG = { baker:"#EDE7FA", doc:"#EFF3FF", lulu:"#EAF7EF", ilona:"#FFF6DF" };
+
+/* ---------- exit-transition helpers -------------------------------------- */
+
+function txOverlay(bg) {
+  const o = document.createElement("div");
+  o.className = "tx-ov";
+  o.style.cssText = "position:fixed;inset:0;z-index:999;pointer-events:none;overflow:hidden";
+  const wash = document.createElement("div");
+  wash.style.cssText = `position:absolute;inset:0;background:${bg};opacity:0`;
+  wash.animate([{ opacity: 0 }, { opacity: 0.94 }],
+               { duration: 240, fill: "forwards", easing: "ease-out" });
+  o.appendChild(wash);
+  document.body.appendChild(o);
+  return o;
+}
+
+function put(o, html, css) {
+  const s = document.createElement("span");
+  s.style.cssText = "position:absolute;left:0;top:0;will-change:transform,opacity;" + css;
+  s.innerHTML = html;
+  o.appendChild(s);
+  return s;
+}
+
+/* Each cat in the bottom menu gets their own send-off. */
+function catExit(slug, href) {
+  const o = txOverlay(PAGE_BG[slug] || "#F4EFFF");
+  const W = innerWidth, H = innerHeight;
+
+  if (slug === "baker") {
+    // her laser zips across, the paw swats, the page flinches
+    const dot = put(o, "", SPR.laserCss);
+    dot.animate([
+      { transform: `translate(${-30}px, ${H * 0.25}px)` },
+      { transform: `translate(${W * 0.3}px, ${H * 0.6}px)`, offset: 0.3 },
+      { transform: `translate(${W * 0.55}px, ${H * 0.3}px)`, offset: 0.55 },
+      { transform: `translate(${W * 0.5}px, ${H * 0.52}px)`, offset: 0.75 },
+      { transform: `translate(${W + 40}px, ${H * 0.4}px)` }
+    ], { duration: 700, easing: "ease-in-out", fill: "forwards" });
+    const paw = put(o, SPR.paw, "transform-origin:50% 100%");
+    paw.animate([
+      { transform: `translate(${W * 0.5 - 40}px, ${H + 90}px) scale(2.2)` },
+      { transform: `translate(${W * 0.5 - 40}px, ${H * 0.42}px) scale(2.2)` }
+    ], { duration: 260, delay: 300, easing: "cubic-bezier(.2,.9,.3,1.1)", fill: "forwards" });
+    document.body.animate([
+      { transform: "translate(0,0)" }, { transform: "translate(-5px,3px)" },
+      { transform: "translate(4px,-3px)" }, { transform: "translate(-3px,2px)" },
+      { transform: "translate(0,0)" }
+    ], { duration: 260, delay: 560 });
+  }
+
+  if (slug === "doc") {
+    // the pom pom is thrown; he is already on his way
+    const pom = put(o, SPR.pom, "");
+    const base = H * 0.72;
+    pom.animate([
+      { transform: `translate(-40px, ${base}px) rotate(0deg)` },
+      { transform: `translate(${W * 0.22}px, ${base - H * 0.3}px) rotate(180deg)`, offset: 0.28 },
+      { transform: `translate(${W * 0.45}px, ${base}px) rotate(340deg)`, offset: 0.52 },
+      { transform: `translate(${W * 0.68}px, ${base - H * 0.18}px) rotate(520deg)`, offset: 0.76 },
+      { transform: `translate(${W + 50}px, ${base}px) rotate(720deg)` }
+    ], { duration: 820, easing: "linear", fill: "forwards" });
+    for (let i = 0; i < 6; i++) {
+      const s = put(o, "", "width:6px;height:6px;border-radius:50%;background:#FFF3B0;box-shadow:0 0 7px #FFE066");
+      s.animate([
+        { transform: `translate(${W * (0.1 + i * 0.15)}px, ${base + R(-30, 20)}px)`, opacity: 0 },
+        { opacity: 1, offset: 0.5 },
+        { transform: `translate(${W * (0.1 + i * 0.15) + R(-25, 25)}px, ${base + R(-70, -30)}px)`, opacity: 0 }
+      ], { duration: 520, delay: i * 90, easing: "ease-out" });
+    }
+  }
+
+  if (slug === "lulu") {
+    // petals and cucumber, everywhere at once
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.35 ? SPR.cuke : SPR.petal, "");
+      const x = R(0, W), sway = R(-70, 70), spin = R(-380, 380);
+      el.animate([
+        { transform: `translate(${x}px, -30px) rotate(0deg)`, opacity: 1 },
+        { transform: `translate(${x + sway}px, ${H + 40}px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(620, 900), delay: i * 26, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  if (slug === "ilona") {
+    // hearts and dandelion seeds, rising all together
+    for (let i = 0; i < 16; i++) {
+      const el = put(o, Math.random() < 0.5 ? SPR.heart : SPR.seed, "");
+      const x = R(0, W), sway = R(-60, 60), spin = R(-160, 160);
+      el.animate([
+        { transform: `translate(${x}px, ${H + 30}px) rotate(0deg) scale(${R(0.9, 1.6)})`, opacity: 0 },
+        { opacity: 1, offset: 0.15 },
+        { transform: `translate(${x + sway}px, -50px) rotate(${spin}deg)`, opacity: 0.9 }
+      ], { duration: R(650, 900), delay: i * 28, easing: "cubic-bezier(.4,0,.8,1)", fill: "forwards" });
+    }
+  }
+
+  setTimeout(() => { window.location.href = href; }, 880);
+}
+
+/* Leaving the About page: all four cats run home into the empty coat. */
+function coatExit(href) {
+  const o = txOverlay(getComputedStyle(document.body).backgroundColor);
+  const W = innerWidth, H = innerHeight;
+
+  // the coat, centre stage (clone the page's own if it's there)
+  const src = document.getElementById("aboutCoat") || document.querySelector(".coat-mini");
+  const holder = put(o, "", "left:50%;top:50%;transform:translate(-50%,-52%);width:min(46vw,220px)");
+  if (src) {
+    const clone = src.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.style.width = "100%"; clone.style.height = "auto";
+    holder.appendChild(clone);
+  }
+  holder.animate([{ opacity: 0, offset: 0 }, { opacity: 1 }],
+                 { duration: 200, fill: "forwards", easing: "ease-out" });
+
+  // four runners, two per side, staggered
+  const cx = W / 2, cy = H / 2 + 6;
+  const runners = [
+    { slug: "baker", fromX: -110,   y: H * 0.30, delay: 0   },
+    { slug: "doc",   fromX: W + 110, y: H * 0.34, delay: 110 },
+    { slug: "lulu",  fromX: -110,   y: H * 0.62, delay: 220 },
+    { slug: "ilona", fromX: W + 110, y: H * 0.66, delay: 330 }
+  ];
+  runners.forEach(({ slug, fromX, y, delay }) => {
+    const el = put(o,
+      `<svg width="86" height="86" viewBox="-6 -6 152 152" aria-hidden="true"><use href="#tk-${slug}"></use></svg>`, "");
+    const dir = fromX < 0 ? 1 : -1;
+    const midX = fromX + (cx - fromX) * 0.55;
+    el.animate([
+      { transform: `translate(${fromX - 43}px, ${y - 43}px) rotate(0deg) scale(1)`, opacity: 1 },
+      { transform: `translate(${midX - 43}px, ${(y + cy) / 2 - 58}px) rotate(${dir * 8}deg) scale(1)`, offset: 0.45 },
+      { transform: `translate(${(midX + cx) / 2 - 43}px, ${cy - 40}px) rotate(${dir * -7}deg) scale(.8)`, offset: 0.75 },
+      { transform: `translate(${cx - 43}px, ${cy - 30}px) rotate(0deg) scale(.06)`, opacity: 0 }
+    ], { duration: 640, delay, easing: "ease-in", fill: "forwards" });
+  });
+
+  setTimeout(() => { window.location.href = href; }, 1050);
+}
+
+/* ---------- 1. page-turn transitions ------------------------------------- */
+(function pageTurn() {
+  if (reduced) return;
+  let navigating = false;
+  document.addEventListener("click", (e) => {
+    if (navigating) { e.preventDefault(); return; }
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    const a = e.target.closest("a");
+    if (!a || a.target === "_blank") return;
+    const href = a.getAttribute("href") || "";
+    if (!href.endsWith(".html") || href.startsWith("http") || href.startsWith("mailto")) return;
+    e.preventDefault();
+    navigating = true;
+
+    const item = a.closest(".cat-item");
+    if (document.body.dataset.exit === "coat" || a.closest(".coat-link")) {
+      coatExit(href);                                   // the coat: everybody in
+    } else if (item) {
+      const cls = [...item.classList].find(c => c.startsWith("ci-"));
+      catExit(cls ? cls.slice(3) : "", href);           // bottom menu: that cat's send-off
+    } else {
+      document.body.classList.add("leaving");           // everything else: quick fade
+      setTimeout(() => { window.location.href = href; }, 200);
+    }
+  });
+  // restore state when arriving via back/forward cache
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("leaving");
+    document.querySelectorAll(".tx-ov").forEach(el => el.remove());
+  });
+})();
+
+/* ---------- 2. scroll reveal ---------------------------------------------- */
+(function reveal() {
+  const items = document.querySelectorAll(".rv, .rv-fade");
+  if (!items.length) return;
+  if (reduced || !("IntersectionObserver" in window)) {
+    items.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+  items.forEach(el => io.observe(el));
+})();
+
+/* ---------- 3. email signup ----------------------------------------------- */
+(function signup() {
+  document.querySelectorAll("form[data-signup]").forEach(form => {
+    const note  = form.parentElement.querySelector(".signup__note");
+    const input = form.querySelector('input[type="email"]');
+    const trap  = form.querySelector('input[name="_hp"]');
+
+    if (SIGNUP_ENDPOINT) form.setAttribute("action", SIGNUP_ENDPOINT);
+
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      if (trap && trap.value) return;
+      const email = (input.value || "").trim();
+      if (!email || !input.checkValidity()) {
+        if (note) note.textContent = "That address didn't look right. Try again?";
+        input.focus();
+        return;
+      }
+      if (!SIGNUP_ENDPOINT) {
+        window.location.href = FALLBACK_MAILTO;
+        if (note) note.textContent = "Opening your email app — just hit send.";
+        return;
+      }
+      if (note) note.textContent = "Signing you up…";
+      try {
+        // form-encoded body: works for both Formspree and Buttondown
+        const res = await fetch(SIGNUP_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new URLSearchParams({ email })
+        });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        if (note) note.textContent = "You're on the list!";
+      } catch (err) {
+        if (note) note.textContent = "That didn't go through. Email toddlerkitties@gmail.com instead.";
+      }
+    });
+  });
+})();
+
+
+/* ---------- tails: random, cat-natural wagging --------------------------- */
+(function tails() {
+  if (reduced) return;
+  const tails = document.querySelectorAll(".cat-item .tk-tail, .stage .tk-tail");
+  tails.forEach(el => {
+    const o = el.getAttribute("data-o") || "96 128";
+    let busy = false;
+    const wag = () => {
+      if (busy) return;
+      busy = true;
+      const amp = R(6, 16) * (Math.random() < 0.5 ? -1 : 1);   // random direction
+      const swings = 2 + Math.floor(R(0, 3));                  // 2-4 swishes
+      const dur = R(700, 1500);
+      const t0 = performance.now();
+      (function f(now) {
+        const p = (now - t0) / dur;
+        if (p >= 1) { el.setAttribute("transform", `rotate(0 ${o})`); busy = false; return; }
+        const a = Math.sin(p * Math.PI * swings) * amp * (1 - p * 0.35);
+        el.setAttribute("transform", `rotate(${a.toFixed(2)} ${o})`);
+        requestAnimationFrame(f);
+      })(t0);
+    };
+    (function loop() {
+      setTimeout(() => { wag(); loop(); }, R(1200, 6500));     // random timing
+    })();
+  });
+})();
+
+/* ---------- about page: someone is in the coat ---------------------------- */
+(function coatPeekaboo() {
+  if (reduced) return;
+  const peek = document.querySelector("#aboutCoat #coatPeek");
+  if (!peek) return;
+  const NS = "http://www.w3.org/2000/svg";
+  const slugs = ["baker", "doc", "lulu", "ilona"];
+  const show = () => {
+    const s = slugs[Math.floor(Math.random() * slugs.length)];
+    const g = document.createElementNS(NS, "g");
+    const sv = document.createElementNS(NS, "svg");
+    sv.setAttribute("x", "141"); sv.setAttribute("y", "224");
+    sv.setAttribute("width", "38"); sv.setAttribute("height", "38");
+    sv.setAttribute("viewBox", "-6 -6 152 152");
+    const u = document.createElementNS(NS, "use");
+    u.setAttribute("href", "#tk-" + s);
+    sv.appendChild(u); g.appendChild(sv); peek.appendChild(g);
+    g.style.transformBox = "fill-box";
+    g.style.transformOrigin = "center";
+    g.animate([
+      { transform: "scale(0)", opacity: 0 },
+      { transform: "scale(1.12)", opacity: 1, offset: 0.18 },
+      { transform: "scale(1)", opacity: 1, offset: 0.28 },
+      { transform: "scale(1)", opacity: 1, offset: 0.8 },
+      { transform: "scale(0)", opacity: 0 }
+    ], { duration: 2400, easing: "ease-in-out" }).onfinish = () => g.remove();
+  };
+  (function loop() {
+    setTimeout(() => { show(); loop(); }, R(3500, 8500));
+  })();
+})();
+
+/* ---------- 404: meow at the wrong door, the right one opens -------------- */
+(function wrongDoor() {
+  const btn = document.getElementById("nfBtn");
+  const panel = document.getElementById("nfPanel");
+  if (!btn || !panel) return;
+  const bubble = document.getElementById("nfBubble");
+  const meow = () => {
+    if (!bubble) return;
+    bubble.style.transformBox = "fill-box";
+    bubble.style.transformOrigin = "20% 100%";
+    bubble.animate([
+      { opacity: 0, transform: "scale(.5)" },
+      { opacity: 1, transform: "scale(1)", offset: 0.22 },
+      { opacity: 1, transform: "scale(1)", offset: 0.72 },
+      { opacity: 0, transform: "scale(.85)" }
+    ], { duration: 950, easing: "ease-out" });
+  };
+  if (!reduced) (function idle() {
+    setTimeout(() => { meow(); idle(); }, R(3200, 7000));
+  })();
+  btn.addEventListener("click", (e) => {
+    const href = btn.getAttribute("href");
+    e.preventDefault();
+    if (reduced) { window.location.href = href; return; }
+    meow();                                        // she meows at HER door...
+    panel.style.transformBox = "fill-box";
+    panel.style.transformOrigin = "left center";
+    panel.animate([                                // ...and the OTHER one opens
+      { transform: "skewY(0deg) scaleX(1)" },
+      { transform: "skewY(-7deg) scaleX(.07)" }
+    ], { duration: 480, delay: 430, easing: "cubic-bezier(.6,0,.4,1)", fill: "forwards" });
+    setTimeout(() => { window.location.href = href; }, 1180);
+  });
+})();
+
+/* ---------- 4. per-cat stage animations ----------------------------------- */
+(function ambient() {
+  if (reduced) return;
+  const stage = document.querySelector("[data-stage]");
+  if (!stage) return;
+  const cat = document.body.dataset.theme;
+
+  const mk = (cls, html) => {
+    const el = document.createElement("span");
+    el.className = "crit " + cls;
+    if (html) el.innerHTML = html;
+    stage.appendChild(el);
+    return el;
+  };
+
+  /* --- Baker: laser dot; her eyes track it, and sometimes she swats --- */
+  if (cat === "baker") {
+    const dot = mk("laser");
+    const pupils = stage.querySelector(".bk-pupils");
+    const paw = mk("bk-paw", SPR.paw);
+
+    let t = R(0, 100), tx = 0.5, ty = 0.4, hold = 0;
+    let x = 0, y = 0, swatting = false;
+
+    paw.style.transition = "none";
+    paw.style.transform = `translate(-100px, 9999px)`;
+
+    (function step() {
+      t += 0.016;
+      if (hold > 0) hold -= 1;
+      else if (Math.random() < 0.012) { hold = R(30, 90); tx = R(0.1, 0.9); ty = R(0.12, 0.85); }
+      const w = stage.clientWidth, h = stage.clientHeight;
+      x = (tx + Math.sin(t * 2.3) * 0.05) * w;
+      y = (ty + Math.cos(t * 3.1) * 0.05) * h;
+      dot.style.transform = `translate(${x - 5}px, ${y - 5}px)`;
+      if (pupils) {
+        const dx = (x / w - 0.5) * 7;
+        const dy = (y / h - 0.45) * 5;
+        pupils.setAttribute("transform",
+          `translate(${Math.max(-3.5, Math.min(3.5, dx))} ${Math.max(-2, Math.min(3, dy))})`);
+      }
+      requestAnimationFrame(step);
+    })();
+
+    const swat = () => {
+      if (swatting) return;
+      swatting = true;
+      const h = stage.clientHeight;
+      paw.style.transition = "none";
+      paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+      void paw.offsetWidth;
+      paw.style.transition = "transform .26s cubic-bezier(.2,.9,.3,1.15)";
+      paw.style.transform = `translate(${x - 18}px, ${y - 10}px)`;
+      setTimeout(() => {
+        tx = R(0.1, 0.9); ty = R(0.12, 0.8); hold = 0;   // the dot escapes, obviously
+        paw.style.transition = "transform .3s ease-in";
+        paw.style.transform = `translate(${x - 18}px, ${h + 70}px)`;
+        setTimeout(() => { swatting = false; }, 320);
+      }, 420);
+    };
+    (function scheduleSwat() {
+      setTimeout(() => { swat(); scheduleSwat(); }, R(4500, 8500));
+    })();
+  }
+
+  /* --- Doc: a sparkly pom pom, being fetched --- */
+  if (cat === "doc") {
+    const pom = mk("pom");
+    const sparks = [mk("spark"), mk("spark"), mk("spark")];
+    let t = R(0, 6);
+    (function step() {
+      t += 0.0055;
+      const p = (t % 1);
+      const w = stage.clientWidth, h = stage.clientHeight;
+      const dir = Math.floor(t) % 2 === 0 ? p : 1 - p;
+      const x = (0.06 + dir * 0.88) * w;
+      const y = h * 0.88 - Math.abs(Math.sin(p * Math.PI * 5)) * h * 0.1;
+      pom.style.transform = `translate(${x - 10}px, ${y - 10}px)`;
+      sparks.forEach((s, i) => {
+        const a = t * (7 + i * 2) + i * 2.1;
+        s.style.transform = `translate(${x - 2 + Math.cos(a) * 15}px, ${y - 2 + Math.sin(a) * 13}px)`;
+        s.style.opacity = 0.35 + 0.65 * Math.abs(Math.sin(a));
+      });
+      requestAnimationFrame(step);
+    })();
+  }
+
+  /* --- Lulu: rose petals and, inexplicably, cucumber --- */
+  if (cat === "lulu") {
+    const drop = () => {
+      const el = mk("", Math.random() < 0.32 ? SPR.cuke : SPR.petal);
+      const x0 = R(0, 100), dur = R(7000, 12000), sway = R(14, 46), spin = R(-360, 360);
+      el.style.left = x0 + "%"; el.style.top = "-8%";
+      const t0 = performance.now();
+      (function fall(now) {
+        const p = (now - t0) / dur;
+        if (p >= 1) { el.remove(); return; }
+        el.style.transform =
+          `translate(${Math.sin(p * 5.5) * sway}px, ${p * stage.clientHeight * 1.2}px) rotate(${spin * p}deg)`;
+        el.style.opacity = p > 0.82 ? (1 - p) / 0.18 : 1;
+        requestAnimationFrame(fall);
+      })(t0);
+    };
+    for (let i = 0; i < 5; i++) setTimeout(drop, i * 900);
+    setInterval(drop, 1500);
+  }
+
+  /* --- Ilona: hearts and dandelion seeds, at heartbeat tempo (72 bpm) --- */
+  if (cat === "ilona") {
+    const rise = () => {
+      const el = mk("", Math.random() < 0.45 ? SPR.heart : SPR.seed);
+      const dur = R(6500, 10500), sway = R(16, 44), spin = R(-140, 140);
+      el.style.left = R(6, 94) + "%"; el.style.top = "100%";
+      const t0 = performance.now();
+      (function up(now) {
+        const p = (now - t0) / dur;
+        if (p >= 1) { el.remove(); return; }
+        el.style.transform =
+          `translate(${Math.sin(p * 4.2) * sway}px, ${-p * stage.clientHeight * 1.15}px) rotate(${spin * p}deg)`;
+        el.style.opacity = p < 0.12 ? p / 0.12 : (p > 0.78 ? (1 - p) / 0.22 : 1);
+        requestAnimationFrame(up);
+      })(t0);
+    };
+    rise();
+    setInterval(rise, 833); // 72 bpm
+  }
+})();
+</script>
+</body>
+</html>
