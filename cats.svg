@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <!-- ============ BAKER — B1 — grey-brown tabby, heart nose, pointed ears ============ -->
+  <symbol id="tk-baker" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#6E6055" stroke-width="11" stroke-linecap="round"/>
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#9C8C7E" stroke-width="7" stroke-linecap="round"/>
+      <path d="M118 96 l9 5 M112 108 l10 3" stroke="#6E6055" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#9C8C7E"/>
+      <ellipse cx="60" cy="130" rx="19" ry="15" fill="#EFE3D2"/>
+      <!-- ears (tall, pointed, sassy) -->
+      <path d="M27 44 L17 2 L53 28 Z" fill="#9C8C7E"/>
+      <path d="M93 44 L103 2 L67 28 Z" fill="#9C8C7E"/>
+      <path d="M31 39 L25 13 L46 28 Z" fill="#E0A6A6"/>
+      <path d="M89 39 L95 13 L74 28 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#9C8C7E"/>
+      <!-- forehead stripes -->
+      <path d="M60 24 v12 M48 27 l3 11 M72 27 l-3 11" stroke="#6E6055" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M26 52 q8 3 13 0 M94 52 q-8 3 -13 0" stroke="#6E6055" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- half-lidded eyes -->
+      <path d="M37 57 C37 66 51 66 51 57 Z" fill="#7C9A4E"/>
+      <path d="M69 57 C69 66 83 66 83 57 Z" fill="#7C9A4E"/>
+      <g class="bk-pupils"><path d="M42 60 C42 65 46 65 46 60 Z" fill="#241F2E"/><path d="M74 60 C74 65 78 65 78 60 Z" fill="#241F2E"/></g>
+      <path d="M36 56 Q44 51 52 56 M68 56 Q76 51 84 56" stroke="#241F2E" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- heart nose -->
+      <path d="M60 71.5 C56.5 66.5 50 67.5 50 72 C50 76.6 56.5 79.2 60 83 C63.5 79.2 70 76.6 70 72 C70 67.5 63.5 66.5 60 71.5 Z" fill="#D96A7A"/>
+      <!-- little frown -->
+      <path d="M52 90 Q60 85.5 68 90" stroke="#241F2E" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <!-- collar on chest + B tag -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#7E5BA6" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="60" cy="122" r="9" fill="#E8DAF6"/>
+      <text x="60" y="126" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B3E82">B</text>
+    </g>
+  </symbol>
+
+  <!-- ============ DOC — D2 — black-and-white cow pattern, huge ears, moon-and-stars collar
+       Sticker style: chunky ink outline, big shiny eyes, blush, toe beans.
+       Markings traced from photo: black base, asymmetric white blaze weighted to HIS left
+       (viewer's right), black nose-bridge band, white muzzle, dark chin patch. ============ -->
+  <symbol id="tk-doc" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail: black with a white tip -->
+      <g class="tk-tail" data-o="98 130">
+        <path d="M98 130 C128 129 137 108 124 89" fill="none" stroke="#221E2C" stroke-width="16.5" stroke-linecap="round"/>
+        <path d="M98 130 C128 129 137 108 124 89" fill="none" stroke="#3A3542" stroke-width="10.5" stroke-linecap="round"/>
+        <path d="M127.5 99 C127.5 95 126 91.5 124 89" fill="none" stroke="#FBF8F3" stroke-width="10.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- body -->
+      <path d="M18 138 C18 106 36 92 60 92 C84 92 102 106 102 138 Z" fill="#3A3542" stroke="#221E2C" stroke-width="3.4" stroke-linejoin="round"/>
+      <!-- big white chest: broad bib, black patches sitting on it, white mitten on the far paw -->
+      <path d="M60 93 C79 93 87 110 87 128 C87 136 75 138 60 138 C45 138 33 136 33 128 C33 110 41 93 60 93 Z" fill="#FBF8F3"/>
+      <path d="M48 111 C53.5 115 56 122 53.5 127 C51 132 44.5 132 42.5 127 C40.5 122 43 115 48 111 Z" fill="#3A3542"/>
+      <ellipse cx="81" cy="125" rx="9" ry="11" fill="#3A3542"/>
+      <ellipse cx="95" cy="133" rx="6.5" ry="4.4" fill="#FBF8F3"/>
+
+      <!-- collar: navy, on the chest, moon and stars -->
+      <path d="M31 102 Q60 118 89 102" fill="none" stroke="#221E2C" stroke-width="13.5" stroke-linecap="round"/>
+      <path d="M31 102 Q60 118 89 102" fill="none" stroke="#2E4E9E" stroke-width="9" stroke-linecap="round"/>
+      <path d="M44 107.5 l1.7 3.8 4.1 .4 -3.1 2.8 .9 4 -3.6 -2.1 -3.6 2.1 .9 -4 -3.1 -2.8 4.1 -.4 Z" fill="#F0CB4A"/>
+      <path d="M77.5 106 a4.8 4.8 0 1 0 3.8 7.7 a3.8 3.8 0 1 1 -3.8 -7.7 Z" fill="#F0CB4A"/>
+      <circle cx="61" cy="114" r="2" fill="#F0CB4A"/>
+
+      <!-- ears (very large, upright) -->
+      <path d="M24 44 L15 3 L55 27 Z" fill="#3A3542" stroke="#221E2C" stroke-width="3.4" stroke-linejoin="round"/>
+      <path d="M96 44 L105 3 L65 27 Z" fill="#3A3542" stroke="#221E2C" stroke-width="3.4" stroke-linejoin="round"/>
+      <path d="M29 38 L22 12 L46 27 Z" fill="#E8A7AE"/>
+      <path d="M91 38 L98 12 L74 27 Z" fill="#E8A7AE"/>
+
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="42" ry="37" fill="#3A3542" stroke="#221E2C" stroke-width="3.4"/>
+      <!-- the white side of his face: wedge down the forehead, whole cheek below it -->
+      <path d="M72 22.6 A42 37 0 0 1 76 92.2 C66 84 58 70 60 54 C62 42 67 30 72 22.6 Z" fill="#FBF8F3"/>
+      <!-- white muzzle -->
+      <ellipse cx="60" cy="78" rx="20" ry="13" fill="#FBF8F3"/>
+      <!-- black band down the nose bridge -->
+      <path d="M49 44 C47 56 49 68 54 74 L66 74 C69 66 68 54 65 44 Z" fill="#3A3542"/>
+      <!-- dark chin patch -->
+      <path d="M60 83 C65 83 68.5 86 68.5 89 C68.5 92.4 64.5 94 60 94 C55.5 94 51.5 92.4 51.5 89 C51.5 86 55 83 60 83 Z" fill="#3A3542"/>
+      <!-- nose -->
+      <path d="M53 68 h14 c2.7 0 3.7 2.5 2 4.3 l-5.6 5.6 c-1.7 1.7 -4.1 1.7 -5.8 0 l-5.6 -5.6 c-1.7 -1.8 -.7 -4.3 2 -4.3 Z" fill="#2A2633" stroke="#221E2C" stroke-width="1.6" stroke-linejoin="round"/>
+      <!-- easy little grin -->
+      <path d="M60 78.6 q-5 5.6 -9.5 1.2 M60 78.6 q5 5.6 9.5 1.2" stroke="#221E2C" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+
+      <!-- big shiny eyes, yellow-green -->
+      <circle cx="42" cy="53" r="11.6" fill="#241F2E" stroke="#221E2C" stroke-width="2.2"/>
+      <circle cx="78" cy="53" r="11.6" fill="#241F2E" stroke="#221E2C" stroke-width="2.2"/>
+      <circle cx="42" cy="53" r="8.6" fill="#C9D64E"/>
+      <circle cx="78" cy="53" r="8.6" fill="#C9D64E"/>
+      <g class="dc-pupils">
+        <ellipse cx="42" cy="54" rx="4.4" ry="7.4" fill="#241F2E"/>
+        <ellipse cx="78" cy="54" rx="4.4" ry="7.4" fill="#241F2E"/>
+        <circle cx="45.8" cy="48.4" r="3.2" fill="#FFFFFF"/>
+        <circle cx="81.8" cy="48.4" r="3.2" fill="#FFFFFF"/>
+        <circle cx="37.8" cy="58" r="1.8" fill="#FFFFFF" opacity=".8"/>
+        <circle cx="73.8" cy="58" r="1.8" fill="#FFFFFF" opacity=".8"/>
+      </g>
+
+      <!-- blush -->
+      <ellipse cx="45" cy="77" rx="7" ry="4.2" fill="#F0A8B4" opacity=".7"/>
+      <ellipse cx="75" cy="77" rx="7" ry="4.2" fill="#F0A8B4" opacity=".7"/>
+      <!-- whiskers: light over the black side, ink over the white side -->
+      <path d="M36 70 l-14 -4 M35 76 l-15 1 M36 82 l-13 5" stroke="#FBF8F3" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <path d="M84 70 l14 -4 M85 76 l15 1 M84 82 l13 5" stroke="#221E2C" stroke-width="2.2" stroke-linecap="round" opacity=".5"/>
+    </g>
+  </symbol>
+
+  <!-- ============ LULU — L3 — greyish-brown tortie, daisy collar ============ -->
+  <symbol id="tk-lulu" viewBox="-6 -6 152 152">
+    <g>
+      <!-- tail -->
+      <g class="tk-tail" data-o="96 128">
+      <path d="M96 128 C124 126 130 108 120 92" fill="none" stroke="#8B7A6C" stroke-width="11" stroke-linecap="round"/>
+      <path d="M122 96 c6 6 4 12 -1 14" fill="none" stroke="#A9714A" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <!-- body -->
+      <path d="M20 138 C20 106 37 94 60 94 C83 94 100 106 100 138 Z" fill="#8B7A6C"/>
+      <path d="M20 138 C20 116 28 100 44 96 L46 138 Z" fill="#5E4E44"/>
+      <ellipse cx="84" cy="124" rx="10" ry="12" fill="#A9714A"/>
+      <ellipse cx="60" cy="132" rx="16" ry="12" fill="#EFE3D2"/>
+      <!-- ears -->
+      <path d="M26 42 L18 5 L53 27 Z" fill="#8B7A6C"/>
+      <path d="M94 42 L102 5 L67 27 Z" fill="#A9714A"/>
+      <path d="M30 37 L25 15 L45 27 Z" fill="#E0A6A6"/>
+      <path d="M90 37 L95 15 L75 27 Z" fill="#E0A6A6"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="41" ry="36" fill="#8B7A6C"/>
+      <!-- tortie mottling -->
+      <path d="M60 22 C78 22 94 32 98 50 C88 56 74 52 66 42 C62 36 60 28 60 22 Z" fill="#A9714A"/>
+      <path d="M22 48 C26 33 38 24 52 22 C50 34 44 44 34 52 Z" fill="#5E4E44"/>
+      <path d="M92 66 q6 6 4 12" stroke="#5E4E44" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="74" rx="17" ry="12" fill="#EFE3D2"/>
+      <!-- eyes, soft green, wide and deep -->
+      <circle cx="43" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="77" cy="57" r="8.5" fill="#6E9A5A"/>
+      <circle cx="43" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="77" cy="57" r="4" fill="#241F2E"/>
+      <circle cx="45.5" cy="54" r="2" fill="#FFFFFF"/>
+      <circle cx="79.5" cy="54" r="2" fill="#FFFFFF"/>
+      <!-- nose + gentle mouth -->
+      <path d="M55 70 h10 l-5 5.5 Z" fill="#D96A7A"/>
+      <path d="M60 76 q-5 5 -9 1 M60 76 q5 5 9 1" stroke="#5E4E44" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <!-- collar: green with white daisies -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#2F6B44" stroke-width="9" stroke-linecap="round"/>
+      <g fill="#FFFFFF">
+        <circle cx="44" cy="110.5" r="1.9"/><circle cx="47.6" cy="110.5" r="1.9"/><circle cx="45.8" cy="107.6" r="1.9"/><circle cx="45.8" cy="113.4" r="1.9"/>
+        <circle cx="72" cy="112.5" r="1.9"/><circle cx="75.6" cy="112.5" r="1.9"/><circle cx="73.8" cy="109.6" r="1.9"/><circle cx="73.8" cy="115.4" r="1.9"/>
+      </g>
+      <circle cx="45.8" cy="110.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="73.8" cy="112.5" r="1.7" fill="#E8C33D"/>
+      <circle cx="60" cy="115.5" r="6.5" fill="#F2F2E8"/>
+      <text x="60" y="119.4" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F6B44">L</text>
+    </g>
+  </symbol>
+
+  <!-- ============ ILONA — I4 — long-haired orange/cream tabby, plume tail, bow tie ============ -->
+  <symbol id="tk-ilona" viewBox="-6 -6 152 152">
+    <g>
+      <!-- plume tail -->
+      <g class="tk-tail" data-o="98 132">
+      <path d="M96 132 C122 132 136 112 126 88 C134 106 124 120 108 122 C120 116 124 104 118 96 C120 110 106 118 94 120 Z" fill="#E0A05A"/>
+      <path d="M124 94 c4 8 2 14 -3 18" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </g>
+      <!-- body with long-hair edge -->
+      <path d="M18 138 C18 121 23 107 34 100 q-4 5 -3 7 q5 -7 10 -9 q-3 4 -2 6 q6 -6 11 -8 C48 94 54 94 60 94 C83 94 102 106 102 138 Z" fill="#E0A05A"/>
+      <ellipse cx="60" cy="130" rx="20" ry="16" fill="#F6E2C4"/>
+      <path d="M24 122 q9 3 0 6 M96 118 q-9 3 0 6" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- big ears with tufts -->
+      <path d="M24 42 L14 2 L53 26 Z" fill="#E0A05A"/>
+      <path d="M96 42 L106 2 L67 26 Z" fill="#E0A05A"/>
+      <path d="M29 37 L22 12 L45 26 Z" fill="#E8AFAF"/>
+      <path d="M91 37 L98 12 L75 26 Z" fill="#E8AFAF"/>
+      <path d="M27 30 l-6 -6 M31 24 l-5 -8 M93 30 l6 -6 M89 24 l5 -8" stroke="#F6E2C4" stroke-width="3" stroke-linecap="round"/>
+      <!-- head -->
+      <ellipse cx="60" cy="58" rx="42" ry="37" fill="#E0A05A"/>
+      <!-- tabby stripes -->
+      <path d="M60 22 v13 M47 25 l3 11 M73 25 l-3 11" stroke="#C2803E" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M25 50 q9 3 14 0 M95 50 q-9 3 -14 0" stroke="#C2803E" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- muzzle -->
+      <ellipse cx="60" cy="75" rx="18" ry="12.5" fill="#F6E2C4"/>
+      <!-- huge amber-gold eyes -->
+      <circle cx="42" cy="57" r="9.5" fill="#D8912A"/>
+      <circle cx="78" cy="57" r="9.5" fill="#D8912A"/>
+      <ellipse cx="42" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <ellipse cx="78" cy="57" rx="4" ry="8" fill="#241F2E"/>
+      <circle cx="45" cy="53" r="2.3" fill="#FFFFFF"/>
+      <circle cx="81" cy="53" r="2.3" fill="#FFFFFF"/>
+      <!-- nose + mid-sentence mouth -->
+      <path d="M55 70 h10 l-5 5 Z" fill="#D96A7A"/>
+      <ellipse cx="60" cy="83" rx="7" ry="6" fill="#C4626E"/>
+      <!-- collar: yellow with black-and-white bow tie -->
+      <path d="M33 105 Q60 119 87 105" fill="none" stroke="#E8C33D" stroke-width="9" stroke-linecap="round"/>
+      <path d="M60 115 L47 108 L47 122 Z" fill="#241F2E"/>
+      <path d="M60 115 L73 108 L73 122 Z" fill="#241F2E"/>
+      <rect x="55.5" y="110.5" width="9" height="9" rx="2.5" fill="#FAF7F2"/>
+    </g>
+  </symbol>
+
+  <!-- ============ sleeping loafs (header) ============ -->
+  <symbol id="tk-sleep-baker" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#9C8C7E"/>
+    <path d="M14 44 q20 9 38 3" stroke="#6E6055" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#9C8C7E"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#9C8C7E"/><path d="M78 19 L81 6 L69 13 Z" fill="#9C8C7E"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#6E6055" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M68 35 c-1.4 -2.2 -3.8 -1.7 -3.8 0 c0 1.7 2.4 2.6 3.8 4 c1.4 -1.4 3.8 -2.3 3.8 -4 c0 -1.7 -2.4 -2.2 -3.8 0 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-doc" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#2A2730"/>
+    <ellipse cx="34" cy="43" rx="9" ry="6" fill="#FAF7F2"/>
+    <ellipse cx="52" cy="46" rx="5" ry="4" fill="#FAF7F2"/>
+    <path d="M14 44 q20 9 38 3" stroke="#2A2730" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M14.5 44.2 q3 1.4 6 2.2" stroke="#FAF7F2" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#3A3542"/>
+    <path d="M72 14.6 A15 15 0 0 1 74 43.4 C69 39 66.5 33 68 26 C69 21 70.5 17 72 14.6 Z" fill="#FAF7F2"/>
+    <ellipse cx="68" cy="35" rx="8" ry="5.5" fill="#FAF7F2"/>
+    <path d="M57 18 L52 3 L66 10 Z" fill="#3A3542"/><path d="M79 18 L84 3 L70 10 Z" fill="#3A3542"/>
+    <path d="M59 28 q3 3 6 0" stroke="#F4EFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M71 28 q3 3 6 0" stroke="#221E2C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="62.5" cy="34" rx="3.4" ry="2.2" fill="#F0A8B4" opacity=".7"/>
+    <ellipse cx="73.5" cy="34" rx="3.4" ry="2.2" fill="#F0A8B4" opacity=".7"/>
+    <path d="M65.5 33.5 h5 l-2.5 3 Z" fill="#2A2633"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-lulu" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#8B7A6C"/>
+    <path d="M20 30 C26 26 36 25 44 27 C40 34 30 38 22 36 Z" fill="#5E4E44"/>
+    <ellipse cx="56" cy="44" rx="9" ry="6" fill="#A9714A"/>
+    <path d="M14 44 q20 9 38 3" stroke="#5E4E44" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#8B7A6C"/>
+    <path d="M68 15 C74 14 80 18 82 24 C77 26 71 24 68 20 Z" fill="#A9714A"/>
+    <path d="M58 19 L55 6 L67 13 Z" fill="#8B7A6C"/><path d="M78 19 L81 6 L69 13 Z" fill="#A9714A"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+  <symbol id="tk-sleep-ilona" viewBox="0 0 96 56">
+    <ellipse cx="44" cy="38" rx="33" ry="15" fill="#E0A05A"/>
+    <path d="M10 40 C6 30 14 22 24 24 C18 27 15 33 18 39 C21 33 27 30 32 32 C26 35 24 40 26 44 Z" fill="#E0A05A"/>
+    <path d="M12 36 q3 -5 9 -6" stroke="#C2803E" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="68" cy="29" r="15" fill="#E0A05A"/>
+    <path d="M58 19 L54 5 L67 12 Z" fill="#E0A05A"/><path d="M78 19 L82 5 L69 12 Z" fill="#E0A05A"/>
+    <path d="M57 12 l-3 -4 M79 12 l3 -4" stroke="#F6E2C4" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M66 12 v6 M61 13 l2 5 M71 13 l-2 5" stroke="#C2803E" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M60 29 q3 3 6 0 M71 29 q3 3 6 0" stroke="#3B2E4A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M65.5 34 h5 l-2.5 3 Z" fill="#D96A7A"/>
+    <text x="84" y="16" font-size="12" font-weight="800" fill="#3B2E4A">z</text>
+    <text x="89" y="8" font-size="8" font-weight="800" fill="#3B2E4A">z</text>
+  </symbol>
+
+</svg>
