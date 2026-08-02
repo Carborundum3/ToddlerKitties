@@ -15,7 +15,7 @@
 <meta property="og:description" content="This page is missing. Ilona was nearby.">
 <meta property="og:url" content="https://toddlerkitties.com/404.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjUuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTAgMTggSDI4IE0xOSAxOCBWNDYiLz48cGF0aCBkPSJNMzYgMTggVjQ2IE01MCAxOCBMMzcuNSAzMCBNMzkuNCAyOC40IEw1MSA0NiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1IDI4IEwxMSA3IEwzMCAxOSBaIiBmaWxsPSIjRkFGN0YyIiBzdHJva2U9IiMzQjJFNEEiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik00OSAyOCBMNTMgNyBMMzQgMTkgWiIgZmlsbD0iI0ZBRjdGMiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTggMjUgTDE2IDEzIEwyNiAyMCBaIiBmaWxsPSIjRjBBOEI0Ii8+PHBhdGggZD0iTTQ2IDI1IEw0OCAxMyBMMzggMjAgWiIgZmlsbD0iI0YwQThCNCIvPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjM4IiByeD0iMjIiIHJ5PSIxOSIgZmlsbD0iI0ZBRjdGMiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSIyMyIgY3k9IjM1IiByPSI1LjYiIGZpbGw9IiMzQjJFNEEiLz48Y2lyY2xlIGN4PSI0MSIgY3k9IjM1IiByPSI1LjYiIGZpbGw9IiMzQjJFNEEiLz48Y2lyY2xlIGN4PSIyNS4yIiBjeT0iMzIuNiIgcj0iMiIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjQzLjIiIGN5PSIzMi42IiByPSIyIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0iTTMyIDQ3LjUgYy0yLjQtMy42LTctMi44LTcgLjYgMCAzLjIgNC42IDUgNyA4IDIuNC0zIDctNC44IDctOCAwLTMuNC00LjYtNC4yLTctLjYgWiIgZmlsbD0iI0QxNEE4MiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjIuNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>/* ==========================================================================
    Toddler Kitties
@@ -293,6 +293,10 @@ footer a{ color:#FFC9DA; }
 .oops .nf-scene{ width:min(94vw,760px); height:auto; margin-bottom:.4rem; }
 .oops h1{ font-size:clamp(2rem,1.3rem + 3.4vw,3.2rem); }
 .oops .lede{ max-width:46ch; }
+.nf-door{ cursor:pointer; }
+.nf-door > rect, .nf-door > text, .nf-door > g{ transition:transform .18s ease; }
+.nf-door:hover > rect, .nf-door:hover > text, .nf-door:hover > g{ transform:translateY(-4px); }
+.nf-door:focus-visible{ outline:3px solid var(--pink); outline-offset:4px; border-radius:10px; }
 
 /* ---------- page turn ----------------------------------------------------- */
 
@@ -385,8 +389,7 @@ footer a{ color:#FFC9DA; }
       <path d="M60 72 C56.6 67 50.2 68 50.2 72.5 C50.2 77.2 56.6 79.8 60 83.5 C63.4 79.8 69.8 77.2 69.8 72.5 C69.8 68 63.4 67 60 72 Z"
             fill="#D96A7A" stroke="#2A2432" stroke-width="1.8" stroke-linejoin="round"/>
       <!-- the smirk. One side only. -->
-      <path d="M50 87 C55 91.6 63 91.4 70 84.6" stroke="#2A2432" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-      <path d="M70 84.6 q2.6 -1.4 3.4 -3.4" stroke="#2A2432" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".55"/>
+      <path d="M55.5 87.4 C58.2 87.9 61.4 87.8 64.5 87" stroke="#2A2432" stroke-width="2.3" stroke-linecap="round" fill="none"/>
 
       <!-- blush + whiskers -->
       <ellipse cx="45" cy="79" rx="6.6" ry="4" fill="#E58EA0" opacity=".55"/>
@@ -684,27 +687,53 @@ footer a{ color:#FFC9DA; }
 </svg><header><div class="wrap nav-inner"><div class="brandbox"><a class="logo" href="/home.html"><svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H23 M13 5 V27"/><path d="M29 5 V27 M42 5 L30.5 16 M32.4 14.4 L43 27"/></svg>Toddler <span>Kitties</span></a><div class="logo-sleep" aria-hidden="true"><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-baker"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-doc"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-lulu"></use></svg><svg viewBox="0 0 96 56" aria-hidden="true"><use href="#tk-sleep-ilona"></use></svg></div></div><nav aria-label="Main"><a href="/home.html">Home</a><a href="/baker.html">Baker</a><a href="/doc.html">Doc</a><a href="/lulu.html">Lulu</a><a href="/ilona.html">Ilona</a><a href="/books.html">Books</a><a href="/shop.html">Shop</a><a href="/about.html">About</a></nav></div></header><main id="main">
 <div class="oops wrap"><div class="oops-in">
   <svg class="nf-scene" viewBox="0 0 380 232" role="img" aria-labelledby="nfT">
-    <title id="nfT">Ilona meowing at the wrong door while the right door waits</title>
+    <title id="nfT">Ilona meowing at the closet door while the bedroom waits</title>
     <line x1="14" y1="206" x2="366" y2="206" stroke="#3B2E4A" stroke-width="3" stroke-linecap="round"/>
-    <!-- the wrong door (hers, apparently) -->
+
+    <!-- the closet, which is not where anybody keeps a bedroom -->
     <g>
+      <rect x="36" y="6" width="116" height="27" rx="5" fill="#A8804E" stroke="#3B2E4A" stroke-width="3.5"/>
+      <text x="94" y="26" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+            font-weight="800" font-size="16" letter-spacing="1.6" fill="#FFF4DC">CLOSET</text>
       <rect x="46" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
       <rect x="59" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
       <rect x="59" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
       <circle cx="131" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+      <g transform="rotate(-4 94 79)">
+        <circle cx="94" cy="57" r="2.6" fill="#8C6839" stroke="#3B2E4A" stroke-width="2"/>
+        <rect x="59" y="60" width="70" height="38" rx="6" fill="#FFF4DC" stroke="#3B2E4A" stroke-width="3"/>
+        <text x="94" y="76" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+              font-weight="800" font-size="13.5" fill="#C0392B">WRONG</text>
+        <text x="94" y="91" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+              font-weight="800" font-size="13.5" fill="#C0392B">DOOR</text>
+      </g>
     </g>
-    <!-- the right door -->
-    <g>
+
+    <!-- the bedroom. Also a button. -->
+    <a href="/home.html" id="nfDoorLink" class="nf-door" aria-label="Take the right door to the home page">
+      <rect x="228" y="6" width="116" height="27" rx="5" fill="#A8804E" stroke="#3B2E4A" stroke-width="3.5"/>
+      <text x="286" y="26" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+            font-weight="800" font-size="16" letter-spacing="1.2" fill="#FFF4DC">BED ROOM</text>
       <rect x="238" y="36" width="96" height="170" rx="8" fill="#FFE9A8" stroke="#3B2E4A" stroke-width="4"/>
       <g id="nfPanel">
         <rect x="238" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
         <rect x="251" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
         <rect x="251" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
         <circle cx="249" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+        <g transform="rotate(3 286 79)">
+          <circle cx="286" cy="57" r="2.6" fill="#8C6839" stroke="#3B2E4A" stroke-width="2"/>
+          <rect x="251" y="60" width="70" height="38" rx="6" fill="#FFF4DC" stroke="#3B2E4A" stroke-width="3"/>
+          <text x="286" y="76" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+                font-weight="800" font-size="13.5" fill="#337A48">RIGHT</text>
+          <text x="286" y="91" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+                font-weight="800" font-size="13.5" fill="#337A48">DOOR</text>
+        </g>
       </g>
-    </g>
+    </a>
+
     <!-- Ilona, committed to the wrong one -->
     <svg x="66" y="126" width="86" height="86" viewBox="-6 -6 152 152"><use href="#tk-ilona"></use></svg>
+
     <!-- the meow -->
     <g id="nfBubble" opacity="0">
       <path d="M146 124 l7 14 l7 -11 Z" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3" stroke-linejoin="round"/>
@@ -714,8 +743,8 @@ footer a{ color:#FFC9DA; }
   </svg>
   <span class="eyebrow">Page not found</span>
   <h1>Wrong door.</h1>
-  <p class="lede">Whatever was here is gone, but Ilona is meowing at the handle anyway.
-  The page you actually want is about three feet that way.</p>
+  <p class="lede">Whatever was here is gone, and Ilona is meowing at the closet anyway.
+  The bedroom is right there. It is even labelled.</p>
   <a class="btn" id="nfBtn" href="/home.html">Take the right door &rarr;</a>
 </div></div>
 </main><section class="cat-menu" aria-label="Pick a cat"><div class="wrap"><div class="cat-row"><a class="cat-item ci-baker" href="/baker.html"><svg viewBox="-6 -6 152 152" role="img" aria-hidden="true">
@@ -779,8 +808,7 @@ footer a{ color:#FFC9DA; }
       <path d="M60 72 C56.6 67 50.2 68 50.2 72.5 C50.2 77.2 56.6 79.8 60 83.5 C63.4 79.8 69.8 77.2 69.8 72.5 C69.8 68 63.4 67 60 72 Z"
             fill="#D96A7A" stroke="#2A2432" stroke-width="1.8" stroke-linejoin="round"/>
       <!-- the smirk. One side only. -->
-      <path d="M50 87 C55 91.6 63 91.4 70 84.6" stroke="#2A2432" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-      <path d="M70 84.6 q2.6 -1.4 3.4 -3.4" stroke="#2A2432" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".55"/>
+      <path d="M55.5 87.4 C58.2 87.9 61.4 87.8 64.5 87" stroke="#2A2432" stroke-width="2.3" stroke-linecap="round" fill="none"/>
 
       <!-- blush + whiskers -->
       <ellipse cx="45" cy="79" rx="6.6" ry="4" fill="#E58EA0" opacity=".55"/>
@@ -1458,8 +1486,8 @@ function coatExit(href) {
   if (!reduced) (function idle() {
     setTimeout(() => { meow(); idle(); }, R(3200, 7000));
   })();
-  btn.addEventListener("click", (e) => {
-    const href = btn.getAttribute("href");
+  const openDoor = (e) => {
+    const href = "home.html";
     e.preventDefault();
     if (reduced) { window.location.href = href; return; }
     meow();                                        // she meows at HER door...
@@ -1470,6 +1498,9 @@ function coatExit(href) {
       { transform: "skewY(-7deg) scaleX(.07)" }
     ], { duration: 480, delay: 430, easing: "cubic-bezier(.6,0,.4,1)", fill: "forwards" });
     setTimeout(() => { window.location.href = href; }, 1180);
+  };
+  [btn, document.getElementById("nfDoorLink")].forEach(n => {
+    if (n) n.addEventListener("click", openDoor);
   });
 })();
 

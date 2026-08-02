@@ -502,8 +502,8 @@ function coatExit(href) {
   if (!reduced) (function idle() {
     setTimeout(() => { meow(); idle(); }, R(3200, 7000));
   })();
-  btn.addEventListener("click", (e) => {
-    const href = btn.getAttribute("href");
+  const openDoor = (e) => {
+    const href = "home.html";
     e.preventDefault();
     if (reduced) { window.location.href = href; return; }
     meow();                                        // she meows at HER door...
@@ -514,6 +514,9 @@ function coatExit(href) {
       { transform: "skewY(-7deg) scaleX(.07)" }
     ], { duration: 480, delay: 430, easing: "cubic-bezier(.6,0,.4,1)", fill: "forwards" });
     setTimeout(() => { window.location.href = href; }, 1180);
+  };
+  [btn, document.getElementById("nfDoorLink")].forEach(n => {
+    if (n) n.addEventListener("click", openDoor);
   });
 })();
 

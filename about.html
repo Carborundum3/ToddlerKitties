@@ -14,7 +14,7 @@
 <meta property="og:description" content="How a household joke about four cats in a trenchcoat became a hand-drawn storybook world.">
 <meta property="og:url" content="https://toddlerkitties.com/about.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjUuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTAgMTggSDI4IE0xOSAxOCBWNDYiLz48cGF0aCBkPSJNMzYgMTggVjQ2IE01MCAxOCBMMzcuNSAzMCBNMzkuNCAyOC40IEw1MSA0NiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGRjhGQjEiIHN0cm9rZT0iIzNCMkU0QSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTE1IDI4IEwxMSA3IEwzMCAxOSBaIiBmaWxsPSIjRkFGN0YyIiBzdHJva2U9IiMzQjJFNEEiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik00OSAyOCBMNTMgNyBMMzQgMTkgWiIgZmlsbD0iI0ZBRjdGMiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTggMjUgTDE2IDEzIEwyNiAyMCBaIiBmaWxsPSIjRjBBOEI0Ii8+PHBhdGggZD0iTTQ2IDI1IEw0OCAxMyBMMzggMjAgWiIgZmlsbD0iI0YwQThCNCIvPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjM4IiByeD0iMjIiIHJ5PSIxOSIgZmlsbD0iI0ZBRjdGMiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSIyMyIgY3k9IjM1IiByPSI1LjYiIGZpbGw9IiMzQjJFNEEiLz48Y2lyY2xlIGN4PSI0MSIgY3k9IjM1IiByPSI1LjYiIGZpbGw9IiMzQjJFNEEiLz48Y2lyY2xlIGN4PSIyNS4yIiBjeT0iMzIuNiIgcj0iMiIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjQzLjIiIGN5PSIzMi42IiByPSIyIiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0iTTMyIDQ3LjUgYy0yLjQtMy42LTctMi44LTcgLjYgMCAzLjIgNC42IDUgNyA4IDIuNC0zIDctNC44IDctOCAwLTMuNC00LjYtNC4yLTctLjYgWiIgZmlsbD0iI0QxNEE4MiIgc3Ryb2tlPSIjM0IyRTRBIiBzdHJva2Utd2lkdGg9IjIuNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>/* ==========================================================================
    Toddler Kitties
@@ -292,6 +292,10 @@ footer a{ color:#FFC9DA; }
 .oops .nf-scene{ width:min(94vw,760px); height:auto; margin-bottom:.4rem; }
 .oops h1{ font-size:clamp(2rem,1.3rem + 3.4vw,3.2rem); }
 .oops .lede{ max-width:46ch; }
+.nf-door{ cursor:pointer; }
+.nf-door > rect, .nf-door > text, .nf-door > g{ transition:transform .18s ease; }
+.nf-door:hover > rect, .nf-door:hover > text, .nf-door:hover > g{ transform:translateY(-4px); }
+.nf-door:focus-visible{ outline:3px solid var(--pink); outline-offset:4px; border-radius:10px; }
 
 /* ---------- page turn ----------------------------------------------------- */
 
@@ -384,8 +388,7 @@ footer a{ color:#FFC9DA; }
       <path d="M60 72 C56.6 67 50.2 68 50.2 72.5 C50.2 77.2 56.6 79.8 60 83.5 C63.4 79.8 69.8 77.2 69.8 72.5 C69.8 68 63.4 67 60 72 Z"
             fill="#D96A7A" stroke="#2A2432" stroke-width="1.8" stroke-linejoin="round"/>
       <!-- the smirk. One side only. -->
-      <path d="M50 87 C55 91.6 63 91.4 70 84.6" stroke="#2A2432" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-      <path d="M70 84.6 q2.6 -1.4 3.4 -3.4" stroke="#2A2432" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".55"/>
+      <path d="M55.5 87.4 C58.2 87.9 61.4 87.8 64.5 87" stroke="#2A2432" stroke-width="2.3" stroke-linecap="round" fill="none"/>
 
       <!-- blush + whiskers -->
       <ellipse cx="45" cy="79" rx="6.6" ry="4" fill="#E58EA0" opacity=".55"/>
@@ -811,8 +814,7 @@ footer a{ color:#FFC9DA; }
       <path d="M60 72 C56.6 67 50.2 68 50.2 72.5 C50.2 77.2 56.6 79.8 60 83.5 C63.4 79.8 69.8 77.2 69.8 72.5 C69.8 68 63.4 67 60 72 Z"
             fill="#D96A7A" stroke="#2A2432" stroke-width="1.8" stroke-linejoin="round"/>
       <!-- the smirk. One side only. -->
-      <path d="M50 87 C55 91.6 63 91.4 70 84.6" stroke="#2A2432" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-      <path d="M70 84.6 q2.6 -1.4 3.4 -3.4" stroke="#2A2432" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".55"/>
+      <path d="M55.5 87.4 C58.2 87.9 61.4 87.8 64.5 87" stroke="#2A2432" stroke-width="2.3" stroke-linecap="round" fill="none"/>
 
       <!-- blush + whiskers -->
       <ellipse cx="45" cy="79" rx="6.6" ry="4" fill="#E58EA0" opacity=".55"/>
@@ -1532,8 +1534,8 @@ function coatExit(href) {
   if (!reduced) (function idle() {
     setTimeout(() => { meow(); idle(); }, R(3200, 7000));
   })();
-  btn.addEventListener("click", (e) => {
-    const href = btn.getAttribute("href");
+  const openDoor = (e) => {
+    const href = "home.html";
     e.preventDefault();
     if (reduced) { window.location.href = href; return; }
     meow();                                        // she meows at HER door...
@@ -1544,6 +1546,9 @@ function coatExit(href) {
       { transform: "skewY(-7deg) scaleX(.07)" }
     ], { duration: 480, delay: 430, easing: "cubic-bezier(.6,0,.4,1)", fill: "forwards" });
     setTimeout(() => { window.location.href = href; }, 1180);
+  };
+  [btn, document.getElementById("nfDoorLink")].forEach(n => {
+    if (n) n.addEventListener("click", openDoor);
   });
 })();
 

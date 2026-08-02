@@ -31,9 +31,16 @@ LOGO = ('<svg viewBox="0 0 46 32" aria-hidden="true" fill="none" stroke="current
 
 FAVICON_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
   '<rect width="64" height="64" rx="14" fill="#FF8FB1" stroke="#3B2E4A" stroke-width="4"/>'
-  '<g fill="none" stroke="#3B2E4A" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">'
-  '<path d="M10 18 H28 M19 18 V46"/><path d="M36 18 V46 M50 18 L37.5 30 M39.4 28.4 L51 46"/>'
-  '</g></svg>')
+  '<path d="M15 28 L11 7 L30 19 Z" fill="#FAF7F2" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>'
+  '<path d="M49 28 L53 7 L34 19 Z" fill="#FAF7F2" stroke="#3B2E4A" stroke-width="4" stroke-linejoin="round"/>'
+  '<path d="M18 25 L16 13 L26 20 Z" fill="#F0A8B4"/>'
+  '<path d="M46 25 L48 13 L38 20 Z" fill="#F0A8B4"/>'
+  '<ellipse cx="32" cy="38" rx="22" ry="19" fill="#FAF7F2" stroke="#3B2E4A" stroke-width="4"/>'
+  '<circle cx="23" cy="35" r="5.6" fill="#3B2E4A"/><circle cx="41" cy="35" r="5.6" fill="#3B2E4A"/>'
+  '<circle cx="25.2" cy="32.6" r="2" fill="#FFFFFF"/><circle cx="43.2" cy="32.6" r="2" fill="#FFFFFF"/>'
+  '<path d="M32 47.5 c-2.4-3.6-7-2.8-7 .6 0 3.2 4.6 5 7 8 2.4-3 7-4.8 7-8 0-3.4-4.6-4.2-7-.6 Z"'
+  ' fill="#D14A82" stroke="#3B2E4A" stroke-width="2.6" stroke-linejoin="round"/>'
+  '</svg>')
 
 ICONS = {
  "book": '<svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M24 14C20 10 12.5 8.6 6 9.6v25C12.5 33.6 20 35 24 39"/><path d="M24 14c4-4 11.5-5.4 18-4.4v25c-6.5-1-14 .4-18 4.4"/><path d="M24 14v25"/></svg>',
@@ -608,27 +615,53 @@ page("about.html", "About — Toddler Kitties",
 NOTFOUND = f'''
 <div class="oops wrap"><div class="oops-in">
   <svg class="nf-scene" viewBox="0 0 380 232" role="img" aria-labelledby="nfT">
-    <title id="nfT">Ilona meowing at the wrong door while the right door waits</title>
+    <title id="nfT">Ilona meowing at the closet door while the bedroom waits</title>
     <line x1="14" y1="206" x2="366" y2="206" stroke="#3B2E4A" stroke-width="3" stroke-linecap="round"/>
-    <!-- the wrong door (hers, apparently) -->
+
+    <!-- the closet, which is not where anybody keeps a bedroom -->
     <g>
+      <rect x="36" y="6" width="116" height="27" rx="5" fill="#A8804E" stroke="#3B2E4A" stroke-width="3.5"/>
+      <text x="94" y="26" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+            font-weight="800" font-size="16" letter-spacing="1.6" fill="#FFF4DC">CLOSET</text>
       <rect x="46" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
       <rect x="59" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
       <rect x="59" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
       <circle cx="131" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+      <g transform="rotate(-4 94 79)">
+        <circle cx="94" cy="57" r="2.6" fill="#8C6839" stroke="#3B2E4A" stroke-width="2"/>
+        <rect x="59" y="60" width="70" height="38" rx="6" fill="#FFF4DC" stroke="#3B2E4A" stroke-width="3"/>
+        <text x="94" y="76" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+              font-weight="800" font-size="13.5" fill="#C0392B">WRONG</text>
+        <text x="94" y="91" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+              font-weight="800" font-size="13.5" fill="#C0392B">DOOR</text>
+      </g>
     </g>
-    <!-- the right door -->
-    <g>
+
+    <!-- the bedroom. Also a button. -->
+    <a href="home.html" id="nfDoorLink" class="nf-door" aria-label="Take the right door to the home page">
+      <rect x="228" y="6" width="116" height="27" rx="5" fill="#A8804E" stroke="#3B2E4A" stroke-width="3.5"/>
+      <text x="286" y="26" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+            font-weight="800" font-size="16" letter-spacing="1.2" fill="#FFF4DC">BED ROOM</text>
       <rect x="238" y="36" width="96" height="170" rx="8" fill="#FFE9A8" stroke="#3B2E4A" stroke-width="4"/>
       <g id="nfPanel">
         <rect x="238" y="36" width="96" height="170" rx="8" fill="#C9A26B" stroke="#3B2E4A" stroke-width="4"/>
         <rect x="251" y="50" width="70" height="58" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
         <rect x="251" y="122" width="70" height="64" rx="6" fill="#B98C57" stroke="#3B2E4A" stroke-width="3"/>
         <circle cx="249" cy="118" r="5" fill="#8C6839" stroke="#3B2E4A" stroke-width="3"/>
+        <g transform="rotate(3 286 79)">
+          <circle cx="286" cy="57" r="2.6" fill="#8C6839" stroke="#3B2E4A" stroke-width="2"/>
+          <rect x="251" y="60" width="70" height="38" rx="6" fill="#FFF4DC" stroke="#3B2E4A" stroke-width="3"/>
+          <text x="286" y="76" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+                font-weight="800" font-size="13.5" fill="#337A48">RIGHT</text>
+          <text x="286" y="91" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif"
+                font-weight="800" font-size="13.5" fill="#337A48">DOOR</text>
+        </g>
       </g>
-    </g>
+    </a>
+
     <!-- Ilona, committed to the wrong one -->
     <svg x="66" y="126" width="86" height="86" viewBox="-6 -6 152 152"><use href="#tk-ilona"></use></svg>
+
     <!-- the meow -->
     <g id="nfBubble" opacity="0">
       <path d="M146 124 l7 14 l7 -11 Z" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3" stroke-linejoin="round"/>
@@ -638,8 +671,8 @@ NOTFOUND = f'''
   </svg>
   <span class="eyebrow">Page not found</span>
   <h1>Wrong door.</h1>
-  <p class="lede">Whatever was here is gone, but Ilona is meowing at the handle anyway.
-  The page you actually want is about three feet that way.</p>
+  <p class="lede">Whatever was here is gone, and Ilona is meowing at the closet anyway.
+  The bedroom is right there. It is even labelled.</p>
   <a class="btn" id="nfBtn" href="home.html">Take the right door &rarr;</a>
 </div></div>
 '''

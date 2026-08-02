@@ -274,6 +274,10 @@ footer a{ color:#FFC9DA; }
 .oops .nf-scene{ width:min(94vw,760px); height:auto; margin-bottom:.4rem; }
 .oops h1{ font-size:clamp(2rem,1.3rem + 3.4vw,3.2rem); }
 .oops .lede{ max-width:46ch; }
+.nf-door{ cursor:pointer; }
+.nf-door > rect, .nf-door > text, .nf-door > g{ transition:transform .18s ease; }
+.nf-door:hover > rect, .nf-door:hover > text, .nf-door:hover > g{ transform:translateY(-4px); }
+.nf-door:focus-visible{ outline:3px solid var(--pink); outline-offset:4px; border-radius:10px; }
 
 /* ---------- page turn ----------------------------------------------------- */
 
