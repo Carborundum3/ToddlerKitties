@@ -594,7 +594,7 @@ NOTFOUND = f'''
     <g id="nfBubble" opacity="0">
       <path d="M146 124 l7 14 l7 -11 Z" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3" stroke-linejoin="round"/>
       <rect x="126" y="92" width="80" height="35" rx="15" fill="#FFFFFF" stroke="#3B2E4A" stroke-width="3"/>
-      <text x="166" y="116" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" font-size="17" fill="#3B2E4A">Mrow!</text>
+      <text x="166" y="116" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" font-size="17" fill="#3B2E4A">Meow!</text>
     </g>
   </svg>
   <span class="eyebrow">Page not found</span>

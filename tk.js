@@ -80,6 +80,8 @@ const SPR = {
   laserCss: "width:13px;height:13px;border-radius:50%;background:#FF3B2E;box-shadow:0 0 12px 5px rgba(255,59,46,.55)"
 };
 
+const CAT_SLUGS = ["baker", "doc", "lulu", "ilona"];
+
 const PAGE_BG = { baker:"#EDE7FA", doc:"#EFF3FF", lulu:"#EAF7EF", ilona:"#FFF6DF" };
 
 /* ---------- exit-transition helpers -------------------------------------- */
@@ -235,11 +237,17 @@ function coatExit(href) {
     navigating = true;
 
     const item = a.closest(".cat-item");
+    // any link that lands on a cat page gets that cat's send-off — the bottom
+    // menu, the "Meet X" buttons, the crew cards, the nav.
+    const target = href.replace(/^\.?\//, "").replace(".html", "");
+    const cls = item ? [...item.classList].find(c => c.startsWith("ci-")) : null;
+    const slug = cls ? cls.slice(3)
+               : (CAT_SLUGS.includes(target) ? target : "");
+
     if (document.body.dataset.exit === "coat" || a.closest(".coat-link")) {
       coatExit(href);                                   // the coat: everybody in
-    } else if (item) {
-      const cls = [...item.classList].find(c => c.startsWith("ci-"));
-      catExit(cls ? cls.slice(3) : "", href);           // bottom menu: that cat's send-off
+    } else if (slug) {
+      catExit(slug, href);                              // that cat's send-off
     } else {
       document.body.classList.add("leaving");           // everything else: quick fade
       setTimeout(() => { window.location.href = href; }, 200);
